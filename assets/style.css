@@ -3,3 +3,22 @@ body {
     font-family: 'Bangers', cursive;
     size: 22px;
 }
+
+.gametitle {
+    align-self: center;
+    font-size: 90px;
+    color: rgb(54, 53, 53);
+    padding-top: 20px;
+}
+
+.gameoptions {
+    display: flex;
+    flex-direction: row;
+    padding-top: 20px;
+    width: 30%;
+}
+
+.vs {
+    background-image: url("assets/images/facestart.png");
+    width: auto;
+}

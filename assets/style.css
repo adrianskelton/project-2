@@ -35,32 +35,58 @@ body {
     width: auto;
 }
 
+.vs2 {
+    background: url("/assets/images/facehand.png");
+    background-position: center;
+    display: block;
+    background-size: 70%;
+    background-repeat: no-repeat;
+    height: 300px;
+    width: auto;
+}
+
 
 /* Choose weapon section*/
 .chooseweapon {
     height: 100px;
+    width: 60%;
+    align-self: center;
+    border: 0;
 }
 
 .rock {
-    background: url("/assets/images/rock.png");
+    background: url("/assets/images/rock.png") center;
     background-size: 30%;
     background-repeat: no-repeat;
     display: block;
+    border: 0;
     height: 150px;
 }
 
 .paper {
-    background: url("/assets/images/rock.png");
+    background: url("/assets/images/paper.png") center;
     background-size: 30%;
     background-repeat: no-repeat;
     display: block;
+    border: 0;
     height: 150px;
 }
 
 .scissors {
-    background: url("/assets/images/rock.png");
+    background: url("/assets/images/scissors.png") center;
     background-size: 30%;
     background-repeat: no-repeat;
     display: block;
+    border: 0;
     height: 150px;
+}
+
+.scissors:hover {
+    background: url("/assets/images/scissors.png");
+    background-size: 30%;
+    background-repeat: no-repeat;
+    display: block;
+    border: 0;
+    height: 150px;
+    text-decoration: underline;
 }

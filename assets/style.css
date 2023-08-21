@@ -11,14 +11,56 @@ body {
     padding-top: 20px;
 }
 
-.gameoptions {
-    display: flex;
-    flex-direction: row;
+.title-makechoice {
+    align-self: center;
+    font-size: 50px;
+    color: rgb(54, 53, 53);
     padding-top: 20px;
+}
+
+
+
+.gameoptions {
+    padding-top: 5px;
     width: 30%;
 }
 
 .vs {
-    background-image: url("assets/images/facestart.png");
+    background: url("/assets/images/facestart.png");
+    background-position: center;
+    display: block;
+    background-size: 70%;
+    background-repeat: no-repeat;
+    height: 300px;
     width: auto;
+}
+
+
+/* Choose weapon section*/
+.chooseweapon {
+    height: 100px;
+}
+
+.rock {
+    background: url("/assets/images/rock.png");
+    background-size: 30%;
+    background-repeat: no-repeat;
+    display: block;
+    height: 150px;
+}
+
+.paper {
+    background: url("/assets/images/rock.png");
+    background-size: 30%;
+    background-repeat: no-repeat;
+    display: block;
+    height: 150px;
+}
+
+.scissors {
+    background: url("/assets/images/rock.png");
+    background-size: 30%;
+    background-repeat: no-repeat;
+    display: block;
+    height: 150px;
 }

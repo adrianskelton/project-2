@@ -4,6 +4,20 @@ body {
     size: 22px;
 }
 
+/*To flip images when on the pc option of screen so the images mirror eachother*/
+.flip-horizontal {
+transform: scaleX(-1);
+width:50%;
+}
+
+.top-menu {
+    align-self: center;
+    width: 70%;
+    font-size: 23px;
+    color: rgb(54, 53, 53);
+    padding-top: 20px;
+}
+
 .gametitle {
     align-self: center;
     font-size: 90px;
@@ -21,9 +35,18 @@ body {
 
 
 .gameoptions {
+    display: flex;
     padding-top: 5px;
     padding-bottom: 5px;
-    width: 30%;
+    width: 60%;
+}
+
+.player-answer {
+    transform: scale(.34);
+}
+
+.pc-answer  {
+    transform: scale(.34);
 }
 
 .vs {
@@ -55,6 +78,7 @@ body {
     border: 0;
 }
 
+
 .rock {
     background: url("/assets/images/rock.png") center;
     background-size: 30%;
@@ -67,10 +91,15 @@ body {
 .paper {
     background: url("/assets/images/paper.png") center;
     background-size: 30%;
+    transition: transform .3s; /* Animation */
     background-repeat: no-repeat;
     display: block;
     border: 0;
     height: 150px;
+}
+
+.paper:hover {
+    transform: scale(1.5);
 }
 
 .scissors {

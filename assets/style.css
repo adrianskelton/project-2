@@ -7,7 +7,6 @@ body {
 /*To flip images when on the pc option of screen so the images mirror eachother*/
 .flip-horizontal {
 transform: scaleX(-1);
-width:50%;
 }
 
 .top-menu {
@@ -16,6 +15,7 @@ width:50%;
     font-size: 23px;
     color: rgb(54, 53, 53);
     padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .gametitle {
@@ -30,33 +30,37 @@ width:50%;
     font-size: 50px;
     color: rgb(54, 53, 53);
     padding-top: 20px;
+    font-family:  'Bangers', cursive;
 }
 
-
-
-.gameoptions {
+.game-options {
     display: flex;
+    justify-content: center;
+    flex-direction: row;
     padding-top: 5px;
     padding-bottom: 5px;
-    width: 60%;
+    padding-left:0;
+
 }
 
 .player-answer {
-    transform: scale(.34);
+    transform: scale(.3);
+    padding: 0;
+    justify-self: center;
 }
 
 .pc-answer  {
-    transform: scale(.34);
+    transform: scale(.3);
+    padding: 0;
+    justify-self: center;
 }
 
 .vs {
     background: url("/assets/images/facestart.png");
     background-position: center;
-    display: block;
-    background-size: 70%;
     background-repeat: no-repeat;
     height: 300px;
-    width: auto;
+    justify-self: center;
 }
 
 .vs2 {
@@ -88,6 +92,10 @@ width:50%;
     height: 150px;
 }
 
+.rock:hover {
+        transform: scale(1.5);
+}
+
 .paper {
     background: url("/assets/images/paper.png") center;
     background-size: 30%;
@@ -112,65 +120,66 @@ width:50%;
 }
 
 .scissors:hover {
-    background: url("/assets/images/scissors.png");
-    background-size: 30%;
-    background-repeat: no-repeat;
-    display: block;
-    border: 0;
-    height: 150px;
-    text-decoration: underline;
+    transform: scale(1.5);
 }
 
 /*Popup modal*/
-.trigger{
-    text-align: center;
-    padding: 7px 13px;
-    background: #3e3e3e;
-    color: #fff;
-    font-size: 15px;
-    outline: none;
-    border: none;
-    border-radius: 5px;
-    font-family: cursive;
+.modal {
+  // padding: 1em;
+  max-width: 50ch;
+  // border: 0;
+  // box-shadow: 0 0 1em rgb(0 0 0 / .3);
+
+  & > * {
+    margin: 0 0 0.5rem 0;
+  }
 }
 
-.modal {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    opacity: 0;
-    visibility: hidden;
-    transform: scale(1.1);
-    transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+.modal::backdrop {
+  background: rgb(0 0 0 / 0.4);
 }
-.modal-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    padding: 1rem 1.5rem;
-    width: 24rem;
-    border-radius: 0.5rem;
+
+/* extra styling */
+
+body {
+  min-height: 100vh;
+  margin: 2rem;
+  font-family: system-ui;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  color: var(--gray-8);
+  // background-image: url('https://images.unsplash.com/photo-1644242629712-943ae5c8c4f3?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY0Njc1MjQxNA&ixlib=rb-1.2.1&q=85');
+  // background-size: cover;
 }
-.close-button {
-    float: right;
-    width: 1.5rem;
-    line-height: 1.5rem;
-    text-align: center;
-    cursor: pointer;
-    border-radius: 0.25rem;
-    background-color: lightgray;
+
+h1 em {
+  color: var(--cyan-9);
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
 }
-.close-button:hover {
-    background-color: darkgray;
+
+.button {
+  border: 0;
+  cursor: pointer;
+  background: var(--gray-8);
+  color: var(--gray-2);
+  font-weight: 700;
+  padding: var(--size-2) var(--size-4);
 }
-.show-modal {
-    opacity: 1;
-    visibility: visible;
-    transform: scale(1.0);
-    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+
+.button:hover,
+.button:focus {
+  background: var(--cyan-9);
+}
+
+form {
+  display: grid;
+  gap: 1em;
+}
+
+
+.footer {
+    display: flex:
+    justify-content: right;
+    align-self: right;
 }

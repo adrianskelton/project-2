@@ -18,9 +18,10 @@ This is a javascript game of rock paper scissors,
     - [Typography](#typography)
     - [Imagery](#imagery)
     - [Wireframes](#wireframes)
-    - [Home](#home)
-    - [Contact](#contact)
+    - [Desktop view - startup screen](#desktop-view---startup-screen)
+    - [Desktop view - startup screen](#desktop-view---startup-screen-1)
     - [Mobile view](#mobile-view)
+    - [Tablet view](#tablet-view)
   - [Features](#features)
     - [General features on each page](#general-features-on-each-page)
     - [Footer with icons](#footer-with-icons)
@@ -82,15 +83,18 @@ I tried to display old school comic book style images
 
 ### Wireframes
 
-### Home
-![alt text](assets/images/wiredesktop.png)<br>
+### Desktop view - startup screen
+![alt text](assets/images/wireddesktopstart.png)<br>
 
+### Desktop view - startup screen
+![alt text](assets/images/wireddesktop.png)<br>
 
-### Contact
-![alt text](assets/images/wirepad.png)<br>
 
 ### Mobile view
-![alt text](assets/images/wiremobile.png)<br>
+![alt text](assets/images/wiredmobile.png)<br>
+
+### Tablet view
+![alt text](assets/images/wiredtablet.png)<br>
 
 
 I used Balsamiq to design my wireframes.

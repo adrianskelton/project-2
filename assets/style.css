@@ -12,9 +12,12 @@ body {
 }
 
 .top-menu {
-    display: wrap;
+    display: flexbox;
     width: 40%;
     flex-wrap: nowrap;
+    align-self: flex-end;
+    justify-self: flex-end;
+    padding-bottom: 40px;
 }
 
 .gametitle {
@@ -55,21 +58,13 @@ body {
 }
 
 .vs {
-    background: url("/assets/images/facestart.png");
     background-size: contain;
     background-repeat: no-repeat;
     justify-self: center;
+    justify-content: center;
 }
 
-.vs2 {
-    background: url("/assets/images/facehand.png");
-    background-position: center;
-    display: block;
-    background-size: 70%;
-    background-repeat: no-repeat;
-    height: 300px;
-    width: auto;
-}
+
 
 
 /* Choose weapon section*/
@@ -163,6 +158,8 @@ form {
 
 
 .footer {
-    display: flex: justify-content: right;
-    align-self: right;
+    display: flexbox;
+    flex-direction: row-reverse;
+    align: right;
+    color: #393a3c;
 }

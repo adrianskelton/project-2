@@ -31,8 +31,8 @@
     </header>
 
 <!-- Header Menu restart,rules,sound -->
-<section class="container text-center row top-menu justify-content-center">
-<button class="music">Sound on / off</button>
+<section class="container top-menu">
+<button class="music">Restart</button>
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
   Rules
@@ -53,6 +53,11 @@
         
         
         ENTER YOUR NAME TO START
+
+        <form id="scoreboard">
+            <input type="text" id="username" required></input>
+        
+        </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary">Start</button>
@@ -70,31 +75,21 @@
     <div class="container">
         <div class="row row-cols-3">
             <div class="col" id="lightningplayer"><img src="assets/images/lightning1.png"></div>
-            <div class="col"><p class="vs">vs</p></div>
-            <div class="col"><img src="assets/images/lightning1.png"></div>
+            <div class="col"> </div>
+            <div class="col" id="lightningcomputer"><img src="assets/images/lightning1.png"></div>
 
-            <div class="col"><p class="vs">playername</p></div>
-            <div class="col">..</div>
-            <div class="col">Computer</div>
+            <div class="col"><p class="playername">playername</p></div>
+            <div class="col mx-auto"><span class="vs">vs</p></div>
+            <div class="col"><p class="computername">Computer</p></div>
 
-            <div class="col" id="playerimg"><img src="assets/images/rock.png"></div>
-            <div class="col"><p class="vs">vs</p></div>
-            <div class="col" id="computerimg"><img src="assets/images/rock.png"></div>
-
-            <div class="col"><p class="vs">playername</p>
-                        </div>
-                        <div class="col"><img src="assets/images/rock.png"></div>
-                        <div class="col">Column</div>
+            <div class="col" id="playerimg"><img src="assets/images/rock.png" id="playerimgr"></div>
+            <div class="col"><img src="assets/images/facehand.png" class="col-md-auto vs"></div>
+            <div class="col flip-horizontal" id="computerimg"><img src="assets/images/rock.png"></div>
         </div>
     </div>
 
-    <section id="gameoptions" class="container text-center">
-        <div class="row game-options nowrap">
-            <div id="player-answer" class="col-md-auto player-answer"></div>
-            <span><img src="assets/images/facehand.png" class="col-md-auto vs"></span>
-            <span id="pc-answer" class="col-md-auto pc-answer flip-horizontal"><img src="assets/images/rock.png"></span>
-        </div>
-    </section>
+    
+
     <!--End of main game section options and vs-->
 
     <!--Make your choice bottom section-->
@@ -103,14 +98,14 @@
     </div>
 
     <section id="chooseweapon" class="container text-center chooseweapon">
-        <div class="row">
-            <button id="rock" class="col rock"  id="rock" class="col rock">yup</button>
+        <div class="row game choices">
+            <button onclick="changeScr()" id="rock" class="col rock"></button>
             <button id="paper" class="col paper"></button>
             <button id="scissors" class="col scissors"></button>
         </div>
     </section>
     <!--End of make your choice bottom section-->
-    <footer><i class="fab fa-github fa-lg footer" style="color: #393a3c;">github</i></footer>
+    <footer><div class="footer"><i class="fab fa-github fa-lg">github</i></div></footer>
     </div>
   </body>
 </html>

@@ -1,6 +1,6 @@
 # Rock Paper Scissors Javascript game
 
-This is a javascript game of rock paper scissors, 
+This is a javascript game of rock paper scissors,
 
 ![fully responsive website example image]()
 
@@ -47,82 +47,76 @@ This is a javascript game of rock paper scissors,
   - [Credits](#credits)
     - [Code Used](#code-used)
     - [Content](#content)
-    - [ Media](#media)
-    - [ Acknowledgments](#acknowledgments)
+    - [Media](#media)
+    - [Acknowledgments](#acknowledgments)
 
 ---
+
 ## Target Audience
 
 Anyone wanting to play the game of rock paper scissors
 
-## User stories
+#### Visitor goals
 
-
-### want to enjoy the game and know how to play it
-
-
-
+- The main goal is to let the user play rock paper scissors.
+- The user should understand the rules of the game and play it easily.
+- The user should ee able to easily navigate the controls of the game.
+- The user should be able to see their score on the scoreboard if they get a good score.
+- The user should be able to restart the game.
 
 ## Design
 
 ### Colour Scheme
 
-![alt text]()<br>
+The color scheme is very basic with two major colors dark grey for the text and blue for the graphics. This was to keep the game from looking to busy espesially on smaller devices.
 
+![alt text]()<br>
 
 ### Typography
 
 I went for a google font Bangers because it looked clean and modern and was easy to setup. Below is a screenshot of the font.
 
-
 ![alt text](assets/images/typography.png)<br>
 
 ### Imagery
 
-I tried to display old school comic book style images
+Due to the nature of the project it is not image intensive however I sourced images for the girls reactions in the vs tab from pexels, I thought it would make the game more interactive and quirky with her expession changing if the user lost or won. I tried to display old school comic book style images. I edited all the images that I sourced using photoshop.
 
 ### Wireframes
 
 ### Desktop view - startup screen
+
 ![alt text](assets/images/wireddesktopstart.png)<br>
 
-### Desktop view - startup screen
+### Desktop view - game screen
+
 ![alt text](assets/images/wireddesktop.png)<br>
 
+### Desktop view - game screen
+
+![alt text](assets/images/wireddesktopscore.png)<br>
 
 ### Mobile view
+
 ![alt text](assets/images/wiredmobile.png)<br>
 
 ### Tablet view
-![alt text](assets/images/wiredtablet.png)<br>
 
+![alt text](assets/images/wiredtablet.png)<br>
 
 I used Balsamiq to design my wireframes.
 
-
 ## Features
-
 
 ### General features on each page
 
-
-
 ![alt text]()
 
-Desktop version nav bar with menu
-
-![alt text]()
-
-Mobile version nav bar hamburger menu
-
+Top menu bar with "Restart game", "Rules" and "Sound on/off" functions
 
 ### Footer with icons
 
-
-
 ![alt text]()
-
-
 
 ## Features by page
 
@@ -132,16 +126,9 @@ The Landing page has the game layout
 
 ![alt text]()
 
-
-
-
 ### Future Implementations
 
-
-
-
 ### Accessibility
-
 
 ## Technologies Used
 
@@ -158,7 +145,6 @@ The Landing page has the game layout
 **TinyPNG Website** - Used to compress images so they load faster.\
 **Codebeautify Website** - Used to clean up css and html code\
 **Favicon Generator Website** - Converted PNG file that I made from the logo using photoshop and converted it into a favicon on website favicon.io\
-
 
 ### Languages Used
 
@@ -186,7 +172,6 @@ I deployed everything my website onto gitpages.
 4. Open the terminal in your code editor and change the current working directory to the location you want to use for the cloned directory.
 5. Type 'git clone' into the terminal, paste the link you copied in step 3 and press enter.
 
-
 #### How to Fork
 
 To fork the repository:
@@ -195,8 +180,8 @@ To fork the repository:
 2. Go to the repository for this project, adrianskelton/Project-2
 3. Click the Fork button in the top right corner.
 
-
 ## Testing
+
 ## Manual Testing
 
 ### Jigsaw CSS Validator
@@ -208,61 +193,50 @@ To fork the repository:
 
 [W3C](https://validator.w3.org/) was used to validate the HTML on all pages of the website. It was also used to validate the CSS.
 
-
 ![alt text]() - Pass
 ![alt text]() - Pass
 
 ### Lighthouse
 
-
-
 ### Index page
 
-
 ![alt text](assets/images/lighthouseindex.png)
-
-
-
 
 ### Full Testing
 
 Full testing was performed on the following devices:
 
-* Laptop:
-  * Huawei matebook D
-* Mobile Devices:
-  * iphone 10
-  * Google pixel 5
+- Laptop:
+  - Huawei matebook D
+- Mobile Devices:
+  - iphone 10
+  - Google pixel 5
 
 Each device tested the site using the following browsers:
 
-* Google Chrome
-* Safari
-* Firefox
+- Google Chrome
+- Safari
+- Firefox
 
-Additional testing was taken by friends on a variety of devices and screen sizes. 
+Additional testing was taken by friends on a variety of devices and screen sizes.
 
-| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
-| --- | --- | --- | --- | --- |
-| `Navbar` |
-|  |  |  |  |  |
-| Mountain Magic Logo & Title | When clicked the user will be redirected to the home page. | Clicked Logo and title | Redirected to the home page. | Pass |
-| Home Page Link | When clicked the user will be redirected to the home page.| Clicked link | Redirected to the home page. | Pass |
-| Accomodation Link | When clicked the user will be redirected to the accomodation page. | Clicked link | Redirected to the accomodation page. | Pass |
-| Contact Link | When clicked the user will be redirected to the Contact page. | Clicked link | Redirected to the contact page | Pass |
-| --- | --- | --- | --- | --- |
+| Feature                     | Expected Outcome                                                   | Testing Performed      | Result                               | Pass/Fail |
+| --------------------------- | ------------------------------------------------------------------ | ---------------------- | ------------------------------------ | --------- |
+| `Navbar`                    |
+|                             |                                                                    |                        |                                      |           |
+| Mountain Magic Logo & Title | When clicked the user will be redirected to the home page.         | Clicked Logo and title | Redirected to the home page.         | Pass      |
+| Home Page Link              | When clicked the user will be redirected to the home page.         | Clicked link           | Redirected to the home page.         | Pass      |
+| Accomodation Link           | When clicked the user will be redirected to the accomodation page. | Clicked link           | Redirected to the accomodation page. | Pass      |
+| Contact Link                | When clicked the user will be redirected to the Contact page.      | Clicked link           | Redirected to the contact page       | Pass      |
+| ---                         | ---                                                                | ---                    | ---                                  | ---       |
 
-
- - - -
+---
 
 ## Credits
 
 ### Code Used
 
-
-
 ### Content
-
 
 ###  Media
 
@@ -271,10 +245,6 @@ Hand Gestures image <https://www.freepik.com/free-vector/hand-wrist-gesture-blac
 Frame image used for hand gestures
 <https://img.freepik.com/free-vector/fight-club-logo-set-vintage-monochrome-emblems-with-arm-clenched-fist-medal-ribbon-vector-illustration-collection-boxing-kickboxing-martial-arts-club-labels_74855-8368.jpg?size=626&ext=jpg&ga=GA1.2.1255192767.1692352642&semt=ais>
 
-
-
-
-  
 ###  Acknowledgments
 
-I would like to thank my mentor Narender as well as all the users on slack for all their opinions and code reviews. 
+I would like to thank my mentor Narender as well as all the users on slack for all their opinions and code reviews.

@@ -7,13 +7,31 @@ const result_p = document.querySelector(".result > p");
 const rock_div = document.getElementById("r");
 const paper_div = document.getElementById("p");
 const scissors_div = document.getElementById("s");
+//updatelightningbolts
+const lightningImages = ['assets/images/lightning0.png', 'assets/images/lightning1.png', 'assets/images/lightning2.png', 'assets/images/lightning3.png', 'assets/images/lightning4.png', 'assets/images/lightning5.png',
+];
+let lightningscoreplayer = document.getElementById("user-score");
+let lightningscorecomputer = document.getElementById("computer-score");
+const lightningScore = document.getElementById("myBtn");
 
+
+lightningScore.addEventListener("click", myFunction1);
+function myFunction1() {
+    document.getElementById("user-label").innerHTML += lightningImages[1];
+}
+/*element.addEventListener("click", myFunction2);
+
+function myFunction2() {
+    document.getElementById("lightningplayer").innerHTML += "22 function was executed! ";
+}
+*/
 
 function getComputerChoice() {
     const choices = ['r', 'p', 's'];
     const randomNumber = Math.floor(Math.random() * 3);
     return choices[randomNumber];
 }
+
 
 function convertToWord(letter) {
     if (letter === "r") return "Rock";
@@ -38,14 +56,11 @@ function lose(userChoice, computerChoice) {
     result_p.innerHTML = `${convertToWord(userChoice)}${smallUserWord} loses to ${convertToWord(computerChoice)}${smallCompWord}. You lost! `;
 }
 
-
-
 function draw(userChoice, computerChoice) {
     const smallUserWord = "user";
     const smallCompWord = "comp";
     result_p.innerHTML = `${convertToWord(userChoice)}${smallUserWord} draws with ${convertToWord(computerChoice)}${smallCompWord}. Its a draw `;
 }
-
 
 function game(userChoice) {
     const computerChoice = getComputerChoice();
@@ -83,7 +98,6 @@ function main() {
 }
 
 main();
-
 
 /*var x = document.getElementById("rock");
 x.addEventListener("click", mySecondFunction);

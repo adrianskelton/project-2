@@ -13,6 +13,10 @@ body {
     padding-left: 40%;
 }
 
+.result-text {
+    font-size: xx-large;
+}
+
 
 /*To flip images when on the pc option of screen so the images mirror eachother*/
 .flip-horizontal {
@@ -71,9 +75,6 @@ body {
     justify-self: center;
     justify-content: center;
 }
-
-
-
 
 /* Choose weapon section*/
 .chooseweapon {
@@ -150,11 +151,10 @@ body {
 }
 
 .modal::backdrop {
-    background: rgb(0 0 0 / 0.4);
+    background: rgb(0 0 / 0.4);
 }
 
 /* extra styling */
-
 
 
 .button {
@@ -175,7 +175,6 @@ form {
     display: grid;
     gap: 1em;
 }
-
 
 .footer {
     display: flexbox;

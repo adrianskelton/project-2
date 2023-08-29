@@ -1,28 +1,91 @@
-/*const computerChoiceDisplay = document.getElementById("rockomputerimg");
-const resultDisplay = document.createElement('h1');
-const gameGrid = document.getElementById('game');
-gameGrid.append(userChoiceDisplay, computerChoiceDisplay, resultDisplay);
-
-const choices = ['rock', 'paper', 'scissors'];
-let userChoice;
-
-const handleClick = (e) => {
-    userChoice = e.target.id;
-    userChoiceDisplay.innerHTML = userChoice;
-};
-
-for (let i = 0; i < choices.length; i++) {
-    const button = document.createElement('button');
-    button.id = choices[i];
-    button.innerHTML = choices[i];
-    button.addEventListener('click', handleClick);
-    gameGrid.appendChild(button);
-}*/
-
-/*testing here;*/
+let userScore = 0;
+let computerScore = 0;
+const userScore_span = document.getElementById("user-score");
+const computerScore_span = document.getElementById("computer-score");
+const scoreBoard_div = document.querySelector(".score-board");
+const result_p = document.querySelector(".result > p");
+const rock_div = document.getElementById("r");
+const paper_div = document.getElementById("p");
+const scissors_div = document.getElementById("s");
 
 
-var x = document.getElementById("rock");
+function getComputerChoice() {
+    const choices = ['r', 'p', 's'];
+    const randomNumber = Math.floor(Math.random() * 3);
+    return choices[randomNumber];
+}
+
+function convertToWord(letter) {
+    if (letter === "r") return "Rock";
+    if (letter === "p") return "Paper";
+    return "Scissors";
+}
+
+function win(userChoice, computerChoice) {
+    userScore++;
+    userScore_span.innerHTML = userScore;
+    computerScore_span.innerHTML = computerScore;
+    const smallUserWord = "user";
+    const smallCompWord = "comp";
+    result_p.innerHTML = `${convertToWord(userChoice)}${smallUserWord} beats ${convertToWord(computerChoice)}${smallCompWord}. You win! `;
+}
+function lose(userChoice, computerChoice) {
+    computerScore++;
+    userScore_span.innerHTML = userScore;
+    computerScore_span.innerHTML = computerScore;
+    const smallUserWord = "user";
+    const smallCompWord = "comp";
+    result_p.innerHTML = `${convertToWord(userChoice)}${smallUserWord} loses to ${convertToWord(computerChoice)}${smallCompWord}. You lost! `;
+}
+
+
+
+function draw(userChoice, computerChoice) {
+    const smallUserWord = "user";
+    const smallCompWord = "comp";
+    result_p.innerHTML = `${convertToWord(userChoice)}${smallUserWord} draws with ${convertToWord(computerChoice)}${smallCompWord}. Its a draw `;
+}
+
+
+function game(userChoice) {
+    const computerChoice = getComputerChoice();
+    switch (userChoice + computerChoice) {
+        case "rs":
+        case "pr":
+        case "sp":
+            win(userChoice, computerChoice);
+            break;
+        case "rp":
+        case "ps":
+        case "sr":
+            lose(userChoice, computerChoice);
+            break;
+        case "rr":
+        case "pp":
+        case "ss":
+            draw(userChoice, computerChoice);
+            break;
+    }
+}
+
+function main() {
+    rock_div.addEventListener('click', function () {
+        game("r");
+    });
+
+    paper_div.addEventListener('click', function () {
+        game("p");
+    });
+
+    scissors_div.addEventListener('click', function () {
+        game("s");
+    });
+}
+
+main();
+
+
+/*var x = document.getElementById("rock");
 x.addEventListener("click", mySecondFunction);
 
 function mySecondFunction() {
@@ -38,8 +101,37 @@ chosePaper.addEventListener("click", myPaperFunction);
 
 function myScissorFunction() {
     document.getElementById("playerimg").innerHTML += "YOU CHOSE SCISSORS!<br>";
+    alert("the computer won");
     //document.getElementById("playerimg") src = 'assets/images/scissors.png';
 }
+
+function myPaperFunction() {
+    document.getElementById("playerimg").innerHTML += "YOU CHOSE PAPER!<br>";
+    alert("the computer won");
+    //document.getElementById("playerimg") src = 'assets/images/scissors.png';
+}
+
+var lightningimages = [
+    "assets/images/lightning0",
+    "assets/images/lightning1",
+    "assets/images/lightning2",
+    "assets/images/lightning3",
+    "assets/images/lightning4",
+    "assets/images/lightning5"
+];
+
+var lightningcurrent = 0; //current image displayed
+var change_img = document.getElementById("lightningplayer");
+
+function next() {
+    console.log("NEXT");
+    if (lightningcurrent === lightningimages.length) lightningcurrent = 0;
+    console.log(lightningcurrent);
+    change_img.src = lightningimages[lightningcurrent++];
+}
+
+const button = document.querySelector("button");
+button.addEventListener("click", next);
 
 
 
@@ -64,4 +156,4 @@ closeButton.addEventListener("click", toggleModal);
 window.addEventListener("click", windowOnClick);
 //End of Modal Script
 
-console.log('hello');
+console.log('hello');*/;;

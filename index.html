@@ -30,80 +30,100 @@
     
     </header>
 
+
+
 <!-- Header Menu restart,rules,sound -->
 <section class="container top-menu">
-<button class="music">Restart</button>
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Rules
-</button>
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Game Rules</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        GAME RULES
-        Rock beats scissors, scissors beat paper, and paper beats rock.
-        
-        First to 5 points wins
-        
-        
-        ENTER YOUR NAME TO START
+    <button class="music">Restart</button>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Rules
+    </button>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Game Rules</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    GAME RULES
+                    Rock beats scissors, scissors beat paper, and paper beats rock.
 
-        <form id="scoreboard">
-            <input type="text" id="username" required></input>
-        
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Start</button>
-      </div>
-    </div>
-  </div>
-</div>
+                    First to 5 points wins
 
-        <button class="music">Sound on / off</button>
-    </section>
-    </section>
-    <!--End of Header Menu restart,rules,sound-->
-    
-    <!--Main game section options and vs-->
-    <div class="container">
-        <div class="row row-cols-3">
-            <div class="col" id="lightningplayer"><img src="assets/images/lightning1.png"></div>
-            <div class="col"> </div>
-            <div class="col" id="lightningcomputer"><img src="assets/images/lightning1.png"></div>
 
-            <div class="col"><p class="playername">playername</p></div>
-            <div class="col mx-auto"><span class="vs">vs</p></div>
-            <div class="col"><p class="computername">Computer</p></div>
+                    ENTER YOUR NAME TO START
 
-            <div class="col" id="playerimg"><img src="assets/images/rock.png" id="playerimgr"></div>
-            <div class="col"><img src="assets/images/facehand.png" class="col-md-auto vs"></div>
-            <div class="col flip-horizontal" id="computerimg"><img src="assets/images/rock.png"></div>
+                    <form id="scoreboard">
+                        <input type="text" id="username" required></input>
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">Start</button>
+                </div>
+            </div>
         </div>
     </div>
 
-    
+    <button class="music">Sound on / off</button>
+</section>
+</section>
+<!--End of Header Menu restart,rules,sound-->
 
-    <!--End of main game section options and vs-->
+<!--ScoreBoard of Game-->
+<div class="score-board">
+    <div id="user-label" class="badge">user<img src="assets/images/lightning1.png" id="lightningplayer"></div>
+    <div id="computer-label" class="badge">comp<img src="assets/images/lightning1.png" id="lightningplayer"></div>
+    <span id="user-score">0</span>:<span id="computer-score">0</span>
+</div>
+
+<div class="result">
+    <p>Paper covers rock. You win!</p>
+</div>
+
+
+<div class="row">
+    <div class="col" id="playerimg"><img src="assets/images/rock.png" id="playerimgr"></div>
+    <div class="col"><img src="assets/images/facehand.png" class="col-md-auto vs"></div>
+    <div class="col flip-horizontal" id="computerimg"><img src="assets/images/rock.png"></div>
+</div>
+
 
     <!--Make your choice bottom section-->
     <div class="container text-center">
         <h1 class="col title-makechoice">Make your choice!</h1>
     </div>
 
+<div class="choices row">
+    <div class="choice col" id="r" alt="image of rock symbol">
+            <img src="assets/images/rock.png" id="rockimg">
+    </div>
+    <div class="choice col" id="p" alt="image of rock symbol">
+            <img src="assets/images/paper.png" id="paperimg">
+    </div>
+    <div class="choice col" id="s" alt="image of rock symbol">
+            <img src="assets/images/scissors.png" id="scissorimg">
+    </div>
+</div>
+    
+<!--End of main game section options and vs-->
+<!--THIS IS DUPLICATE SAVED JUST FOR CLASSES
     <section id="chooseweapon" class="container text-center chooseweapon">
-        <div class="row game choices">
-            <button onclick="changeScr()" id="rock" class="col rock"></button>
-            <button id="paper" class="col paper"></button>
-            <button id="scissors" class="col scissors"></button>
+        <div class=" game choices row">
+            <div class="choice col" id="r" alt="image of rock symbol">
+                <img src="assets/images/rock.png" id="rockimg">
+            </div>
+            <div class="choice col" id="p" alt="image of rock symbol">
+                <img src="assets/images/paper.png" id="paperimg">
+            </div>
+            <div class="choice col" id="s" alt="image of rock symbol">
+                <img src="assets/images/scissors.png" id="scissorimg">
+            </div>
         </div>
-    </section>
+    </section>-->
     <!--End of make your choice bottom section-->
     <footer><div class="footer"><i class="fab fa-github fa-lg">github</i></div></footer>
     </div>

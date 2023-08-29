@@ -1,9 +1,17 @@
 body {
-    background-color: white;
+    background-color: rgb(233, 81, 81);
     font-family: 'Bangers', cursive;
     size: 22px;
 }
 
+.score-board,
+.user-score,
+.computer-score {
+    display: flex;
+    align-self: center;
+    align-content: center;
+    padding-left: 40%;
+}
 
 
 /*To flip images when on the pc option of screen so the images mirror eachother*/
@@ -73,8 +81,20 @@ body {
     width: 60%;
     align-self: center;
     border: 0;
+    flex-wrap: nowrap;
 }
 
+#rockimg {
+    width: 50%;
+}
+
+#paperimg {
+    width: 50%;
+}
+
+#scissorimg {
+    width: 50%;
+}
 
 .rock {
     background: url("/assets/images/rock.png") center;
@@ -119,10 +139,10 @@ body {
 
 /*Popup modal*/
 .modal {
-    // padding: 1em;
+    padding: 1em;
     max-width: 50ch;
-    // border: 0;
-    // box-shadow: 0 0 1em rgb(0 0 0 / .3);
+    border: 0;
+    box-shadow: 0 0 1em rgb(0 0 0 / .3);
 
     &>* {
         margin: 0 0 0.5rem 0;
@@ -162,4 +182,58 @@ form {
     flex-direction: row-reverse;
     align: right;
     color: #393a3c;
+}
+
+.result-selection {
+    opacity: .7;
+}
+
+.result-selection.winner {
+    opacity: 1.5;
+    size: 120%
+}
+
+
+/*styl eo*/
+
+.selections {
+    display: flex;
+    justify-content: center;
+}
+
+.selection {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 2rem;
+    transition: 100ms;
+}
+
+.selection:hover {
+    transform: scale(1.2);
+}
+
+.results {
+    margin-top: 1rem;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    align-items: center;
+}
+
+.result-score {
+    margin-left: .1rem;
+    font-size: .5rem;
+    color: #333;
+}
+
+.result-selection {
+    opacity: .5;
+}
+
+.result-selection.winner {
+    opacity: 1;
+    font-size: 1.5rem;
 }

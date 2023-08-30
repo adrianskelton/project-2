@@ -1,6 +1,6 @@
 body {
     background-color: rgb(233, 81, 81);
-    font-family: 'Bangers', cursive;
+    font-family: "Bangers", cursive;
     size: 22px;
 }
 
@@ -16,7 +16,6 @@ body {
 .result-text {
     font-size: xx-large;
 }
-
 
 /*To flip images when on the pc option of screen so the images mirror eachother*/
 .flip-horizontal {
@@ -44,7 +43,7 @@ body {
     font-size: 50px;
     color: rgb(54, 53, 53);
     padding-top: 20px;
-    font-family: 'Bangers', cursive;
+    font-family: "Bangers", cursive;
 }
 
 .game-options {
@@ -54,17 +53,16 @@ body {
     padding-top: 5px;
     padding-bottom: 5px;
     padding-left: 0;
-
 }
 
 .player-answer {
-    transform: scale(.3);
+    transform: scale(0.3);
     padding: 0;
     justify-self: center;
 }
 
 .pc-answer {
-    transform: scale(.3);
+    transform: scale(0.3);
     padding: 0;
     justify-self: center;
 }
@@ -113,7 +111,7 @@ body {
 .paper {
     background: url("/assets/images/paper.png") center;
     background-size: 30%;
-    transition: transform .3s;
+    transition: transform 0.3s;
     /* Animation */
     background-repeat: no-repeat;
     display: block;
@@ -143,7 +141,7 @@ body {
     padding: 1em;
     max-width: 50ch;
     border: 0;
-    box-shadow: 0 0 1em rgb(0 0 0 / .3);
+    box-shadow: 0 0 1em rgb(0 0 0 / 0.3);
 
     &>* {
         margin: 0 0 0.5rem 0;
@@ -155,7 +153,6 @@ body {
 }
 
 /* extra styling */
-
 
 .button {
     border: 0;
@@ -184,14 +181,13 @@ form {
 }
 
 .result-selection {
-    opacity: .7;
+    opacity: 0.7;
 }
 
 .result-selection.winner {
     opacity: 1.5;
-    size: 120%
+    size: 120%;
 }
-
 
 /*styl eo*/
 
@@ -209,6 +205,10 @@ form {
     transition: 100ms;
 }
 
+.who-wins {
+    align-self: center;
+}
+
 .selection:hover {
     transform: scale(1.2);
 }
@@ -223,13 +223,13 @@ form {
 }
 
 .result-score {
-    margin-left: .1rem;
-    font-size: .5rem;
+    margin-left: 0.1rem;
+    font-size: 0.5rem;
     color: #333;
 }
 
 .result-selection {
-    opacity: .5;
+    opacity: 0.5;
 }
 
 .result-selection.winner {

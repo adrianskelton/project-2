@@ -7,18 +7,16 @@ const result_p = document.querySelector(".result > p");
 const rock_div = document.getElementById("r");
 const paper_div = document.getElementById("p");
 const scissors_div = document.getElementById("s");
-//updatelightningbolts
-//let lightningImages = ['assets/images/lightning1.png', 'assets/images/lightning2.png','assets/images/lightning3.png','assets/images/lightning4.png','assets/images/lightning5.png',]
+
 let currentLightning = 0;
 let currentLightningPc = 0;
 
 
 let lightningscoreplayer = document.getElementById("user-score");
 let lightningscorecomputer = document.getElementById("computer-score");
-
+let lightningPlayer = document.getElementById("lightningplayer");
+let lightningPc = document.getElementById("lightningcomputer");
 const lightningScore = document.getElementById("myBtn");
-
-
 
 lightningScore.addEventListener("click", myFunction1);
 function myFunction1() {
@@ -26,16 +24,10 @@ function myFunction1() {
     changeLightningPc();
     lightningplayer.src = `assets/images/lightning${currentLightning}.png`;
     lightningPc.src = `assets/images/lightning${currentLightningPc}.png`
-    document.getElementById("user-label").innerHTML += changeLightning();
-    console.log(lightningImages);
+    console.log(currentLightning);
     console.log(`User score is ${userScore}`)
 }
-/*element.addEventListener("click", myFunction2);
 
-function myFunction2() {
-    document.getElementById("lightningplayer").innerHTML += "22 function was executed! ";
-}
-*/
 
 function getComputerChoice() {
     const choices = ['r', 'p', 's'];
@@ -97,33 +89,66 @@ function game(userChoice) {
 function main() {
     rock_div.addEventListener('click', function () {
         game("r");
+        myFunction1();
     });
 
     paper_div.addEventListener('click', function () {
         game("p");
+        myFunction1();
     });
 
     scissors_div.addEventListener('click', function () {
         game("s");
+        myFunction1();
     });
 }
 
 function changeLightning() {
     switch (userScore) {
         case 1:
-            currentLightning = 0;
-        case 2:
             currentLightning = 1;
-        case 3:
+            break;
+        case 2:
             currentLightning = 2;
-        case 4:
+            break;
+        case 3:
             currentLightning = 3;
-        case 5:
+            break;
+        case 4:
             currentLightning = 4;
+            break;
+        case 5:
+            currentLightning = 5;
+            break;
         default: 
+            currentLightning = 0;
         console.log('defaultswitchcase')
     };
-    return imgUrl
+    return currentLightning;
+}
+
+function changeLightningPc() {
+    switch (computerScore) {
+        case 1:
+            currentLightningPc = 1;
+            break;
+        case 2:
+            currentLightningPc = 2;
+            break;
+        case 3:
+            currentLightningPc = 3;
+            break;
+        case 4:
+            currentLightningPc = 4;
+            break;
+        case 5:
+            currentLightningPc = 5;
+            break;
+        default: 
+        currentLightningPc = 0;
+        console.log('defaultswitchcasePc')
+    };
+    return currentLightningPc;
 }
 
 main();

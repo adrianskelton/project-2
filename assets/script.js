@@ -8,16 +8,24 @@ const rock_div = document.getElementById("r");
 const paper_div = document.getElementById("p");
 const scissors_div = document.getElementById("s");
 //updatelightningbolts
-const lightningImages = ['assets/images/lightning0.png', 'assets/images/lightning1.png', 'assets/images/lightning2.png', 'assets/images/lightning3.png', 'assets/images/lightning4.png', 'assets/images/lightning5.png',
-];
+let lightningArray = ['assets/images/lightning1.png', 'assets/images/lightning2.png','assets/images/lightning3.png','assets/images/lightning4.png','assets/images/lightning5.png',]
+let imgUrl = `<img
+          src="assets/images/lightning${currentLightning}.png"
+          id="lightningplayer"
+          alt="player lightning score image"
+        />`;
+
+
 let lightningscoreplayer = document.getElementById("user-score");
 let lightningscorecomputer = document.getElementById("computer-score");
 const lightningScore = document.getElementById("myBtn");
+let currentLightning;
 
 
 lightningScore.addEventListener("click", myFunction1);
 function myFunction1() {
-    document.getElementById("user-label").innerHTML += lightningImages[1];
+    document.getElementById("user-label").innerHTML += changeLightning();
+    console.log(lightningImages)
 }
 /*element.addEventListener("click", myFunction2);
 
@@ -95,6 +103,24 @@ function main() {
     scissors_div.addEventListener('click', function () {
         game("s");
     });
+}
+
+function changeLightning() {
+    switch (userScore) {
+        case 1:
+            currentLightning = 0;
+        case 2:
+            currentLightning = 1;
+        case 3:
+            currentLightning = 2;
+        case 4:
+            currentLightning = 3;
+        case 5:
+            currentLightning = 4;
+        default: 
+        console.log('defaultswitchcase')
+    };
+    return imgUrl
 }
 
 main();

@@ -8,24 +8,27 @@ const rock_div = document.getElementById("r");
 const paper_div = document.getElementById("p");
 const scissors_div = document.getElementById("s");
 //updatelightningbolts
-let lightningArray = ['assets/images/lightning1.png', 'assets/images/lightning2.png','assets/images/lightning3.png','assets/images/lightning4.png','assets/images/lightning5.png',]
-let imgUrl = `<img
-          src="assets/images/lightning${currentLightning}.png"
-          id="lightningplayer"
-          alt="player lightning score image"
-        />`;
+//let lightningImages = ['assets/images/lightning1.png', 'assets/images/lightning2.png','assets/images/lightning3.png','assets/images/lightning4.png','assets/images/lightning5.png',]
+let currentLightning = 0;
+let currentLightningPc = 0;
 
 
 let lightningscoreplayer = document.getElementById("user-score");
 let lightningscorecomputer = document.getElementById("computer-score");
+
 const lightningScore = document.getElementById("myBtn");
-let currentLightning;
+
 
 
 lightningScore.addEventListener("click", myFunction1);
 function myFunction1() {
+    changeLightning();
+    changeLightningPc();
+    lightningplayer.src = `assets/images/lightning${currentLightning}.png`;
+    lightningPc.src = `assets/images/lightning${currentLightningPc}.png`
     document.getElementById("user-label").innerHTML += changeLightning();
-    console.log(lightningImages)
+    console.log(lightningImages);
+    console.log(`User score is ${userScore}`)
 }
 /*element.addEventListener("click", myFunction2);
 
@@ -125,75 +128,7 @@ function changeLightning() {
 
 main();
 
-/*var x = document.getElementById("rock");
-x.addEventListener("click", mySecondFunction);
-
-function mySecondFunction() {
-    document.getElementById("playerimg").innerHTML += "YOU CHOSE ROCK!<br>";
-    //document.getElementById("playerimg") src = 'assets/images/scissors.png';
-}
-
-var choseScissor = document.getElementById("scissors");
-choseScissor.addEventListener("click", myScissorFunction);
-
-var chosePaper = document.getElementById("paper");
-chosePaper.addEventListener("click", myPaperFunction);
-
-function myScissorFunction() {
-    document.getElementById("playerimg").innerHTML += "YOU CHOSE SCISSORS!<br>";
-    alert("the computer won");
-    //document.getElementById("playerimg") src = 'assets/images/scissors.png';
-}
-
-function myPaperFunction() {
-    document.getElementById("playerimg").innerHTML += "YOU CHOSE PAPER!<br>";
-    alert("the computer won");
-    //document.getElementById("playerimg") src = 'assets/images/scissors.png';
-}
-
-var lightningimages = [
-    "assets/images/lightning0",
-    "assets/images/lightning1",
-    "assets/images/lightning2",
-    "assets/images/lightning3",
-    "assets/images/lightning4",
-    "assets/images/lightning5"
-];
-
-var lightningcurrent = 0; //current image displayed
-var change_img = document.getElementById("lightningplayer");
-
-function next() {
-    console.log("NEXT");
-    if (lightningcurrent === lightningimages.length) lightningcurrent = 0;
-    console.log(lightningcurrent);
-    change_img.src = lightningimages[lightningcurrent++];
-}
-
-const button = document.querySelector("button");
-button.addEventListener("click", next);
-
-
-
-
-//Popup Modal Script
-var modal = document.querySelector(".modal");
-var trigger = document.querySelector(".trigger");
-var closeButton = document.querySelector(".close-button");
-
-function toggleModal() {
-    modal.classList.toggle("show-modal");
-}
-
-function windowOnClick(event) {
-    if (event.target === modal) {
-        toggleModal();
-    }
-}
-
-trigger.addEventListener("click", toggleModal);
-closeButton.addEventListener("click", toggleModal);
-window.addEventListener("click", windowOnClick);
-//End of Modal Script
-
-console.log('hello');*/;;
+//show modal on load
+$(window).on('load', function() {
+        $('#myModal').modal('show');
+    });

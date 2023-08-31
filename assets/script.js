@@ -1,3 +1,4 @@
+//global variables
 let userScore = 0;
 let computerScore = 0;
 const userScore_span = document.getElementById("user-score");
@@ -7,23 +8,37 @@ const result_p = document.querySelector(".result > p");
 const rock_div = document.getElementById("r");
 const paper_div = document.getElementById("p");
 const scissors_div = document.getElementById("s");
+
 //update lightning bolts
 let currentLightning = 0;
 let currentLightningPc = 0;
-
 let lightningscoreplayer = document.getElementById("user-score");
 let lightningscorecomputer = document.getElementById("computer-score");
 let lightningPlayer = document.getElementById("lightningplayer");
 let lightningPc = document.getElementById("lightningcomputer");
 const lightningScore = document.getElementById("myBtn");
+const addName = document.getElementById("closeModal");
 
 //eventlisteners
 lightningScore.addEventListener("click", myFunction1);
 document.getElementById("restart").addEventListener("click", reloadGame);
+addName.addEventListener("click", nameToCookies);
 
+//Add player name to cookie function
+function nameToCookies() {
+    let playerName = document.getElementById("username").value;
+    sessionStorage.setItem("name", playerName);
+    window.alert("Welcome" + " " + playerName);
+    playerNameDisplay = document.getElementById("user-name");
+    playerNameDisplay.innerText = playerName;
+}
+
+
+//my function to change the lightning images based on the players score
 function myFunction1() {
     changeLightning();
     changeLightningPc();
+    winGame();
     lightningplayer.src = `assets/images/lightning${currentLightning}.png`;
     lightningPc.src = `assets/images/lightning${currentLightningPc}.png`;
     console.log(currentLightning);
@@ -48,6 +63,7 @@ function convertToWord(letter) {
     return "Scissors";
 }
 
+//function if user wins
 function win(userChoice, computerChoice) {
     userScore++;
     userScore_span.innerHTML = userScore;
@@ -56,6 +72,8 @@ function win(userChoice, computerChoice) {
     const smallCompWord = "comp";
     result_p.innerHTML = `${convertToWord(userChoice)}${smallUserWord} beats ${convertToWord(computerChoice)}${smallCompWord}. You win! `;
 }
+
+//function if computer wins
 function lose(userChoice, computerChoice) {
     computerScore++;
     userScore_span.innerHTML = userScore;
@@ -65,6 +83,7 @@ function lose(userChoice, computerChoice) {
     result_p.innerHTML = `${convertToWord(userChoice)}${smallUserWord} loses to ${convertToWord(computerChoice)}${smallCompWord}. You lost! `;
 }
 
+//function if it's a draw
 function draw(userChoice, computerChoice) {
     const smallUserWord = "user";
     const smallCompWord = "comp";
@@ -157,9 +176,20 @@ function changeLightningPc() {
     return currentLightningPc;
 }
 
+//Function that stops the game when someone gets to 5 points and prompts an alert.
+function winGame() {
+    if (userScore == 5) {
+        window.alert("You Win");
+        location.reload();
+    } else if (computerScore == 5) {
+        window.alert("Computer Wins");
+        location.reload();
+    } else {
+        return;
+    }
+}
+
 main();
-
-
 
 //show modal on load
 $(window).on('load', function () {

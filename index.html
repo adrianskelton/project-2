@@ -80,7 +80,15 @@
               </form>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-primary">Start</button>
+              <button
+                id="closeModal"
+                type="button"
+                class="btn btn-primary"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              >
+                Start
+              </button>
             </div>
           </div>
         </div>
@@ -90,7 +98,8 @@
     <!--End of Header Menu restart,rules,sound-->
     <!--ScoreBoard of Game-->
     <div class="score-board">
-      <div id="user-label" class="badge">
+    <div id="user-label" class="badge">
+        <span id="user-name">
         user
         <img
           src="assets/images/lightning1.png"

@@ -7,10 +7,9 @@ const result_p = document.querySelector(".result > p");
 const rock_div = document.getElementById("r");
 const paper_div = document.getElementById("p");
 const scissors_div = document.getElementById("s");
-
+//update lightning bolts
 let currentLightning = 0;
 let currentLightningPc = 0;
-
 
 let lightningscoreplayer = document.getElementById("user-score");
 let lightningscorecomputer = document.getElementById("computer-score");
@@ -18,16 +17,23 @@ let lightningPlayer = document.getElementById("lightningplayer");
 let lightningPc = document.getElementById("lightningcomputer");
 const lightningScore = document.getElementById("myBtn");
 
+//eventlisteners
 lightningScore.addEventListener("click", myFunction1);
+document.getElementById("restart").addEventListener("click", reloadGame);
+
 function myFunction1() {
     changeLightning();
     changeLightningPc();
     lightningplayer.src = `assets/images/lightning${currentLightning}.png`;
-    lightningPc.src = `assets/images/lightning${currentLightningPc}.png`
+    lightningPc.src = `assets/images/lightning${currentLightningPc}.png`;
     console.log(currentLightning);
-    console.log(`User score is ${userScore}`)
+    console.log(`User score is ${userScore}`);
 }
 
+// My function to restart the game when clicked
+function reloadGame() {
+    location.reload();
+}
 
 function getComputerChoice() {
     const choices = ['r', 'p', 's'];
@@ -120,9 +126,9 @@ function changeLightning() {
         case 5:
             currentLightning = 5;
             break;
-        default: 
+        default:
             currentLightning = 0;
-        console.log('defaultswitchcase')
+            console.log('defaultswitchcase');
     };
     return currentLightning;
 }
@@ -144,16 +150,18 @@ function changeLightningPc() {
         case 5:
             currentLightningPc = 5;
             break;
-        default: 
-        currentLightningPc = 0;
-        console.log('defaultswitchcasePc')
+        default:
+            currentLightningPc = 0;
+            console.log('defaultswitchcasePc');
     };
     return currentLightningPc;
 }
 
 main();
 
+
+
 //show modal on load
-$(window).on('load', function() {
-        $('#myModal').modal('show');
-    });
+$(window).on('load', function () {
+    $('#myModal').modal('show');
+});

@@ -53,9 +53,41 @@ function reloadGame() {
 function getComputerChoice() {
     const choices = ['r', 'p', 's'];
     const randomNumber = Math.floor(Math.random() * 3);
+    const computerChoice = choices[randomNumber];
+    const playerChoice = choices[randomNumber];
+    console.log("pc choice =" + choices[randomNumber]);
+    pcChoiceImg(computerChoice);
+    playerChoiceImg(playerChoice);
     return choices[randomNumber];
 }
 
+// My function that gets the computers choice and updates the image.
+function pcChoiceImg(choice) {
+    if (choice === "r") {
+        document.getElementById("computerimg").src = "assets/images/rock.png";
+        console.log("PcChoiceImg is set to" + " " + choice);
+    } else if (choice === "p") {
+        document.getElementById("computerimg").src = "assets/images/paper.png";
+        console.log("PcChoiceImg is set to" + " " + choice);
+    } else {
+        document.getElementById("computerimg").src = "assets/images/scissors.png";
+        console.log("PcChoiceImg is set to" + " " + choice);
+    }
+}
+
+// My function that gets the player choice and updates the image.
+function playerChoiceImg(choice) {
+    if (choice === "r") {
+        document.getElementById("playerimg").src = "assets/images/rock.png";
+        console.log("playerChoiceImg is set to" + " " + choice);
+    } else if (choice === "p") {
+        document.getElementById("playerimg").src = "assets/images/paper.png";
+        console.log("playerChoiceImg is set to" + " " + choice);
+    } else {
+        document.getElementById("playerimg").src = "assets/images/scissors.png";
+        console.log("playerChoiceImg is set to" + " " + choice);
+    }
+}
 
 function convertToWord(letter) {
     if (letter === "r") return "Rock";

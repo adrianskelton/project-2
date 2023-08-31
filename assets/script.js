@@ -100,9 +100,12 @@ function win(userChoice, computerChoice) {
     userScore++;
     userScore_span.innerHTML = userScore;
     computerScore_span.innerHTML = computerScore;
+    //girls face changes to a sad face when computer wins
+    document.getElementById("middleImg").src = "assets/images/facewin.png";
     const smallUserWord = "user";
     const smallCompWord = "comp";
-    result_p.innerHTML = `${convertToWord(userChoice)}${smallUserWord} beats ${convertToWord(computerChoice)}${smallCompWord}. You win! `;
+    //the old result... result_p.innerHTML = `${convertToWord(userChoice)}${smallUserWord} beats ${convertToWord(computerChoice)}${smallCompWord}. You win! `;
+    result_p.innerHTML = `${convertToWord(userChoice)} beats ${convertToWord(computerChoice)}. You win! `;
 }
 
 //function if computer wins
@@ -110,16 +113,22 @@ function lose(userChoice, computerChoice) {
     computerScore++;
     userScore_span.innerHTML = userScore;
     computerScore_span.innerHTML = computerScore;
+    //girls face changes to a sad face when computer wins
+    document.getElementById("middleImg").src = "assets/images/facehand.png";
     const smallUserWord = "user";
     const smallCompWord = "comp";
-    result_p.innerHTML = `${convertToWord(userChoice)}${smallUserWord} loses to ${convertToWord(computerChoice)}${smallCompWord}. You lost! `;
+    //old way... result_p.innerHTML = `${convertToWord(userChoice)}${smallUserWord} loses to ${convertToWord(computerChoice)}${smallCompWord}. You lost! `;
+    result_p.innerHTML = `${convertToWord(userChoice)} loses to ${convertToWord(computerChoice)}. You lost! `;
 }
 
 //function if it's a draw
 function draw(userChoice, computerChoice) {
     const smallUserWord = "user";
     const smallCompWord = "comp";
-    result_p.innerHTML = `${convertToWord(userChoice)}${smallUserWord} draws with ${convertToWord(computerChoice)}${smallCompWord}. Its a draw `;
+    //girls face changes to a sad face when a draw
+    document.getElementById("middleImg").src = "assets/images/facedraw.png";
+    //old way result_p.innerHTML = `${convertToWord(userChoice)}${smallUserWord} draws with ${convertToWord(computerChoice)}${smallCompWord}. Its a draw `;
+    result_p.innerHTML = `${convertToWord(userChoice)} draws with ${convertToWord(computerChoice)}. Its a draw `;
 }
 
 function game(userChoice) {

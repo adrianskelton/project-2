@@ -9,6 +9,8 @@ const rock_div = document.getElementById("r");
 const paper_div = document.getElementById("p");
 const scissors_div = document.getElementById("s");
 
+
+
 //update lightning bolts
 let currentLightning = 0;
 let currentLightningPc = 0;
@@ -47,8 +49,12 @@ function myFunction1() {
 
 // My function to restart the game when clicked
 function reloadGame() {
-    location.reload();
+    document.getElementById("lightningplayer").src = "assets/images/lightning0.png";
+    document.getElementById("lightningcomputer").src = "assets/images/lightning0.png";
+    document.getElementById("user-score").innerText = "0";
+    document.getElementById("computer-score").innerText = "0";
 }
+
 
 function getComputerChoice() {
     const choices = ['r', 'p', 's'];
@@ -57,7 +63,6 @@ function getComputerChoice() {
     const playerChoice = choices[randomNumber];
     console.log("pc choice =" + choices[randomNumber]);
     pcChoiceImg(computerChoice);
-    playerChoiceImg(playerChoice);
     return choices[randomNumber];
 }
 
@@ -72,20 +77,6 @@ function pcChoiceImg(choice) {
     } else {
         document.getElementById("computerimg").src = "assets/images/scissors.png";
         console.log("PcChoiceImg is set to" + " " + choice);
-    }
-}
-
-// My function that gets the player choice and updates the image.
-function playerChoiceImg(choice) {
-    if (choice === "r") {
-        document.getElementById("playerimg").src = "assets/images/rock.png";
-        console.log("playerChoiceImg is set to" + " " + choice);
-    } else if (choice === "p") {
-        document.getElementById("playerimg").src = "assets/images/paper.png";
-        console.log("playerChoiceImg is set to" + " " + choice);
-    } else {
-        document.getElementById("playerimg").src = "assets/images/scissors.png";
-        console.log("playerChoiceImg is set to" + " " + choice);
     }
 }
 
@@ -152,19 +143,24 @@ function game(userChoice) {
     }
 }
 
+//Event listener for choices of rock paper scissor icons and also added code to change the player image choice
+
 function main() {
     rock_div.addEventListener('click', function () {
         game("r");
+        document.getElementById("playerimg").src = "assets/images/rock.png";
         myFunction1();
     });
 
     paper_div.addEventListener('click', function () {
         game("p");
+        document.getElementById("playerimg").src = "assets/images/paper.png";
         myFunction1();
     });
 
     scissors_div.addEventListener('click', function () {
         game("s");
+        document.getElementById("playerimg").src = "assets/images/scissors.png";
         myFunction1();
     });
 }

@@ -1,7 +1,19 @@
+html {
+    display: table;
+    margin: auto;
+}
+
+img {
+    align-self: center;
+}
+
+
 body {
-    background-color: rgb(233, 81, 81);
     font-family: "Bangers", cursive;
     size: 22px;
+    max-width: 1030px;
+    display: table-cell;
+    vertical-align: middle;
 }
 
 h1 {
@@ -36,6 +48,10 @@ h1 {
     align-self: flex-end;
     justify-self: flex-end;
     padding-bottom: 20px;
+}
+
+.choice {
+    align-content: center;
 }
 
 .title-makechoice {
@@ -176,7 +192,7 @@ form {
 .footer {
     display: flexbox;
     flex-direction: row-reverse;
-    align-self: right;
+    ign-self: right;
     color: #393a3c;
 }
 
@@ -271,6 +287,44 @@ form {
 
     #computerimg {
         width: 80%;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 1020px) {
+    h1 {
+        align-self: center;
+        font-size: 50px;
+        color: rgb(59, 59, 59);
+        padding-top: 10px;
+    }
+
+    .top-menu {
+        display: flexbox;
+        width: 80%;
+        flex-wrap: nowrap;
+        align-self: flex-end;
+        justify-self: flex-end;
+        padding-bottom: 5px;
+    }
+
+    .result-text {
+        font-size: 20px;
+    }
+
+    #playerimg {
+        width: 60%;
+        height: auto;
+    }
+
+    #middleImg {
+        width: 100%;
+        height: 100%;
+        border-top: 55px;
+    }
+
+    #computerimg {
+        width: 60%;
         height: auto;
     }
 }

@@ -26,6 +26,10 @@ lightningScore.addEventListener("click", myFunction1);
 document.getElementById("restart").addEventListener("click", reloadGame);
 addName.addEventListener("click", nameToCookies);
 
+$(document).ready(function () {
+    $("#exampleModal").modal('show');
+});
+
 //Add player name to cookie function
 function nameToCookies() {
     let playerName = document.getElementById("username").value;
@@ -47,12 +51,18 @@ function myFunction1() {
     console.log(`User score is ${userScore}`);
 }
 
-// My function to restart the game when clicked
+// My function to restart the game when clicked resets all images and scores to default
 function reloadGame() {
     document.getElementById("lightningplayer").src = "assets/images/lightning0.png";
     document.getElementById("lightningcomputer").src = "assets/images/lightning0.png";
+    document.getElementById("playerimg").src = "assets/images/question.png";
+    document.getElementById("computerimg").src = "assets/images/questionreverse.png";
+    document.getElementById("middleimage").src = "assets/images/facestart.png";
+
     document.getElementById("user-score").innerText = "0";
     document.getElementById("computer-score").innerText = "0";
+    userScore = 0;
+    computerScore = 0;
 }
 
 
@@ -229,6 +239,4 @@ function winGame() {
 main();
 
 //show modal on load
-$(window).on('load', function () {
-    $('#myModal').modal('show');
-});
+

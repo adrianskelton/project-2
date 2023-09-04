@@ -51,6 +51,7 @@ h1 {
 }
 
 .choice {
+    display: flex;
     align-content: center;
 }
 

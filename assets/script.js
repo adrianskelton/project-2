@@ -39,6 +39,19 @@ function nameToCookies() {
     playerNameDisplay.innerText = playerName;
 }
 
+// My function to restart the game when clicked resets all images and scores to default
+function reloadGame() {
+    document.getElementById("user-score").innerText = 0;
+    document.getElementById("computer-score").innerText = 0;
+    document.getElementById("lightningplayer").src = "assets/images/lightning0.png";
+    document.getElementById("lightningcomputer").src = "assets/images/lightning0.png";
+    document.getElementById("playerimg").src = "assets/images/question.png";
+    document.getElementById("computerimg").src = "assets/images/questionreverse.png";
+    //document.getElementById("middleImage").src = "assets/images/facestart.png";
+    userScore = 0;
+    computerScore = 0;
+}
+
 
 //my function to change the lightning images based on the players score
 function myFunction1() {
@@ -49,20 +62,6 @@ function myFunction1() {
     lightningPc.src = `assets/images/lightning${currentLightningPc}.png`;
     console.log(currentLightning);
     console.log(`User score is ${userScore}`);
-}
-
-// My function to restart the game when clicked resets all images and scores to default
-function reloadGame() {
-    document.getElementById("lightningplayer").src = "assets/images/lightning0.png";
-    document.getElementById("lightningcomputer").src = "assets/images/lightning0.png";
-    document.getElementById("playerimg").src = "assets/images/question.png";
-    document.getElementById("computerimg").src = "assets/images/questionreverse.png";
-    document.getElementById("middleimage").src = "assets/images/facestart.png";
-
-    document.getElementById("user-score").innerText = "0";
-    document.getElementById("computer-score").innerText = "0";
-    userScore = 0;
-    computerScore = 0;
 }
 
 
@@ -227,10 +226,12 @@ function changeLightningPc() {
 function winGame() {
     if (userScore == 5) {
         window.alert("You Win");
-        location.reload();
+        reloadGame();
+        //function reloadGame();
     } else if (computerScore == 5) {
         window.alert("Computer Wins");
-        location.reload();
+        reloadGame();       
+        //function reloadGame();
     } else {
         return;
     }

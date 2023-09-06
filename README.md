@@ -232,6 +232,10 @@ Additional testing was taken by friends on a variety of devices and screen sizes
 
 ---
 
+## Bugs
+
+When username is entered in modal userimage dissapears
+
 ## Credits
 
 ### Code Used

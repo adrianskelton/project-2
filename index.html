@@ -47,21 +47,15 @@
       <!-- Button trigger modal -->
       <button
         type="button"
-        class="btn btn-primary"
+        class=""
         data-bs-toggle="modal"
         data-bs-target="#exampleModal"
       >
         Rules
       </button>
-      <!-- Modal -->
-      <div
-        class="modal fade"
-        id="exampleModal"
-        tabindex="-1"
-        aria-labelledby="exampleModalLabel"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog">
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-sm">
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title" id="exampleModalLabel">Game Rules</h5>
@@ -93,6 +87,11 @@
           </div>
         </div>
       </div>
+
+
+    </div>
+  </div>
+</div>
       <button class="music">Sound on / off</button>
     </section>
     <!--End of Header Menu restart,rules,sound-->
@@ -112,7 +111,7 @@
     </section>
     <div class="row">
       <div class="col"><span id="user-name">
-        user</span><span id="user-score">0</span>
+        user</span><div id="user-score">0</div>
         <img src="assets/images/lightning0.png" id="lightningplayer" alt="player lightning score image" />
         <img
           src="assets/images/question.png"
@@ -131,7 +130,7 @@
         comp
         
       </div>
-    <span id="computer-score">0</span>
+    <div id="computer-score">0</div>
         <img src="assets/images/lightning0.png" id="lightningcomputer" alt="computer lightning score image" />
         <img  id="computerimg" src="assets/images/questionreverse.png" class="flip-horizontal" alt="image of computer choice" />
       </div>

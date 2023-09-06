@@ -234,11 +234,13 @@ Additional testing was taken by friends on a variety of devices and screen sizes
 
 ## Bugs
 
-When username is entered in modal userimage dissapears
+When username is entered in modal userimag
+e dissapears
 
 ## Credits
 
 ### Code Used
+Tip to over-ride bootstrap modal css https://stackoverflow.com/questions/20854035/is-it-possible-to-customize-style-of-bootstrap-modal
 
 ### Content
 

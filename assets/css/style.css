@@ -1,3 +1,12 @@
+body {
+    font-family: "Bangers", cursive;
+    size: 22px;
+    max-width: 1030px;
+    padding-left: 5%;
+    display: table-cell;
+    vertical-align: middle;
+}
+
 html {
     display: table;
     margin: auto;
@@ -7,14 +16,6 @@ img {
     align-self: center;
 }
 
-
-body {
-    font-family: "Bangers", cursive;
-    size: 22px;
-    max-width: 1030px;
-    display: table-cell;
-    vertical-align: middle;
-}
 
 h1 {
     align-self: center;
@@ -56,9 +57,9 @@ h1 {
 }
 
 .title-makechoice {
+    color: rgb(54, 53, 53);
     align-self: center;
     font-size: 50px;
-    color: rgb(255, 255, 255);
     padding-top: 20px;
     font-family: "Bangers", cursive;
 }
@@ -153,23 +154,34 @@ h1 {
     transform: scale(1.5);
 }
 
-/*Popup modal*/
-.modal {
-     !display: flex;
-    padding: 45%;
-    border: 0;
-    box-shadow: 0 0 1em rgb(0 0 0 / 0.3);
-
-    &>* {
-        margin: 0 0 0.5rem 0;
+.vshidden {
+        display: hidden;
     }
+
+/*code to overwrite the default bootstrap modal styling*/
+.modal.custom .modal-dialog {
+    width:50%;
+    margin:0 auto;
+    /*add what you want here*/
+} {
+ min-width: 400px;
+}
+
+/*Popup modal
+.modal {
+    display: flex;
+    vertical-align: top;
+    padding: 45%;
+    min-width: 400px;
+    border: 0 0 0 0;
+    box-shadow: 0 0 1em rgb(0 0 0 / 0.3);
 }
 
 .modal::backdrop {
     background: rgb(0 0 / 0.4);
 }
 
-/* extra styling */
+
 
 .button {
     border: 0;
@@ -187,9 +199,8 @@ h1 {
 
 form {
     display: grid;
-
 }
-
+*/
 .footer {
     display: flexbox;
     flex-direction: row-reverse;
@@ -254,7 +265,11 @@ form {
     font-size: 1.5rem;
 }
 
+/*Media query for mobile phones*/
+
 @media screen and (max-width: 480px) {
+
+
     h1 {
         align-self: center;
         font-size: 50px;
@@ -281,7 +296,7 @@ form {
     }
 
     #middleImg {
-        width: 100%;
+        width: 132%;
         height: 63%;
         border-top: 55px;
     }
@@ -291,8 +306,15 @@ form {
         height: auto;
     }
 }
+        .vshidden {
+        visibility: ;
+    }
 
-@media screen and (max-width: 1020px) {
+/*Media query for tablets*/
+
+@media (500px <= width <= 1024px) {
+
+
     h1 {
         align-self: center;
         font-size: 50px;
@@ -318,7 +340,17 @@ form {
         height: auto;
     }
 
+    .hideme {
+        visibility: hidden;
+    }
+
     #middleImg {
+        width: 100%;
+        height: 100%;
+        border-top: 55px;
+    }
+
+        .vshidden {
         width: 100%;
         height: 100%;
         border-top: 55px;

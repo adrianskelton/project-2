@@ -47,7 +47,7 @@ function reloadGame() {
     document.getElementById("lightningcomputer").src = "assets/images/lightning0.png";
     document.getElementById("playerimg").src = "assets/images/question.png";
     document.getElementById("computerimg").src = "assets/images/questionreverse.png";
-    //document.getElementById("middleImage").src = "assets/images/facestart.png";
+    document.getElementById("middleImg").src = "assets/images/facestart.png";
     userScore = 0;
     computerScore = 0;
 }

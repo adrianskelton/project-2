@@ -24,6 +24,20 @@ h1 {
     padding-top: 20px;
 }
 
+
+#user-name,
+#user-score {
+    display: inline;
+    font-size: 20px;
+}
+
+
+#computer-label,
+#computer-score {
+    display: inline;
+    font-size: 20px;
+}
+
 .score-board,
 .user-score,
 .computer-score {
@@ -109,6 +123,10 @@ h1 {
     width: 50%;
 }
 
+#paperimg:hover {
+    size-adjust: 120%;
+}
+
 #scissorimg {
     width: 50%;
 }
@@ -155,16 +173,18 @@ h1 {
 }
 
 .vshidden {
-        display: hidden;
-    }
+    display: hidden;
+}
 
 /*code to overwrite the default bootstrap modal styling*/
 .modal.custom .modal-dialog {
-    width:50%;
-    margin:0 auto;
+    width: 50%;
+    margin: 0 auto;
     /*add what you want here*/
-} {
- min-width: 400px;
+}
+
+    {
+    min-width: 400px;
 }
 
 /*Popup modal
@@ -241,6 +261,7 @@ form {
     transform: scale(1.2);
 }
 
+
 .results {
     margin-top: 1rem;
     display: grid;
@@ -269,6 +290,23 @@ form {
 
 @media screen and (max-width: 480px) {
 
+    .title-makechoice {
+        color: rgb(54, 53, 53);
+        align-self: center;
+        font-size: 35px;
+        padding-top: 4px;
+        font-family: "Bangers", cursive;
+
+    }
+
+    #lightningcomputer {
+        width: 80%;
+    }
+
+    #lightningplayer {
+        width: 80%;
+    }
+
 
     h1 {
         align-self: center;
@@ -291,8 +329,8 @@ form {
     }
 
     #playerimg {
-        width: 147%;
-        height: 58%;
+        width: 80%;
+        height: auto;
     }
 
     #middleImg {
@@ -306,13 +344,10 @@ form {
         height: auto;
     }
 }
-        .vshidden {
-        visibility: ;
-    }
 
 /*Media query for tablets*/
 
-@media (500px <= width <= 1024px) {
+@media (500px <=width <=1024px) {
 
 
     h1 {
@@ -320,6 +355,15 @@ form {
         font-size: 50px;
         color: rgb(59, 59, 59);
         padding-top: 10px;
+    }
+
+    .title-makechoice {
+        color: rgb(54, 53, 53);
+        align-self: center;
+        font-size: 35px;
+        padding-top: 4px;
+        font-family: "Bangers", cursive;
+
     }
 
     .top-menu {
@@ -340,17 +384,8 @@ form {
         height: auto;
     }
 
-    .hideme {
-        visibility: hidden;
-    }
 
     #middleImg {
-        width: 100%;
-        height: 100%;
-        border-top: 55px;
-    }
-
-        .vshidden {
         width: 100%;
         height: 100%;
         border-top: 55px;

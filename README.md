@@ -220,15 +220,15 @@ Each device tested the site using the following browsers:
 
 Additional testing was taken by friends on a variety of devices and screen sizes.
 
-| Feature                     | Expected Outcome                                                   | Testing Performed      | Result                               | Pass/Fail |
-| --------------------------- | ------------------------------------------------------------------ | ---------------------- | ------------------------------------ | --------- |
-| `Navbar`                    |
-|                             |                                                                    |                        |                                      |           |
-| Mountain Magic Logo & Title | When clicked the user will be redirected to the home page.         | Clicked Logo and title | Redirected to the home page.         | Pass      |
-| Home Page Link              | When clicked the user will be redirected to the home page.         | Clicked link           | Redirected to the home page.         | Pass      |
-| Accomodation Link           | When clicked the user will be redirected to the accomodation page. | Clicked link           | Redirected to the accomodation page. | Pass      |
-| Contact Link                | When clicked the user will be redirected to the Contact page.      | Clicked link           | Redirected to the contact page       | Pass      |
-| ---                         | ---                                                                | ---                    | ---                                  | ---       |
+| Feature           | Expected Outcome                                                                                                      | Testing Performed      | Result                               | Pass/Fail |
+| ----------------- | --------------------------------------------------------------------------------------------------------------------- | ---------------------- | ------------------------------------ | --------- |
+| `Navbar`          |
+|                   |                                                                                                                       |                        |                                      |           |
+| Game title        | This remains static and unclickable if a user wants the game to reset that can be done using the rest button instead. | Clicked Logo and title | Nothing happens.                     | Pass      |
+| Restart Link      | When clicked the user will be redirected to the home page.                                                            | Clicked link           | Redirected to the home page.         | Pass      |
+| Accomodation Link | When clicked the user will be redirected to the accomodation page.                                                    | Clicked link           | Redirected to the accomodation page. | Pass      |
+| Contact Link      | When clicked the user will be redirected to the Contact page.                                                         | Clicked link           | Redirected to the contact page       | Pass      |
+| ---               | ---                                                                                                                   | ---                    | ---                                  | ---       |
 
 ---
 
@@ -240,9 +240,12 @@ e dissapears
 ## Credits
 
 ### Code Used
+
 Tip to over-ride bootstrap modal css https://stackoverflow.com/questions/20854035/is-it-possible-to-customize-style-of-bootstrap-modal
 
 ### Content
+
+Sound effects used from <https://pixabay.com/sound-effects/search/scissors/>
 
 ###  Media
 

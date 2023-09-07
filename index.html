@@ -43,7 +43,7 @@
     </header>
     <!-- Header Menu restart,rules,sound -->
     <section class="container top-menu d-flex justify-content-center">
-      <button id="restart" class="music">Restart</button>
+      <button id="restart" class="music">Restart Game</button>
       <!-- Button trigger modal -->
       <button
         type="button"
@@ -111,7 +111,7 @@
     </section>
     <div class="row">
       <div class="col"><span id="user-name">
-        user</span><div id="user-score">0</div>
+        user</span> Score <div id="user-score">0</div>
         <img id="lightningplayer" src="assets/images/lightning0.png" alt="player lightning score image" />
         <img
           src="assets/images/question.png"
@@ -126,10 +126,8 @@
           alt="changing image of girl based on win or lose"
         />
       </div>
-      <div class="col"><div id="computer-label" class="badge">
-        comp
-        
-      </div>
+        <div class="col">
+        <span id="computer-label">Computer</span> Score
     <div id="computer-score">0</div>
         <img id="lightningcomputer" src="assets/images/lightning0.png" alt="computer lightning score image" />
         <img  id="computerimg" src="assets/images/questionreverse.png" class="flip-horizontal" alt="image of computer choice" />
@@ -155,7 +153,7 @@
           alt="image of paper choice"
         />
       </div>
-      <div class="choice col" id="s">
+      <div class="choice col" id="s" value="PLAY" onclick="play()">
         <img
           src="assets/images/scissorselect.png"
           id="scissorimg"
@@ -172,5 +170,6 @@
        <i class="fab fa-github fa-lg">github</i>
       </div></footer>
     </footer>
+    <audio id="audio" src="assets/audio/scissors.mp3"></audio>
   </body>
 </html>

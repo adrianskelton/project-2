@@ -12,6 +12,8 @@ const paper_div = document.getElementById("p");
 const scissors_div = document.getElementById("s");
 const computerRound = document.getElementById("computer-roundswon");
 const userRound = document.getElementById("user-roundswon");
+const playLoseaudio = document.getElementById("pcwin_audio");
+const playWinaudio = document.getElementById("userwin_audio");
 
 //update lightning bolts
 let currentLightning = 0;
@@ -22,15 +24,23 @@ let lightningPlayer = document.getElementById("lightningplayer");
 let lightningPc = document.getElementById("lightningcomputer");
 const lightningScore = document.getElementById("myBtn");
 const addName = document.getElementById("closeModal");
+//const soundControl = document.getElementById("sound-onoff");
 
 //eventlisteners
 lightningScore.addEventListener("click", myFunction1);
 document.getElementById("restart").addEventListener("click", hardReloadgame);
 addName.addEventListener("click", nameToCookies);
+//soundControl.addEventListener("click", audioElements);
 
 $(document).ready(function () {
     $("#exampleModal").modal("show");
 });
+
+/*Mute all audio in the game
+function audioElements = document.getElementsByTagName("audio");
+for (var i = 0; i < audioElements.length; ++i) {
+    audioElements[i].pause();
+}*/
 
 //Add player name to cookie function
 function nameToCookies() {
@@ -57,7 +67,7 @@ function reloadGame() {
     computerScore = 0;
 }
 
-//my function to reset the rounds and the game 
+//my function to reset the rounds and the game
 function hardReloadgame() {
     document.getElementById("user-score").innerText = 0;
     document.getElementById("computer-score").innerText = 0;
@@ -76,7 +86,6 @@ function hardReloadgame() {
     userRoundswon = 0;
     computerRoundswon = 0;
 }
-
 
 //my function to change the lightning images based on the players score
 function myFunction1() {
@@ -258,6 +267,7 @@ function winGame() {
         currentLightning = 5;
         userRoundswon++;
         userRound.innerHTML = userRoundswon;
+        playWinaudio.play();
         console.log("user-round");
         window.alert("You Win");
         reloadGame();
@@ -266,6 +276,7 @@ function winGame() {
         currentLightningPc = 5;
         computerRoundswon++;
         computerRound.innerHTML = computerRoundswon;
+        playLoseaudio.play();
         console.log("computer-round");
         window.alert("Computer Wins");
         reloadGame();
@@ -276,4 +287,3 @@ function winGame() {
 }
 
 main();
-

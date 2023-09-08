@@ -38,6 +38,30 @@ h1 {
     font-size: 20px;
 }
 
+#computer-roundswon,
+#rounds-one {
+    display: inline;
+    font-size: 20px;
+    clear: both;
+}
+
+#user-roundswon,
+#rounds-one {
+    display: inline;
+    font-size: 20px;
+    clear: both;
+}
+
+#lightningcomputer {
+    width: 80%;
+    clear: both;
+}
+
+#lightningplayer {
+    width: 80%;
+    clear: both;
+}
+
 .score-board,
 .user-score,
 .computer-score {
@@ -221,10 +245,10 @@ form {
     display: grid;
 }
 */
-.footer {
+#footer {
     display: flexbox;
     flex-direction: row-reverse;
-    ign-self: right;
+    align-self: right;
     color: #393a3c;
 }
 
@@ -301,10 +325,12 @@ form {
 
     #lightningcomputer {
         width: 80%;
+        clear: both;
     }
 
     #lightningplayer {
         width: 80%;
+        clear: both;
     }
 
 

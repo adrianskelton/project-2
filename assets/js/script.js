@@ -1,6 +1,8 @@
 //global variables
 let userScore = 0;
 let computerScore = 0;
+let userRoundswon = 0;
+let computerRoundswon = 0;
 const userScore_span = document.getElementById("user-score");
 const computerScore_span = document.getElementById("computer-score");
 const scoreBoard_div = document.querySelector(".score-board");
@@ -8,6 +10,8 @@ const result_p = document.querySelector(".result > p");
 const rock_div = document.getElementById("r");
 const paper_div = document.getElementById("p");
 const scissors_div = document.getElementById("s");
+const computerRound = document.getElementById("computer-roundswon");
+const userRound = document.getElementById("user-roundswon");
 
 //update lightning bolts
 let currentLightning = 0;
@@ -231,11 +235,17 @@ function changeLightningPc() {
 function winGame() {
     if (userScore == 5) {
         currentLightning = 5;
+        userRoundswon++;
+        userRound.innerHTML = userRoundswon;
+        console.log("user-round");
         window.alert("You Win");
         reloadGame();
         //function reloadGame();
     } else if (computerScore == 5) {
         currentLightningPc = 5;
+        computerRoundswon++;
+        computerRound.innerHTML = computerRoundswon;
+        console.log("computer-round");
         window.alert("Computer Wins");
         reloadGame();
         //function reloadGame();

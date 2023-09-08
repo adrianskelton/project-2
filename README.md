@@ -241,11 +241,11 @@ e dissapears
 
 ### Code Used
 
-Tip to over-ride bootstrap modal css https://stackoverflow.com/questions/20854035/is-it-possible-to-customize-style-of-bootstrap-modal
+Tip to over-ride bootstrap modal css <https://stackoverflow.com/questions/20854035/is-it-possible-to-customize-style-of-bootstrap-modal>
 
 ### Content
 
-Sound effects used from <https://pixabay.com/sound-effects/search/scissors/>
+Sound effects used from <https://pixabay.com/sound-effects/search/scissors/> <https://mixkit.co/free-sound-effects/lose/>
 
 ###  Media
 

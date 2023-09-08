@@ -109,36 +109,45 @@
         <p class="result-text results">First to 5 lightning bolts wins!</p>
       </div>
     </section>
+
+    <!--player score section-->
     <div class="row">
-      <div class="col"><span id="user-name">
-        user</span> Score <div id="user-score">0</div>
+      <div class="col">
         <img id="lightningplayer" src="assets/images/lightning0.png" alt="player lightning score image" />
+        <span id="user-name">
+        user</span> Score <div id="user-score">0</div>
+        <div id="rounds-one">Rounds won </div><div id="user-roundswon">0</div>
         <img
           src="assets/images/question.png"
           id="playerimg"
           alt="image of players choice"
         />
       </div>
+
+      <!--girl facial expression image-->
       <div class="col d-flex justify-content-center">
         <img id="middleImg"
           src="assets/images/facestart.png"
           class="col-md-auto vs"
           alt="changing image of girl based on win or lose"
         />
+    
+        <!--computer score section-->
       </div>
-        <div class="col">
+        <div class="col"><img id="lightningcomputer" src="assets/images/lightning0.png" alt="computer lightning score image" />
         <span id="computer-label">Computer</span> Score
     <div id="computer-score">0</div>
-        <img id="lightningcomputer" src="assets/images/lightning0.png" alt="computer lightning score image" />
+    <div id="rounds-one">Rounds won </div><div id="computer-roundswon">0</div>
         <img  id="computerimg" src="assets/images/questionreverse.png" class="flip-horizontal" alt="image of computer choice" />
       </div>
     </div>
+
     <!--Make your choice bottom section-->
     <div class="container text-center">
       <h1 class="col title-makechoice">Make your choice!</h1>
       <div id="myBtn"></div>
     </div>
-    <div class="choices row">
+    <div class="choices row d-flex justify-content-center">
       <div class="choice col" id="r">
         <img
           src="assets/images/rockselect.png"
@@ -146,18 +155,18 @@
           alt="image of rock choice" class="rockchoiceimage"
         />
       </div>
-      <div class="choice col" id="p">
+      <div class="choice col d-flex justify-content-center" id="p">
         <img
           src="assets/images/paperselect.png"
           id="paperimg"
           alt="image of paper choice"
         />
       </div>
-        <img
+        <div class="choice col d-flex justify-content-center" id="s">
+            <img
           src="assets/images/scissorselect.png"
           id="scissorimg"
-          alt="image of scissor choice"
-        />
+          alt="image of scissor choice">
       </div>
     </div>
     <!--End of main game section options and vs-->
@@ -165,9 +174,8 @@
     <section id="chooseweapon" class="container text-center chooseweapon"><div class=" game choices row"><div class="choice col" id="r" alt="image of rock symbol"><img src="assets/images/rock.png" id="rockimg"></div><div class="choice col" id="p" alt="image of rock symbol"><img src="assets/images/paper.png" id="paperimg"></div><div class="choice col" id="s" alt="image of rock symbol"><img src="assets/images/scissors.png" id="scissorimg"></div></div></section>-->
     <!--End of make your choice bottom section-->
     <footer>
-      <div><class="footer">
+      <div class="footer">
        <i class="fab fa-github fa-lg">github</i>
       </div></footer>
-    </footer>
   </body>
 </html>

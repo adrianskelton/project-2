@@ -24,31 +24,34 @@ h1 {
     padding-top: 20px;
 }
 
+#user-score {
+    padding-right: 5px;
+}
 
 #user-name,
 #user-score {
     display: inline;
-    font-size: 20px;
+    font-size: 14px;
 }
 
 
 #computer-label,
 #computer-score {
     display: inline;
-    font-size: 20px;
+    font-size: 14px;
 }
 
 #computer-roundswon,
 #rounds-one {
     display: inline;
-    font-size: 20px;
+    font-size: 18px;
     clear: both;
 }
 
 #user-roundswon,
 #rounds-one {
     display: inline;
-    font-size: 20px;
+    font-size: 18px;
     clear: both;
 }
 

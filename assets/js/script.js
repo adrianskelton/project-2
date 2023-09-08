@@ -25,7 +25,7 @@ const addName = document.getElementById("closeModal");
 
 //eventlisteners
 lightningScore.addEventListener("click", myFunction1);
-document.getElementById("restart").addEventListener("click", reloadGame);
+document.getElementById("restart").addEventListener("click", hardReloadgame);
 addName.addEventListener("click", nameToCookies);
 
 $(document).ready(function () {
@@ -56,6 +56,27 @@ function reloadGame() {
     userScore = 0;
     computerScore = 0;
 }
+
+//my function to reset the rounds and the game 
+function hardReloadgame() {
+    document.getElementById("user-score").innerText = 0;
+    document.getElementById("computer-score").innerText = 0;
+    document.getElementById("user-roundswon").innerText = 0;
+    document.getElementById("computer-roundswon").innerText = 0;
+    document.getElementById("lightningplayer").src =
+        "assets/images/lightning0.png";
+    document.getElementById("lightningcomputer").src =
+        "assets/images/lightning0.png";
+    document.getElementById("playerimg").src = "assets/images/question.png";
+    document.getElementById("computerimg").src =
+        "assets/images/questionreverse.png";
+    document.getElementById("middleImg").src = "assets/images/facestart.png";
+    userScore = 0;
+    computerScore = 0;
+    userRoundswon = 0;
+    computerRoundswon = 0;
+}
+
 
 //my function to change the lightning images based on the players score
 function myFunction1() {

@@ -36,6 +36,99 @@
   </head>
 
   <body>
+    <!--Modal popup to welcome player after they enter their name-->
+        <div class="modal" id="welcomeplayer" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Lets play Rock Paper Scissors!</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Welcome</p>
+                        <p id="theplayersname"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                            Close
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!--Modal popup for round winner and scoreboard-->
+    <div class="modal" id="highscoremodal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Leaderboard</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p></p>
+            <p id="leaderboardscore">the leaderboard code will go here.</p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--End of Modal popup for round winner and scoreboard-->
+
+    <!--Modal popup if the user loses-->
+    <div class="modal" id="losermodal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">You lose!!!</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <iframe
+              src="https://giphy.com/embed/GW10shdM3oXok"
+              width="480"
+              height="377"
+              class="giphy-embed"
+              allowfullscreen
+            ></iframe>
+            <p>
+              <a href="https://giphy.com/gifs/ace-ventura-loser-GW10shdM3oXok"
+                >via GIPHY</a
+              >
+            </p>
+            <p>Try again?</p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--End of user loses modal-->
+
     <header>
       <div class="container text-center">
         <h1 class="col gametitle">Rock Paper Scissors</h1>
@@ -49,16 +142,22 @@
         type="button"
         class=""
         data-bs-toggle="modal"
-        data-bs-target="#exampleModal"
+        data-bs-target="#rulesModal"
       >
         Rules
       </button>
 
-        <div class="modal fade modal custom" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered modal-sm">
+      <div
+        class="modal fade modal custom"
+        id="rulesModal"
+        tabindex="-1"
+        aria-labelledby="rulesModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered modal-sm">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Game Rules</h5>
+              <h5 class="modal-title" id="rulesModalLabel">Game Rules</h5>
               <button
                 type="button"
                 class="btn-close"
@@ -67,8 +166,14 @@
               ></button>
             </div>
             <div class="modal-body">
-              GAME RULES Rock beats scissors, scissors beat paper, and paper
-              beats rock. First to 5 points wins ENTER YOUR NAME TO START
+              <p>
+                Rock beats scissors, scissors beat paper, and paper beats rock.
+                First to 5 points wins the round and first to 5 rounds wins the
+                game!
+              </p>
+              <p aria-label="enter name to start form">
+                ENTER YOUR NAME TO START
+              </p>
               <form id="scoreboard">
                 <input type="text" id="username" required />
               </form>
@@ -88,35 +193,32 @@
         </div>
       </div>
 
-
-    </div>
-  </div>
-</div>
-      <button class="sound-onoff">Sound on / off</button>
+      <button id="soundonoff" class="sound-onoff">Sound on / off</button>
     </section>
     <!--End of Header Menu restart,rules,sound-->
     <!--ScoreBoard of Game-->
     <div class="score-board">
-    <div id="user-label" class="badge">
-        
-        
-      </div>
-      
+      <div id="user-label" class="badge"></div>
     </div>
     <!--Who beats who section-->
     <section class="who-wins">
       <div class="result">
-        <p class="result-text results">First to 5 lightning bolts wins!</p>
+        <p  id="whowontext" class="result-text results">First to 5 lightning bolts wins!</p>
       </div>
     </section>
 
     <!--player score section-->
     <div class="row">
       <div class="col">
-        <img id="lightningplayer" src="assets/images/lightning0.png" alt="player lightning score image" />
-        <span id="user-name">
-        user</span> Score <div id="user-score">0</div>
-        <div id="rounds-one">Rounds won </div><div id="user-roundswon">0</div>
+        <img
+          id="lightningplayer"
+          src="assets/images/lightning0.png"
+          alt="player lightning score image"
+        />
+        <span id="user-name"> user</span> Score
+        <div id="user-score">0</div>
+        <div id="rounds-one">Rounds won</div>
+        <div id="user-roundswon">0</div>
         <img
           src="assets/images/question.png"
           id="playerimg"
@@ -126,19 +228,31 @@
 
       <!--girl facial expression image-->
       <div class="col d-flex justify-content-center">
-        <img id="middleImg"
+        <img
+          id="middleImg"
           src="assets/images/facestart.png"
           class="col-md-auto vs"
           alt="changing image of girl based on win or lose"
         />
-    
+
         <!--computer score section-->
       </div>
-        <div class="col"><img id="lightningcomputer" src="assets/images/lightning0.png" alt="computer lightning score image" />
+      <div class="col">
+        <img
+          id="lightningcomputer"
+          src="assets/images/lightning0.png"
+          alt="computer lightning score image"
+        />
         <span id="computer-label">Computer</span> Score
-    <div id="computer-score">0</div>
-    <div id="rounds-one">Rounds won </div><div id="computer-roundswon">0</div>
-        <img  id="computerimg" src="assets/images/questionreverse.png" class="flip-horizontal" alt="image of computer choice" />
+        <div id="computer-score">0</div>
+        <div id="rounds-one">Rounds won</div>
+        <div id="computer-roundswon">0</div>
+        <img
+          id="computerimg"
+          src="assets/images/questionreverse.png"
+          class="flip-horizontal"
+          alt="image of computer choice"
+        />
       </div>
     </div>
 
@@ -148,11 +262,12 @@
       <div id="myBtn"></div>
     </div>
     <div class="choices row d-flex justify-content-center">
-      <div class="choice col" id="r">
+      <div class="choice col d-flex justify-content-center" id="r">
         <img
           src="assets/images/rockselect.png"
           id="rockimg"
-          alt="image of rock choice" class="rockchoiceimage"
+          alt="image of rock choice"
+          class="rockchoiceimage"
         />
       </div>
       <div class="choice col d-flex justify-content-center" id="p">
@@ -162,22 +277,24 @@
           alt="image of paper choice"
         />
       </div>
-        <div class="choice col d-flex justify-content-center" id="s">
-            <img
+      <div class="choice col d-flex justify-content-center" id="s">
+        <img
           src="assets/images/scissorselect.png"
           id="scissorimg"
-          alt="image of scissor choice">
+          alt="image of scissor choice"
+        />
       </div>
     </div>
     <!--End of main game section options and vs-->
     <!--THIS IS DUPLICATE SAVED JUST FOR CLASSES
     <section id="chooseweapon" class="container text-center chooseweapon"><div class=" game choices row"><div class="choice col" id="r" alt="image of rock symbol"><img src="assets/images/rock.png" id="rockimg"></div><div class="choice col" id="p" alt="image of rock symbol"><img src="assets/images/paper.png" id="paperimg"></div><div class="choice col" id="s" alt="image of rock symbol"><img src="assets/images/scissors.png" id="scissorimg"></div></div></section>-->
     <!--End of make your choice bottom section-->
-    <audio id="pcwin_audio" src="assets/audio/winround.mp3"></audio>
-    <audio id="userwin_audio" src="assets/audio/winround.mp3"></audio>
+    <audio muted="false" id="pcwin_audio" src="assets/audio/winround.mp3"></audio>
+    <audio muted="false" id="userwin_audio" src="assets/audio/winround.mp3"></audio>
     <footer>
       <div class="footer">
-       <i class="fab fa-github fa-lg">github</i>
-      </div></footer>
+        <i class="fab fa-github fa-lg">github</i>
+      </div>
+    </footer>
   </body>
 </html>

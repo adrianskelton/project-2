@@ -56,12 +56,12 @@ h1 {
 }
 
 #lightningcomputer {
-    width: 80%;
+    width: 30%;
     clear: both;
 }
 
 #lightningplayer {
-    width: 80%;
+    width: 30%;
     clear: both;
 }
 
@@ -248,10 +248,10 @@ form {
     display: grid;
 }
 */
-#footer {
-    display: flexbox;
+footer {
+    padding-top: 20px;
+    display: flex;
     flex-direction: row-reverse;
-    align-self: right;
     color: #393a3c;
 }
 

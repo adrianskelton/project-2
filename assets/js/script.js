@@ -3,6 +3,7 @@ let userScore = 0;
 let computerScore = 0;
 let userRoundswon = 0;
 let computerRoundswon = 0;
+let userTotalscore = 0;
 const userScore_span = document.getElementById("user-score");
 const computerScore_span = document.getElementById("computer-score");
 const scoreBoard_div = document.querySelector(".score-board");
@@ -22,32 +23,37 @@ let lightningscoreplayer = document.getElementById("user-score");
 let lightningscorecomputer = document.getElementById("computer-score");
 let lightningPlayer = document.getElementById("lightningplayer");
 let lightningPc = document.getElementById("lightningcomputer");
+let leaderboardModalcontent = document.getElementById("leaderboardscore");
 const lightningScore = document.getElementById("myBtn");
 const addName = document.getElementById("closeModal");
+const toggleTheaudio = document.getElementById("soundonoff");
 //const soundControl = document.getElementById("sound-onoff");
 
+audiogroup = document.querySelectorAll("#pcwin_audio, #userwin_audio");
+
 //eventlisteners
-lightningScore.addEventListener("click", myFunction1);
+lightningScore.addEventListener("click", updateLightning);
+toggleTheaudio.addEventListener("click", toggleSound);
 document.getElementById("restart").addEventListener("click", hardReloadgame);
 addName.addEventListener("click", nameToCookies);
-//soundControl.addEventListener("click", audioElements);
 
+//modal hide by default
 $(document).ready(function () {
-    $("#exampleModal").modal("show");
+    $("#highscoremodal").modal("hide"), $("#welcomeplayer").modal("show");
 });
 
-/*Mute all audio in the game
-function audioElements = document.getElementsByTagName("audio");
-for (var i = 0; i < audioElements.length; ++i) {
-    audioElements[i].pause();
-}*/
+//function to toggle audio on or off
+function toggleSound() {
+
+}
 
 //Add player name to cookie function
 function nameToCookies() {
     let playerName = document.getElementById("username").value;
     sessionStorage.setItem("name", playerName);
-    window.alert("Welcome" + " " + playerName);
+    playerNameDisplay = document.getElementById("theplayersname");
     playerNameDisplay = document.getElementById("user-name");
+    $("#rulesModal").modal("show");
     playerNameDisplay.innerText = playerName;
 }
 
@@ -81,6 +87,7 @@ function hardReloadgame() {
     document.getElementById("computerimg").src =
         "assets/images/questionreverse.png";
     document.getElementById("middleImg").src = "assets/images/facestart.png";
+    document.getElementById("whowontext").innerHTML = "First to 5 lightning bolts wins!";
     userScore = 0;
     computerScore = 0;
     userRoundswon = 0;
@@ -88,13 +95,15 @@ function hardReloadgame() {
 }
 
 //my function to change the lightning images based on the players score
-function myFunction1() {
+function updateLightning() {
     changeLightning();
     changeLightningPc();
-    lightningplayer.src = `assets/images/lightning${currentLightning}.png`;
+    lightningPlayer.src = `assets/images/lightning${currentLightning}.png`;
     lightningPc.src = `assets/images/lightning${currentLightningPc}.png`;
+    console.log("playerlightning" + currentLightning);
+    console.log("pclightning" + currentLightningPc);
     winGame();
-    console.log(currentLightning);
+    winRounds();
     console.log(`User score is ${userScore}`);
 }
 
@@ -131,13 +140,11 @@ function convertToWord(letter) {
 //function if user wins
 function win(userChoice, computerChoice) {
     userScore++;
+    userTotalscore++;
     userScore_span.innerHTML = userScore;
     computerScore_span.innerHTML = computerScore;
     //girls face changes to a sad face when computer wins
     document.getElementById("middleImg").src = "assets/images/facewin.png";
-    const smallUserWord = "user";
-    const smallCompWord = "comp";
-    //the old result... result_p.innerHTML = `${convertToWord(userChoice)}${smallUserWord} beats ${convertToWord(computerChoice)}${smallCompWord}. You win! `;
     result_p.innerHTML = `${convertToWord(userChoice)} beats ${convertToWord(
         computerChoice
     )}. You win! `;
@@ -150,9 +157,7 @@ function lose(userChoice, computerChoice) {
     computerScore_span.innerHTML = computerScore;
     //girls face changes to a sad face when computer wins
     document.getElementById("middleImg").src = "assets/images/facehand.png";
-    const smallUserWord = "user";
-    const smallCompWord = "comp";
-    //old way... result_p.innerHTML = `${convertToWord(userChoice)}${smallUserWord} loses to ${convertToWord(computerChoice)}${smallCompWord}. You lost! `;
+
     result_p.innerHTML = `${convertToWord(userChoice)} loses to ${convertToWord(
         computerChoice
     )}. You lost! `;
@@ -160,11 +165,8 @@ function lose(userChoice, computerChoice) {
 
 //function if it's a draw
 function draw(userChoice, computerChoice) {
-    const smallUserWord = "user";
-    const smallCompWord = "comp";
     //girls face changes to a sad face when a draw
     document.getElementById("middleImg").src = "assets/images/facedraw.png";
-    //old way result_p.innerHTML = `${convertToWord(userChoice)}${smallUserWord} draws with ${convertToWord(computerChoice)}${smallCompWord}. Its a draw `;
     result_p.innerHTML = `${convertToWord(userChoice)} draws with ${convertToWord(
         computerChoice
     )}. Its a draw `;
@@ -197,19 +199,19 @@ function main() {
     rock_div.addEventListener("click", function () {
         game("r");
         document.getElementById("playerimg").src = "assets/images/rock.png";
-        myFunction1();
+        updateLightning();
     });
 
     paper_div.addEventListener("click", function () {
         game("p");
         document.getElementById("playerimg").src = "assets/images/paper.png";
-        myFunction1();
+        updateLightning();
     });
 
     scissors_div.addEventListener("click", function () {
         game("s");
         document.getElementById("playerimg").src = "assets/images/scissors.png";
-        myFunction1();
+        updateLightning();
     });
 }
 
@@ -281,6 +283,23 @@ function winGame() {
         window.alert("Computer Wins");
         reloadGame();
         //function reloadGame();
+    } else {
+        return;
+    }
+}
+
+//Function that stops the game when someone wins 5 rounds and prompts an alert.
+function winRounds() {
+    if (userRoundswon == 2) {
+        userRound.innerHTML = userRoundswon;
+        playWinaudio.play();
+        console.log("user-WINS EVERYTHING");
+        $("#highscoremodal").modal("show");
+    } else if (computerRoundswon == 2) {
+        computerRound.innerHTML = computerRoundswon;
+        playLoseaudio.play();
+        console.log("COMPUTERWINS");
+        $("#highscoremodal").modal("show");
     } else {
         return;
     }

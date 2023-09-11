@@ -44,7 +44,7 @@ $(document).ready(function () {
 
 //function to toggle audio on or off
 function toggleSound() {
-
+    $(audiogroup).attr(muted, true);
 }
 
 //Add player name to cookie function

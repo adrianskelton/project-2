@@ -60,11 +60,13 @@ Anyone wanting to play the game of rock paper scissors
 
 - The main goal is to let the user play rock paper scissors.
 - The user should understand the rules of the game and play it easily.
-- The user should ee able to easily navigate the controls of the game.
-- The user should be able to see their score on the scoreboard if they get a good score.
+- The user should be able to easily navigate the controls of the game.
+- The user should be able to see their score on the scoreboard if they get a good score this is shown at the end of the game.
 - The user should be able to restart the game.
 
 ## Design
+
+
 
 ### Colour Scheme
 

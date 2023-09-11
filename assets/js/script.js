@@ -39,12 +39,12 @@ addName.addEventListener("click", nameToCookies);
 
 //modal hide by default
 $(document).ready(function () {
-    $("#highscoremodal").modal("hide"), $("#welcomeplayer").modal("show");
+    $("#highscoremodal").modal("hide"), $("#welcomeplayer").modal("hide");
 });
 
 //function to toggle audio on or off
 function toggleSound() {
-    $(audiogroup).attr(muted, true);
+    $(audiogroup).attr(muted, false);
 }
 
 //Add player name to cookie function
@@ -269,7 +269,6 @@ function winGame() {
         currentLightning = 5;
         userRoundswon++;
         userRound.innerHTML = userRoundswon;
-        playWinaudio.play();
         console.log("user-round");
         window.alert("You Win");
         reloadGame();
@@ -278,7 +277,6 @@ function winGame() {
         currentLightningPc = 5;
         computerRoundswon++;
         computerRound.innerHTML = computerRoundswon;
-        playLoseaudio.play();
         console.log("computer-round");
         window.alert("Computer Wins");
         reloadGame();
@@ -292,8 +290,9 @@ function winGame() {
 function winRounds() {
     if (userRoundswon == 2) {
         userRound.innerHTML = userRoundswon;
-        playWinaudio.play();
         console.log("user-WINS EVERYTHING");
+        playWinaudio.play();
+
         $("#highscoremodal").modal("show");
     } else if (computerRoundswon == 2) {
         computerRound.innerHTML = computerRoundswon;

@@ -26,14 +26,10 @@ let lightningPc = document.getElementById("lightningcomputer");
 let leaderboardModalcontent = document.getElementById("leaderboardscore");
 const lightningScore = document.getElementById("myBtn");
 const addName = document.getElementById("closeModal");
-const toggleTheaudio = document.getElementById("soundonoff");
-
-
-audiogroup = document.querySelectorAll("#pcwin_audio, #userwin_audio");
 
 //eventlisteners
 lightningScore.addEventListener("click", updateLightning);
-toggleTheaudio.addEventListener("click", toggleSound);
+document.getElementById("soundonoff").addEventListener("click", myAudio);
 document.getElementById("restart").addEventListener("click", hardReloadgame);
 addName.addEventListener("click", nameToCookies);
 
@@ -42,11 +38,11 @@ $(document).ready(function () {
     $("#highscoremodal").modal("hide"), $("#welcomeplayer").modal("hide");
 });
 
-//function to toggle audio on or off
-var toggleSound() {
-    document.getElementById('pcwin_audio');
-    myAudio.muted = !myAudio.muted;
-};
+//function to toggle audio on or off;
+
+var myAudio = document.getElementById('userwin_audio');
+myAudio.muted = !myAudio.muted;
+
 
 //Add player name to cookie function
 function nameToCookies() {
@@ -271,6 +267,7 @@ function winGame() {
         currentLightning = 5;
         userRoundswon++;
         userRound.innerHTML = userRoundswon;
+        playWinaudio.play();
         console.log("user-round");
         window.alert("You Win");
         reloadGame();
@@ -279,6 +276,7 @@ function winGame() {
         currentLightningPc = 5;
         computerRoundswon++;
         computerRound.innerHTML = computerRoundswon;
+        playLoseaudio.play();
         console.log("computer-round");
         window.alert("Computer Wins");
         reloadGame();
@@ -294,7 +292,6 @@ function winRounds() {
         userRound.innerHTML = userRoundswon;
         console.log("user-WINS EVERYTHING");
         playWinaudio.play();
-
         $("#highscoremodal").modal("show");
     } else if (computerRoundswon == 2) {
         computerRound.innerHTML = computerRoundswon;

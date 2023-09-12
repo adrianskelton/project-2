@@ -77,7 +77,7 @@
             <p id="leaderboardscore">the leaderboard code will go here.</p>
           </div>
           <div class="modal-footer">
-            <button
+            <button id="highscoreclose"
               type="button"
               class="btn btn-secondary"
               data-bs-dismiss="modal"
@@ -196,7 +196,7 @@
         </div>
       </div>
 
-      <button id="soundonoff" class="sound-onoff">Sound on / off</button>
+      <button id="soundonoff" class="sound-onoff">Sound on</button>
     </section>
     <!--End of Header Menu restart,rules,sound-->
     <!--ScoreBoard of Game-->
@@ -261,7 +261,7 @@
 
     <!--Make your choice bottom section-->
     <div class="container text-center">
-      <h1 class="col title-makechoice">Make your choice!</h1>
+      <p class="col title-makechoice">Make your choice!</p>
       <div id="myBtn"></div>
     </div>
     <div class="choices row d-flex justify-content-center">
@@ -292,8 +292,8 @@
     <!--THIS IS DUPLICATE SAVED JUST FOR CLASSES
     <section id="chooseweapon" class="container text-center chooseweapon"><div class=" game choices row"><div class="choice col" id="r" alt="image of rock symbol"><img src="assets/images/rock.png" id="rockimg"></div><div class="choice col" id="p" alt="image of rock symbol"><img src="assets/images/paper.png" id="paperimg"></div><div class="choice col" id="s" alt="image of rock symbol"><img src="assets/images/scissors.png" id="scissorimg"></div></div></section>-->
     <!--End of make your choice bottom section-->
-    <audio id="pcwin_audio" src="assets/audio/loseround.mp3"></audio>
-    <audio id="userwin_audio" src="assets/audio/winround.mp3"></audio>
+    <audio id="pcwin_audio" class="audio" src="assets/audio/loseround.mp3"></audio>
+    <audio id="userwin_audio" class="audio" src="assets/audio/winround.mp3"></audio>
     <footer>
       <div class="footer">
         <a href="https://github.com/adrianskelton/" target="_blank"><i class="fab fa-github fa-lg">github</i></a>

@@ -13,8 +13,10 @@ const paper_div = document.getElementById("p");
 const scissors_div = document.getElementById("s");
 const computerRound = document.getElementById("computer-roundswon");
 const userRound = document.getElementById("user-roundswon");
+const myAudio = document.querySelectorAll('.audio');
 const playLoseaudio = document.getElementById("pcwin_audio");
 const playWinaudio = document.getElementById("userwin_audio");
+
 
 //update lightning bolts
 let currentLightning = 0;
@@ -26,11 +28,14 @@ let lightningPc = document.getElementById("lightningcomputer");
 let leaderboardModalcontent = document.getElementById("leaderboardscore");
 const lightningScore = document.getElementById("myBtn");
 const addName = document.getElementById("closeModal");
+const soundToggle = document.getElementById("soundonoff");
+const soundGroup = document.getElementsByClassName(".audio");
 
 //eventlisteners
 lightningScore.addEventListener("click", updateLightning);
-document.getElementById("soundonoff").addEventListener("click", myAudio);
+//soundToggle.addEventListener("click", muteAudio);
 document.getElementById("restart").addEventListener("click", hardReloadgame);
+document.getElementById("highscoreclose").addEventListener("click", hardReloadgame);
 addName.addEventListener("click", nameToCookies);
 
 //modal hide by default
@@ -38,11 +43,21 @@ $(document).ready(function () {
     $("#highscoremodal").modal("hide"), $("#welcomeplayer").modal("hide");
 });
 
-//function to toggle audio on or off;
-
-var myAudio = document.getElementById('userwin_audio');
-myAudio.muted = !myAudio.muted;
-
+/*//function to toggle audio on or off;
+function muteAudio() {
+    if (soundButtonChange.innerText = "Sound Off") {
+        soundGroup.muted = false;
+        soundButtonChange = document.getElementById("soundonoff");
+        soundButtonChange.innerText = "Sound on";
+        alert(soundGroup.muted);
+    } else if (soundButtonChange.innerText = "Sound On") {
+        soundGroup.muted = true;
+        soundButtonChange = document.getElementById("soundonoff");
+        soundButtonChange.innerText = "Sound Off";
+        alert(soundGroup.muted);
+        break;
+    }
+*/
 
 //Add player name to cookie function
 function nameToCookies() {

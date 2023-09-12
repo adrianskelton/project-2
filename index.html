@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta description="Rock Paper Scissors Game">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <!--font awesome import script-->
@@ -11,6 +12,7 @@
       crossorigin="anonymous"
     ></script>
     <!--google font import of banger font family-->
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -289,11 +291,11 @@
     <!--THIS IS DUPLICATE SAVED JUST FOR CLASSES
     <section id="chooseweapon" class="container text-center chooseweapon"><div class=" game choices row"><div class="choice col" id="r" alt="image of rock symbol"><img src="assets/images/rock.png" id="rockimg"></div><div class="choice col" id="p" alt="image of rock symbol"><img src="assets/images/paper.png" id="paperimg"></div><div class="choice col" id="s" alt="image of rock symbol"><img src="assets/images/scissors.png" id="scissorimg"></div></div></section>-->
     <!--End of make your choice bottom section-->
-    <audio muted="false" id="pcwin_audio" src="assets/audio/winround.mp3"></audio>
-    <audio muted="false" id="userwin_audio" src="assets/audio/winround.mp3"></audio>
+    <audio id="pcwin_audio" src="assets/audio/loseround.mp3"></audio>
+    <audio id="userwin_audio" src="assets/audio/winround.mp3"></audio>
     <footer>
       <div class="footer">
-        <i class="fab fa-github fa-lg">github</i>
+        <a href="https://github.com/adrianskelton/" target="_blank"><i class="fab fa-github fa-lg">github</i></a>
       </div>
     </footer>
   </body>

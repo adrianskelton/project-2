@@ -27,7 +27,7 @@ let leaderboardModalcontent = document.getElementById("leaderboardscore");
 const lightningScore = document.getElementById("myBtn");
 const addName = document.getElementById("closeModal");
 const toggleTheaudio = document.getElementById("soundonoff");
-//const soundControl = document.getElementById("sound-onoff");
+
 
 audiogroup = document.querySelectorAll("#pcwin_audio, #userwin_audio");
 
@@ -43,9 +43,10 @@ $(document).ready(function () {
 });
 
 //function to toggle audio on or off
-function toggleSound() {
-    $(audiogroup).attr(muted, false);
-}
+var toggleSound() {
+    document.getElementById('pcwin_audio');
+    myAudio.muted = !myAudio.muted;
+};
 
 //Add player name to cookie function
 function nameToCookies() {
@@ -87,7 +88,8 @@ function hardReloadgame() {
     document.getElementById("computerimg").src =
         "assets/images/questionreverse.png";
     document.getElementById("middleImg").src = "assets/images/facestart.png";
-    document.getElementById("whowontext").innerHTML = "First to 5 lightning bolts wins!";
+    document.getElementById("whowontext").innerHTML =
+        "First to 5 lightning bolts wins!";
     userScore = 0;
     computerScore = 0;
     userRoundswon = 0;

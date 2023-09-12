@@ -66,11 +66,11 @@ Anyone wanting to play the game of rock paper scissors
 
 ## Design
 
-
+![alt text](assets/images/readme/responsiveimage.png)<br>
 
 ### Colour Scheme
 
-The color scheme is very basic with two major colors dark grey for the text and blue for the graphics. This was to keep the game from looking to busy espesially on smaller devices.
+The color scheme is very basic with two major colors blue and yellow for the graphics. This was to keep the game from looking to busy espesially on smaller devices which makes it easier to navigate and seperate the different sections.
 
 ![alt text]()<br>
 
@@ -78,7 +78,7 @@ The color scheme is very basic with two major colors dark grey for the text and 
 
 I went for a google font Bangers because it looked clean and modern and was easy to setup. Below is a screenshot of the font.
 
-![alt text](assets/images/typography.png)<br>
+![alt text](assets/images/readme/typography.png)<br>
 
 ### Imagery
 

@@ -13,7 +13,6 @@ const paper_div = document.getElementById("p");
 const scissors_div = document.getElementById("s");
 const computerRound = document.getElementById("computer-roundswon");
 const userRound = document.getElementById("user-roundswon");
-
 const playLoseaudio = document.getElementById("pcwin_audio");
 const playWinaudio = document.getElementById("userwin_audio");
 
@@ -28,28 +27,19 @@ let lightningPc = document.getElementById("lightningcomputer");
 let leaderboardModalcontent = document.getElementById("leaderboardscore");
 const lightningScore = document.getElementById("myBtn");
 const addName = document.getElementById("closeModal");
-const soundToggle = document.getElementById("soundonoff");
-const soundButtonChange = document.getElementsByClassName(".audio");
+
 
 
 //eventlisteners
 lightningScore.addEventListener("click", updateLightning);
-soundToggle.addEventListener("click", muteAudio);
 document.getElementById("restart").addEventListener("click", hardReloadgame);
 document.getElementById("highscoreclose").addEventListener("click", hardReloadgame);
 addName.addEventListener("click", nameToCookies);
 
-//modal hide by default
+//show into modal on page load
 $(document).ready(function () {
-    $("#highscoremodal").modal("hide"), $("#welcomeplayer").modal("hide");
+    $("#rulesModal").modal('show');
 });
-
-//function to toggle audio on or off;
-function muteAudio() {
-    soundButtonChange.innerText = "Sound Off";
-    soundButtonChange = document.getElementById("soundonoff");
-    alert(soundGroup.muted);
-}
 
 
 //Add player name to cookie function
@@ -93,7 +83,7 @@ function hardReloadgame() {
         "assets/images/questionreverse.png";
     document.getElementById("middleImg").src = "assets/images/facestart.png";
     document.getElementById("whowontext").innerHTML =
-        "First to 5 lightning bolts wins!";
+        "Lets play rock paper scissors!";
     userScore = 0;
     computerScore = 0;
     userRoundswon = 0;
@@ -137,6 +127,8 @@ function pcChoiceImg(choice) {
     }
 }
 
+// convert the letters to words
+
 function convertToWord(letter) {
     if (letter === "r") return "Rock";
     if (letter === "p") return "Paper";
@@ -177,6 +169,8 @@ function draw(userChoice, computerChoice) {
         computerChoice
     )}. Its a draw `;
 }
+
+//function to get the outcome of the game based on users choice and computers choice
 
 function game(userChoice) {
     const computerChoice = getComputerChoice();
@@ -221,6 +215,8 @@ function main() {
     });
 }
 
+//function to change the lightning image to reflect the user score
+
 function changeLightning() {
     switch (userScore) {
         case 1:
@@ -244,6 +240,7 @@ function changeLightning() {
     }
     return currentLightning;
 }
+//function to change the lightning image to reflect the computer score
 
 function changeLightningPc() {
     switch (computerScore) {
@@ -269,7 +266,7 @@ function changeLightningPc() {
     return currentLightningPc;
 }
 
-//Function that stops the game when someone gets to 5 points and prompts an alert.
+//function that stops the game when someone gets to 5 points and prompts an alert.
 function winGame() {
     if (userScore == 5) {
         currentLightning = 5;
@@ -296,12 +293,12 @@ function winGame() {
 
 //Function that stops the game when someone wins 5 rounds and prompts an alert.
 function winRounds() {
-    if (userRoundswon == 2) {
+    if (userRoundswon == 5) {
         userRound.innerHTML = userRoundswon;
         console.log("user-WINS EVERYTHING");
         playWinaudio.play();
         $("#highscoremodal").modal("show");
-    } else if (computerRoundswon == 2) {
+    } else if (computerRoundswon == 5) {
         computerRound.innerHTML = computerRoundswon;
         playLoseaudio.play();
         console.log("COMPUTERWINS");
@@ -310,5 +307,33 @@ function winRounds() {
         return;
     }
 }
+
+//audiomute function
+document.addEventListener("DOMContentLoaded", function () {
+    // Get references to the audio elements and the button
+    var audio1 = document.getElementById("pcwin_audio");
+    var audio2 = document.getElementById("userwin_audio");
+    var soundOnOff = document.getElementById("soundOnOff");
+
+    // Initialize the mute state
+    var isMuted = false;
+
+    // Add click event listener to the toggle button
+    soundOnOff.addEventListener("click", function () {
+        // Toggle the mute state
+        isMuted = !isMuted;
+
+        // Update the button text based on the mute state
+        if (isMuted) {
+            audio1.muted = true;
+            audio2.muted = true;
+            soundOnOff.textContent = "Turn Sound ON";
+        } else {
+            audio1.muted = false;
+            audio2.muted = false;
+            soundOnOff.textContent = "Turn Sound OFF";
+        }
+    });
+});
 
 main();

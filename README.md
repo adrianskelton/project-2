@@ -147,6 +147,7 @@ The Landing page has the game layout
 **TinyPNG Website** - Used to compress images so they load faster.\
 **Codebeautify Website** - Used to clean up css and html code\
 **Favicon Generator Website** - Converted PNG file that I made from the logo using photoshop and converted it into a favicon on website favicon.io\
+**coolors.co** - Website used for the colour pallete.\
 
 ### Languages Used
 
@@ -253,7 +254,7 @@ Tip to over-ride bootstrap modal css <https://stackoverflow.com/questions/208540
 
 Sound effects used from <https://pixabay.com/sound-effects/search/scissors/> <https://mixkit.co/free-sound-effects/lose/>
 
-###  Media
+### Media
 
 Hand Gestures image <https://www.freepik.com/free-vector/hand-wrist-gesture-black-engraving-icon-set-with-thumb-up-down-fist-middle-finger-other-gestures-vector-illustration_26766099.htm#query=fist%20gesture&position=0&from_view=keyword&track=ais>
 

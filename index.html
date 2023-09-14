@@ -69,7 +69,7 @@
           </div>
           <div class="modal-body">
             <p></p>
-            <p>You lost! Would you like to try again, click the button below! </p>
+            <p>Would you like to try again? Click the button below! </p>
           </div>
           <div class="modal-footer">
             <button id="youLoseClose" type="button" class="btn btn-secondary" data-bs-dismiss="modal"> Click to play again </button>
@@ -131,6 +131,8 @@
       <button id="restart" class="music">Restart Game</button>
       <!-- Button trigger modal -->
       <button type="button" class="" data-bs-toggle="modal" data-bs-target="#rulesOnlyModal"> Rules </button>
+
+
       <div class="modal fade modal custom" id="rulesModal" tabindex="-1" aria-labelledby="rulesModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-sm">
           <div class="modal-content">
@@ -141,12 +143,15 @@
             <div class="modal-body">
               <p> Rock beats scissors, scissors beat paper, and paper beats rock. First to 5 points wins the round and first to 5 rounds wins the game! </p>
               <h4 aria-label="enter name to start form"> ENTER YOUR NAME BELOW </h4>
-              <form id="scoreboard">
-                <input type="text" id="username" required />
+              <form name="playername" onsubmit="return validateForm()">
+                <input type="text" class="form-control" id="username" name="pname">
+      <div class="invalid-feedback">
+        Please choose a username.
+      </div>
               </form>
             </div>
             <div class="modal-footer">
-              <button id="closeModal" type="button" class="btn btn-primary" data-bs-dismiss="modal" aria-label="Close"> Click Here to Start </button>
+              <button id="closeModal" type="submit" value="submit" class="btn btn-primary" data-bs-dismiss="modal" aria-label="Close"> Click Here to Start </button>
             </div>
           </div>
         </div>
@@ -160,18 +165,18 @@
 
 
     <!--Who beats who section-->
-    <section>
+    <aside id="result_text">
       <div class="result">
         <p id="whowontext" class="result-text results">Lets play rock paper scissors!</p>
       </div>
-    </section>
+    </aside>
     <!--player score section-->
     <div class="row">
       <div class="col">
         <img id="lightningplayer" src="assets/images/lightning0.png" alt="player lightning score image" />
         <br>
-        <span id="user-name"> user</span> Score <div id="user-score">0</div>
-        <div id="rounds-won-user">Rounds won</div>
+        <span id="user-name"> User</span> Score <div id="user-score">0</div>
+        <div id="user-roundswon">Rounds won</div>
         <div id="user-rounds-won">0</div>
         <img src="assets/images/question.png" id="playerimg" alt="image of players choice" />
       </div>

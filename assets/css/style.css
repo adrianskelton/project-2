@@ -52,8 +52,8 @@ h1 {
     clear: both;
 }
 
-#rounds-won-user,
-#user-rounds-won {
+#user-rounds-won,
+#user-roundswon {
     display: inline;
     font-size: 18px;
     clear: both;

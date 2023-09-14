@@ -38,6 +38,15 @@ $(document).ready(function () {
     $("#rulesModal").modal('show');
 });
 
+//javascript to validate the modul for player name entry
+function validateForm() {
+  let x = document.forms["playername"]["pname"].value;
+  if (x == "") {
+    alert("Name must be filled out");
+    return false;
+  }
+}
+
 
 //Add player name to cookie function
 function nameToCookies() {
@@ -332,6 +341,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+
 
 main();
 

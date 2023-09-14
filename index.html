@@ -8,7 +8,7 @@
     <!--font awesome import script-->
     <script src="https://kit.fontawesome.com/660a11ff62.js" crossorigin="anonymous"></script>
     <!--google font import of banger font family-->
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet" />
@@ -119,11 +119,13 @@
       </div>
     </div>
     <!--End of user loses modal-->
+
+    
     <header>
       <div class="container text-center">
         <h1 class="col gametitle">Rock Paper Scissors</h1>
       </div>
-    </header>
+
     <!-- Header Menu restart,rules,sound -->
     <section class="container top-menu d-flex justify-content-center">
       <button id="restart" class="music">Restart Game</button>
@@ -149,35 +151,16 @@
           </div>
         </div>
       </div>
-      <div class="modal fade modal custom" id="rulesModal" tabindex="-1" aria-labelledby="rulesModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-sm">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="rulesModalLabel">Game Rules</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <p> Rock beats scissors, scissors beat paper, and paper beats rock. First to 5 points wins the round and first to 5 rounds wins the game! </p>
-              <p aria-label="enter name to start form"> ENTER YOUR NAME TO START </p>
-              <form id="scoreboard">
-                <input type="text" id="username" required />
-              </form>
-            </div>
-            <div class="modal-footer">
-              <button id="closeModal" type="button" class="btn btn-primary" data-bs-dismiss="modal" aria-label="Close"> Start </button>
-            </div>
-          </div>
-        </div>
-      </div>
+
+      
       <button id="soundOnOff">Turn Sound Off</button>
     </section>
+        </header>
     <!--End of Header Menu restart,rules,sound-->
-    <!--ScoreBoard of Game-->
-    <div class="score-board">
-      <div id="user-label" class="badge"></div>
-    </div>
+
+
     <!--Who beats who section-->
-    <section class="who-wins">
+    <section>
       <div class="result">
         <p id="whowontext" class="result-text results">Lets play rock paper scissors!</p>
       </div>
@@ -188,7 +171,7 @@
         <img id="lightningplayer" src="assets/images/lightning0.png" alt="player lightning score image" />
         <br>
         <span id="user-name"> user</span> Score <div id="user-score">0</div>
-        <div id="rounds-one">Rounds won</div>
+        <div id="rounds-won-user">Rounds won</div>
         <div id="user-roundswon">0</div>
         <img src="assets/images/question.png" id="playerimg" alt="image of players choice" />
       </div>
@@ -201,11 +184,12 @@
         <img id="lightningcomputer" src="assets/images/lightning0.png" alt="computer lightning score image" />
         <br>
         <span id="computer-label">Computer</span> Score <div id="computer-score">0</div>
-        <div id="rounds-one">Rounds won</div>
+        <div id="rounds-one-computer">Rounds won</div>
         <div id="computer-roundswon">0</div>
         <img id="computerimg" src="assets/images/questionreverse.png" class="flip-horizontal" alt="image of computer choice" />
       </div>
     </div>
+
     <!--Make your choice bottom section-->
     <div class="container text-center">
       <p class="col title-makechoice">Make your choice!</p>
@@ -222,12 +206,15 @@
         <img src="assets/images/scissorselect.png" id="scissorimg" alt="image of scissor choice" />
       </div>
     </div>
-    <!--End of main game section options and vs-->
+    <!--End of main game section options-->
+
+    <!--Audio for when a player wins or loses a round and a game-->
     <audio id="pcwin_audio">
       <source src="assets/audio/loseround.mp3" type="audio/mp3">
     </audio>
     <audio id="userwin_audio">
       <source src="assets/audio/winround.mp3" type="audio/mp3">
     </audio>
+    <!--End of audio section-->
   </body>
 </html>

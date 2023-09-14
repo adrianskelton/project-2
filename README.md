@@ -257,7 +257,9 @@ Tutorial I based my game on... https://www.youtube.com/watch?v=jaVNP3nIAv0>
 
 Tip to over-ride bootstrap modal css <https://stackoverflow.com/questions/20854035/is-it-possible-to-customize-style-of-bootstrap-modal>
 
-<https://stackoverflow.com/questions/6464592/how-to-align-entire-html-body-to-the-center>
+Help aligning entire html to center https://stackoverflow.com/questions/6464592/how-to-align-entire-html-body-to-the-center
+
+The fix used to stop dollar signs in my javascript code from coming back as an undefined function https://stackoverflow.com/questions/8852765/jshint-and-jquery-is-not-defined
 
 ### Content
 

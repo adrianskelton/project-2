@@ -6,7 +6,6 @@ let computerRoundswon = 0;
 let userTotalscore = 0;
 const userScore_span = document.getElementById("user-score");
 const computerScore_span = document.getElementById("computer-score");
-const scoreBoard_div = document.querySelector(".score-board");
 const result_p = document.querySelector(".result > p");
 const rock_div = document.getElementById("r");
 const paper_div = document.getElementById("p");
@@ -20,11 +19,8 @@ const playWinaudio = document.getElementById("userwin_audio");
 //update lightning bolts
 let currentLightning = 0;
 let currentLightningPc = 0;
-let lightningscoreplayer = document.getElementById("user-score");
-let lightningscorecomputer = document.getElementById("computer-score");
 let lightningPlayer = document.getElementById("lightningplayer");
 let lightningPc = document.getElementById("lightningcomputer");
-let leaderboardModalcontent = document.getElementById("leaderboardscore");
 const lightningScore = document.getElementById("myBtn");
 const addName = document.getElementById("closeModal");
 
@@ -108,7 +104,7 @@ function getComputerChoice() {
     const choices = ["r", "p", "s"];
     const randomNumber = Math.floor(Math.random() * 3);
     const computerChoice = choices[randomNumber];
-    const playerChoice = choices[randomNumber];
+    //const playerChoice = choices[randomNumber];
     console.log("pc choice =" + choices[randomNumber]);
     pcChoiceImg(computerChoice);
     return choices[randomNumber];
@@ -156,7 +152,6 @@ function lose(userChoice, computerChoice) {
     computerScore_span.innerHTML = computerScore;
     //girls face changes to a sad face when computer wins
     document.getElementById("middleImg").src = "assets/images/facehand.png";
-
     result_p.innerHTML = `${convertToWord(userChoice)} loses to ${convertToWord(
         computerChoice
     )}. You lost! `;
@@ -338,3 +333,5 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 main();
+
+

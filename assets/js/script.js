@@ -45,6 +45,7 @@ function nameToCookies() {
     sessionStorage.setItem("name", playerName);
     playerNameDisplay = document.getElementById("theplayersname");
     playerNameDisplay = document.getElementById("user-name");
+    window.alert("Welcome" + " " + playerName);
     $("#rulesModal").modal("show");
     playerNameDisplay.innerText = playerName;
 }

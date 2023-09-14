@@ -247,7 +247,8 @@ Additional testing was taken by friends on a variety of devices and screen sizes
 ## Bugs
 
 When username is entered in modal userimag
-e dissapearshe lightning bolts image does not turn to the correct image of 5 lightning bolts.
+e dissapearshe lightning bolts image does not turn to the correct image of 5 lightnin
+g bolts.
 
 ## Credits
 
@@ -256,9 +257,7 @@ e dissapearshe lightning bolts image does not turn to the correct image of 5 lig
 Tutorial I based my game on... https://www.youtube.com/watch?v=jaVNP3nIAv0>
 
 Tip to over-ride bootstrap modal css <https://stackoverflow.com/questions/20854035/is-it-possible-to-customize-style-of-bootstrap-modal>
-
-Help aligning entire html to center https://stackoverflow.com/questions/6464592/how-to-align-entire-html-body-to-the-center
-
+Help aligning entire html to center <https://stackoverflow.com/questions/6464592/how-to-align-entire-html-body-to-the-cente>
 The fix used to stop dollar signs in my javascript code from coming back as an undefined function https://stackoverflow.com/questions/8852765/jshint-and-jquery-is-not-defined
 
 ### Content

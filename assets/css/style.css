@@ -46,14 +46,14 @@ h1 {
 }
 
 #computer-roundswon,
-#rounds-one-computer {
+#rounds-one-pc {
     display: inline;
     font-size: 18px;
     clear: both;
 }
 
-#user-rounds-won,
-#user-roundswon {
+#user-roundswon,
+#rounds-won-user {
     display: inline;
     font-size: 18px;
     clear: both;
@@ -266,6 +266,7 @@ h1 {
     opacity: 1;
     font-size: 1.5rem;
 }
+
 
 /*Media query for mobile phones*/
 

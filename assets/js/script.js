@@ -6,6 +6,7 @@ let computerRoundswon = 0;
 let userTotalscore = 0;
 const userScore_span = document.getElementById("user-score");
 const computerScore_span = document.getElementById("computer-score");
+//const scoreBoard_div = document.querySelector(".score-board");
 const result_p = document.querySelector(".result > p");
 const rock_div = document.getElementById("r");
 const paper_div = document.getElementById("p");
@@ -38,15 +39,6 @@ $(document).ready(function () {
     $("#rulesModal").modal('show');
 });
 
-//javascript to validate the modul for player name entry
-function validateForm() {
-  let x = document.forms["playername"]["pname"].value;
-  if (x == "") {
-    alert("Name must be filled out");
-    return false;
-  }
-}
-
 
 //Add player name to cookie function
 function nameToCookies() {
@@ -54,7 +46,6 @@ function nameToCookies() {
     sessionStorage.setItem("name", playerName);
     playerNameDisplay = document.getElementById("theplayersname");
     playerNameDisplay = document.getElementById("user-name");
-    window.alert("Welcome" + " " + playerName);
     $("#rulesModal").modal("show");
     playerNameDisplay.innerText = playerName;
 }
@@ -342,8 +333,4 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-
-
 main();
-
-

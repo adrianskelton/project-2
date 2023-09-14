@@ -33,7 +33,8 @@ const addName = document.getElementById("closeModal");
 //eventlisteners
 lightningScore.addEventListener("click", updateLightning);
 document.getElementById("restart").addEventListener("click", hardReloadgame);
-document.getElementById("highscoreclose").addEventListener("click", hardReloadgame);
+document.getElementById("youWinClose").addEventListener("click", hardReloadgame);
+document.getElementById("youLoseClose").addEventListener("click", hardReloadgame);
 addName.addEventListener("click", nameToCookies);
 
 //show into modal on page load

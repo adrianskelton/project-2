@@ -2,6 +2,7 @@ body {
     font-family: "Bangers", cursive;
     max-width: 1030px;
     padding-left: 5%;
+    padding-right: 5%;
     display: table-cell;
     vertical-align: middle;
 }
@@ -20,7 +21,6 @@ img {
     align-self: center;
 }
 
-
 h1 {
     align-self: center;
     font-size: 38px;
@@ -38,15 +38,15 @@ h1 {
     font-size: 14px;
 }
 
-
 #computer-label,
 #computer-score {
     display: inline;
     font-size: 14px;
 }
 
-#computer-roundswon,
-#rounds-one-pc {
+#rounds-one-pc, 
+#computer-rounds-won
+ {
     display: inline;
     font-size: 18px;
     clear: both;
@@ -85,15 +85,6 @@ h1 {
 /*To flip images when on the pc option of screen so the images mirror eachother*/
 .flip-horizontal {
     transform: scaleX(-1);
-}
-
-.top-menu {
-    display: flex;
-    width: 40%;
-    flex-wrap: nowrap;
-    align-self: flex-end;
-    justify-self: flex-end;
-    padding-bottom: 20px;
 }
 
 .choice {
@@ -205,43 +196,9 @@ h1 {
     margin: 0 auto;
 }
 
-    {
-    min-width: 400px;
-}
-
-.result-selection {
-    opacity: 0.7;
-}
-
-.result-selection.winner {
-    opacity: 1.5;
-    size: 120%;
-}
-
-/*styl eo*/
-
-.selections {
-    display: flex;
-    justify-content: center;
-}
-
-.selection {
-    background: none;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    font-size: 2rem;
-    transition: 100ms;
-}
-
 .who-wins {
     align-self: center;
 }
-
-.selection:hover {
-    transform: scale(1.2);
-}
-
 
 .results {
     margin-top: 1rem;
@@ -267,7 +224,6 @@ h1 {
     font-size: 1.5rem;
 }
 
-
 /*Media query for mobile phones*/
 
 @media screen and (max-width: 480px) {
@@ -278,7 +234,6 @@ h1 {
         font-size: 24px;
         padding-top: 4px;
         font-family: "Bangers", cursive;
-
     }
 
     #lightningcomputer {
@@ -290,7 +245,6 @@ h1 {
         width: 80%;
         clear: both;
     }
-
 
     h1 {
         align-self: center;
@@ -322,7 +276,7 @@ h1 {
 
 /*Media query for tablets*/
 
-@media (500px <=width <=1024px) {
+@media (481px <=width <=1024px) {
 
 
     h1 {
@@ -338,17 +292,7 @@ h1 {
         font-size: 24px;
         padding-top: 4px;
         font-family: "Bangers", cursive;
-
     }
-
-    /*.top-menu {
-        display: flexbox;
-        width: 80%;
-        flex-wrap: nowrap;
-        align-self: flex-end;
-        justify-self: flex-end;
-        padding-bottom: 5px;
-    }*/
 
     .result-text {
         font-size: 20px;
@@ -358,7 +302,6 @@ h1 {
         width: 60%;
         height: auto;
     }
-
 
     #middleImg {
         width: 100%;

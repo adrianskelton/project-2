@@ -19,7 +19,7 @@ The score and the image of the girls face changes according to the results which
   - [Table of Contents](#contents)
   - [User stories](#user-stories)
   - [Target Audience](#target-audience)
-    - [want to enjoy the game and know how to play it]
+  - [Visitor Goals](#visitor-goals)
   - [Design](#design)
     - [Colour Scheme](#colour-scheme)
     - [Typography](#typography)
@@ -63,24 +63,24 @@ The score and the image of the girls face changes according to the results which
 
 ## Target Audience
 
-The game is targeted at anyone wanting to play the game of rock paper scissors.
+The target audience simply is anyone wanting to play an easy to understand game of rock, paper, scissors.
 
 #### Visitor goals
 
-- As a user I wanted to play a game of rock paper scissors.
-- The user should understand the rules of the game and play it easily.
-- The user should be able to easily navigate the controls of the game.
-- The user should be able to see their score on the scoreboard if they get a good score this is shown at the end of the game.
-- The user should be able to restart the game.
+- As a user, I want to be able to recognise what the game is.
+- As a user, I want to easily understand the concepts of the game.
+- As a user, I want to know my score vs the computer score.
+- As a user, I want to navigate the games controls easily.
+- As a user, I want to easily see who is winning.
 
 ## Design
 
-
 ### Colour Scheme
 
-The color scheme is very basic with two major colors blue and yellow for the graphics. This was to keep the game from looking to busy espesially on smaller devices which makes it easier to navigate and seperate the different sections.
+![alt text](assets/images/readme/palletescreenshot.png)
 
-![alt text]()<br>
+The color scheme is very basic with two major colors blue and yellow for the graphics. This was to keep the game from looking too busy, espesially on smaller devices which makes it easier to navigate and seperate the different sections.
+
 
 ### Typography
 
@@ -122,14 +122,30 @@ I used Balsamiq to design my wireframes.
 
 ![alt text](assets/images/readme/firstscreen.png)<br>
 
+<font color="red">CHANGE THE SCREENSHOTS!!!!!!!!!!!!!!!!!!!!!!!!</font>
+
 The game is only one page with a popup modal automatically set to appear when the page is loaded. The modal contains the rules of the game and a text area for the player to enter their name. 
+
+### Popup modal with rules and form for players name.
+This is a bootstrap modal that pops up automatically on the loading of the homepage.
+The user can read the rules of the game in the modal and then enter their name to start.
+The click
+<font color="red">POPUP MODAL SCREENSHOT GOES HERE!!!!!!!!</font>
+
+
+
+<font color="red">REPLACE THIS SCREENSHOT BELOW!!!!!!!!!!!!!!!!!!!!!!!!</font>
 
 ![alt text](assets/images/readme/headerscreen.png)<br>
 
-Top menu bar with "Restart game", "Rules" and "Sound on/off" toggle button. The restart game button resets all the variables to their start stage.
+### Top menu bar 
 
+This contains with buttons of: 
+
+### Restart game button. 
+
+The restart game button resets all the variables to their start stage.
 Namely:
-
 - The round score and game score to zero of both player and computer.
 - The lightning bolt images of both player and computer.
 - The computer choice and user choice image resets to a question mark image.
@@ -137,41 +153,112 @@ Namely:
 - The text above the girl face image resets to the text 'Lets play rock paper scissors!'
 - The user name if entered does not change, only refreshing the page does that, thereby popping up the modul and prompting the user to enter a name again.
 
+### Rules button 
 
-![alt text]()
+When the user clicks on the rules button a popup similar to the one at the start pops up with the game rules. The only difference is there is no form requiring a username.
 
-![alt text]()
+<font color="red">PUT IN MORE SCREENSHOTS HERE OF INDIVIDUAL BUTTON SHOTS!!!!!!!!!!!!!!!!!!!!!!!</font>
+
+"Sound on/off" toggle button. 
+
+This button toggles between a "sound on" and a "sound off" state, muting the two mp3 files listed at the bottom of the html.
+The text then reflects what the user should push on or off for their desired choice.
+
+___
+
+### User game score, round score and lightning bolt
+
+![alt text](assets/images/readme/screenshot_user_score.png).\
+Start View when the user has not yet chosen anything and the score is zero (shown above)
+
+![alt text](assets/images/readme/screenshot_user_score2.png).\
+In game-play view with lightning bolts that reflect the score. (shown above)
+
+![alt text](assets/images/readme/screenshot_user_score3.png).\
+Games one view with lightning bolts that reflect the score. (shown above)
+
+### Computer game score, round score and lightning bolt
+
+![alt text](assets/images/readme/screenshot_computer_score.png).\
+The exact same block is shown on the opposite side of the screen, the only difference is the word computer instead of the user name.
+No more screenshots added of this image changing as it is the same as the users functionality and would be redundant.
+
+### Changing facial expression image with apprpriate text of who wins and how.
+
+There are 4 different states of the images, static when the game starts, a win, a lose and a draw.
+Each of these are reflected in the text above the image and the girls expression to match.
+These images are shown below.
+
+![alt text](assets/images/readme/screenshot_girl_expression1.png).\
+Static image (shown above).\.\
+
+
+![alt text](assets/images/readme/screenshot_girl_expression3.png).\
+Win image (shown above).\.\
+
+![alt text](assets/images/readme/screenshot_girl_expression4.png).\
+Player Loses image (shown above).\.\
+
+
+![alt text](assets/images/readme/screenshot_girl_expression2.png).\
+Draw image (shown above).\.\
+
+### The 3 option images for the player to select: rock, paper or scissors.
+
+![alt text](assets/images/readme/screenshot_user_choice.png)
+
+### Two alert boxes for a win or a lose.
+
+![alt text](assets/images/readme/screenshot_alert_pcwin.png)
+
+![alt text](assets/images/readme/screenshot_alert_userwin.png)
+
+___
 
 ### Future Implementations
 
+- A scoreboard that logs the username and their score will be later implemented. 
+- More options could later be added to the game such as spock and lizzard.
+- A button option to share the game on facebook and other platforms. 
+- The popup modal at the start needs to be improved so if the username is missing they are not allowed to play, and that the player can push enter after entering their name instead of clicking on the button.
+- When the player hovers over the selection images of rock paper or scissors they will have a css animation.
+- The alert boxes when a user wins or loses could be replaced with better looking popup modals.
+
 ### Accessibility
+
+<font color="red"> CHECK ACCESSIBILITY OF THE SITE AND ENTER HERE!!!!!!!!!!!!!!!!!!!!!!!</font>
+
+___
 
 ## Technologies Used
 
 **Github** - Used for storage of my site and for publishing online.\
 **Codeanywhere** - The IDE used for editing my site and pushing changes.\
 **Python** - Used python 3 via terminal to preview my site using a local http server.\
-**HTML5** - The core of the site was built with HTML version 5.\
+**HTML5** - The core of the site was built with HTML version 5.\`
+**Javascript** - Javascript was responsible for all the functionality and interactivity of the website.\
 **CSS** - CSS was used to style the website and define fonts and layout.\
 **Bootstrap** - Bootstrap was used to align items and create items such as the Navbar, accordion, carosel, flipcards, forms etc.\
-**Google Maps** - Google maps embed from Google inc.\
-**Youtube** - Videos embedded from Youtube.\
-**Font Awesome** - Social Media icons from Font Awesome.\
-**Google Chrome** - The website was built and tested in google Chrome.\
+**Google Chrome** - The website was built and tested in google Chrome with developer tools being used.\
 **TinyPNG Website** - Used to compress images so they load faster.\
 **Codebeautify Website** - Used to clean up css and html code\
 **Favicon Generator Website** - Converted PNG file that I made from the logo using photoshop and converted it into a favicon on website favicon.io\
 **coolors.co** - Website used for the colour pallete.\
+**Lighthouse in chrome -  Used to see the performance of the site.\
+
 
 ### Languages Used
 
-HTML, CSS, Javascript
+HTML, CSS, Javascript.<font color="red"> CHECK IF IT WAS ONLY THESE!!!!!!!!!!!!!!!!!!!!!!!</font>
+
 
 ### Frameworks, Libraries & Programs Used
 
 **Bootstrap** - for the responsiveness of the website despite having to add a media query for the 1000px breakpoint so that the site looked better on mobile and tablets. I also used bootstrap code for the navbar.\
 **Github** - I used GitHub for the storage of my site and Gitpages to pubish my website.\
-**Photoshop** - Used photoshop for some of my image resizing.
+**Photoshop** - Used photoshop for some of my image resizing and editing of the images.\
+
+___
 
 ## Deployment & Local Development
 
@@ -201,23 +288,25 @@ To fork the repository:
 
 ## Manual Testing
 
-### Jigsaw CSS Validator
 
-[Jigsaw](https://jigsaw.w3.org/css-validator/validator) was used to validate the css code
-![alt text](assets/images/jigsaw.jpg) - Pass
 
 ### W3C Validator
 
-[W3C](https://validator.w3.org/) was used to validate the HTML on all pages of the website. It was also used to validate the CSS.
+[W3C](https://validator.w3.org/) was used to validate the HTML of website. 
 
-![alt text]() - Pass
-![alt text]() - Pass
+![alt text](assets/images/readme/screenshot_validator_html.png) - HTML Pass
+
+___
+
+### Jigsaw CSS Validator
+[Jigsaw](https://jigsaw.w3.org/css-validator/validator) was used to validate the css code
+
+![alt text](assets/images/readme/screenshot_validator_css.png) - CSS Pass
+
 
 ### Lighthouse
 
-### Index page
-
-![alt text](assets/images/lighthouseindex.png)
+![alt text](assets/images/readme/screenshot_lighthouse.png)
 
 ### Full Testing
 
@@ -239,30 +328,28 @@ Additional testing was taken by friends on a variety of devices and screen sizes
 
 | Feature           | Expected Outcome                                                                                                      | Testing Performed      | Result                               | Pass/Fail |
 | ----------------- | --------------------------------------------------------------------------------------------------------------------- | ---------------------- | ------------------------------------ | --------- |
-| `Navbar`          |
+|        |
 |                   |                                                                                                                       |                        |                                      |           |
 | Game title        | This remains static and unclickable if a user wants the game to reset that can be done using the rest button instead. | Clicked Logo and title | Nothing happens.                     | Pass      |
-| Restart Link      | When clicked the user will be redirected to the home page.                                                            | Clicked link           | Redirected to the home page.         | Pass      |
-| Accomodation Link | When clicked the user will be redirected to the accomodation page.                              Tcted to the accomodation page. | Pass      |
-| Contact Link      | When clicked the user will be redirected to the Contact page.                                                         | Clicked link           | Redirected to the contact page       | Pass      |
-| ---               | ---                                                                                                                   | ---                    | ---                                  | ---       |
+| Startup Popup modal      | Pops up on page load and when the user enters the name and clicks on the button the name is stored and reflected in the game on the scoreboard.           | Entered name and clicked button           | Name now shows on the scoreboard.         | Pass      |
+| Restart game | When clicked during play everything will be reset to the start page, score, images etc.    |                         Clicked on restart button | Everything reset to default state. |Pass      |
+| Sound toggle button      | When clicked the sound will turn off for the game and the button text will turn to 'Sound On' When clicked again the sound will then return and the button text will revert to 'Sound Off'.                                                         | Clicked  button          | Perfomed as expected       | Pass      |
+| Yellow images of rock, paper and scissors  | When clicked they will result in the scores changing, the girls expression, the text of who wins or loses, the blue images of the choices will also change as well as the lightning bolts until the game is won.                                                                                                | Tested each image individually until a win or loss was the result              | Perfomed as expected                                  | Pass      |
 
 ---
 
 ## Bugs
 
-
+The lightning bolts do not reach the 5th bolt for some reason. Even though it reflects it in the score, needs to be fixed.
 
 ## Credits
 
 ### Code Used
 
-Tutorial I based my game on... https://www.youtube.com/watch?v=jaVNP3nIAv0>
-
+Tutorial I based my game on... https://www.youtube.com/watch?v=jaVNP3nIAv0
 Tip to over-ride bootstrap modal css <https://stackoverflow.com/questions/20854035/is-it-possible-to-customize-style-of-bootstrap-modal>
 Help aligning entire html to center <https://stackoverflow.com/questions/6464592/how-to-align-entire-html-body-to-the-cente>
-The fix used to stop dollar signs in my javascript code from coming back as an undefined function https://stackoverflow.com/questions/8852765/jshint-and-jquery-is-not-defined
-Modal validation https://codepen.io/philbaker/pen/MBrVwQ
+When I was stuck I referred to help from w3schools to figure it out https://www.w3schools.com/
 
 ### Content
 
@@ -275,6 +362,6 @@ Hand Gestures image <https://www.freepik.com/free-vector/hand-wrist-gesture-blac
 Frame image used for hand gestures
 <https://img.freepik.com/free-vector/fight-club-logo-set-vintage-monochrome-emblems-with-arm-clenched-fist-medal-ribbon-vector-illustration-collection-boxing-kickboxing-martial-arts-club-labels_74855-8368.jpg?size=626&ext=jpg&ga=GA1.2.1255192767.1692352642&semt=ais>
 
-###  Acknowledgments
+### Acknowledgments
 
 I would like to thank my mentor Narender as well as all the users on slack for all their opinions and code reviews.

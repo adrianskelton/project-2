@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta description="Rock Paper Scissors Game">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <!--font awesome import script-->
@@ -59,7 +58,7 @@
         </div>
 
     <!--Modal popup for round winner and scoreboard-->
-    <div class="modal" id="highscoremodal" tabindex="-1">
+    <div class="modal" id="youWinModal" tabindex="-1">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
@@ -90,6 +89,67 @@
       </div>
     </div>
     <!--End of Modal popup for round winner and scoreboard-->
+
+    <!--Modal popup for round winner and scoreboard-->
+    <div class="modal" id="youLoseModal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">You lost, better luck next time!!</h5>
+            <div id="highscore_content"></div>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p></p>
+            <p id="leaderboardscore">You lost! Would you like to try again, click the button below!
+                 </p>
+          </div>
+          <div class="modal-footer">
+            <button id="highscoreclose"
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Click to play again
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--End of Modal popup for if user loses-->
+
+    <!--Modal popup for rules only-->
+    <div class="modal" id="rulesOnlyModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Game Rules</h5>
+                    <div id="highscore_content"></div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                                <p>
+                                    Rock beats scissors, scissors beat paper, and paper beats rock.
+                                    First to 5 points wins the round and first to 5 rounds wins the
+                                    game!
+                                </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End of Modal popup for rules-->
+
+
 
     <!--Modal popup if the user loses-->
     <div class="modal" id="losermodal" tabindex="-1">
@@ -146,10 +206,55 @@
         type="button"
         class=""
         data-bs-toggle="modal"
-        data-bs-target="#rulesModal"
+        data-bs-target="#rulesOnlyModal"
       >
         Rules
       </button>
+
+      <div
+        class="modal fade modal custom"
+        id="rulesModal"
+        tabindex="-1"
+        aria-labelledby="rulesModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-sm">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="rulesModalLabel">Game Rules</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <p>
+                Rock beats scissors, scissors beat paper, and paper beats rock.
+                First to 5 points wins the round and first to 5 rounds wins the
+                game!
+              </p>
+              <p aria-label="enter name to start form">
+                ENTER YOUR NAME TO START
+              </p>
+              <form id="scoreboard">
+                <input type="text" id="username" required />
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button
+                id="closeModal"
+                type="button"
+                class="btn btn-primary"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              >
+                Start
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <div
         class="modal fade modal custom"
@@ -197,7 +302,7 @@
         </div>
       </div>
 
-      <button id="soundOnOff">Sound on</button>
+      <button id="soundOnOff">Turn Sound Off</button>
     </section>
     <!--End of Header Menu restart,rules,sound-->
     <!--ScoreBoard of Game-->

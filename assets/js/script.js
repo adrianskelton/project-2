@@ -297,12 +297,12 @@ function winRounds() {
         userRound.innerHTML = userRoundswon;
         console.log("user-WINS EVERYTHING");
         playWinaudio.play();
-        $("#highscoremodal").modal("show");
+        $("#youWinModal").modal("show");
     } else if (computerRoundswon == 5) {
         computerRound.innerHTML = computerRoundswon;
         playLoseaudio.play();
         console.log("COMPUTERWINS");
-        $("#highscoremodal").modal("show");
+        $("#youLoseModal").modal("show");
     } else {
         return;
     }

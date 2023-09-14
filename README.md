@@ -1,8 +1,10 @@
 # Rock Paper Scissors Javascript game
 
-This is a javascript game of rock paper scissors,
+This is a javascript game of rock paper scissors
 
-![fully responsive website example image]()
+---
+
+![alt text](assets/images/readme/responsiveimage.png) 
 
 ---
 
@@ -12,7 +14,7 @@ This is a javascript game of rock paper scissors,
   - [CONTENTS](#contents)
   - [Target Audience](#target-audience)
   - [User stories](#user-stories)
-    - [want to enjoy the game and know how to play it](#want-to-enjoy-the-game-and-know-how-to-play-it)
+    - [want to enjoy the game and know how to play it]
   - [Design](#design)
     - [Colour Scheme](#colour-scheme)
     - [Typography](#typography)
@@ -52,13 +54,15 @@ This is a javascript game of rock paper scissors,
 
 ---
 
+# User Stories
+
 ## Target Audience
 
-Anyone wanting to play the game of rock paper scissors
+The game is targeted at anyone wanting to play the game of rock paper scissors.
 
 #### Visitor goals
 
-- The main goal is to let the user play rock paper scissors.
+- As a user I wanted to play a game of rock paper scissors.
 - The user should understand the rules of the game and play it easily.
 - The user should be able to easily navigate the controls of the game.
 - The user should be able to see their score on the scoreboard if they get a good score this is shown at the end of the game.
@@ -66,7 +70,6 @@ Anyone wanting to play the game of rock paper scissors
 
 ## Design
 
-![alt text](assets/images/readme/responsiveimage.png)<br>
 
 ### Colour Scheme
 
@@ -110,21 +113,27 @@ I used Balsamiq to design my wireframes.
 
 ## Features
 
-### General features on each page
-
-![alt text]()
-
-Top menu bar with "Restart game", "Rules" and "Sound on/off" functions
-
-### Footer with icons
-
-![alt text]()
-
-## Features by page
-
 ### Landing page
 
-The Landing page has the game layout
+![alt text](assets/images/readme/firstscreen.png)<br>
+
+The game is only one page with a popup modal automatically set to appear when the page is loaded. The modal contains the rules of the game and a text area for the player to enter their name. 
+
+![alt text](assets/images/readme/headerscreen.png)<br>
+
+Top menu bar with "Restart game", "Rules" and "Sound on/off" toggle button. The restart game button resets all the variables to their start stage.
+
+Namely:
+
+- The round score and game score to zero of both player and computer.
+- The lightning bolt images of both player and computer.
+- The computer choice and user choice image resets to a question mark image.
+- The image of the girls face resets to the start image.
+- The text above the girl face image resets to the text 'Lets play rock paper scissors!'
+- The user name if entered does not change, only refreshing the page does that, thereby popping up the modul and prompting the user to enter a name again.
+
+
+![alt text]()
 
 ![alt text]()
 
@@ -229,7 +238,7 @@ Additional testing was taken by friends on a variety of devices and screen sizes
 |                   |                                                                                                                       |                        |                                      |           |
 | Game title        | This remains static and unclickable if a user wants the game to reset that can be done using the rest button instead. | Clicked Logo and title | Nothing happens.                     | Pass      |
 | Restart Link      | When clicked the user will be redirected to the home page.                                                            | Clicked link           | Redirected to the home page.         | Pass      |
-| Accomodation Link | When clicked the user will be redirected to the accomodation page.                                                    | Clicked link           | Redirected to the accomodation page. | Pass      |
+| Accomodation Link | When clicked the user will be redirected to the accomodation page.                              Tcted to the accomodation page. | Pass      |
 | Contact Link      | When clicked the user will be redirected to the Contact page.                                                         | Clicked link           | Redirected to the contact page       | Pass      |
 | ---               | ---                                                                                                                   | ---                    | ---                                  | ---       |
 
@@ -238,7 +247,7 @@ Additional testing was taken by friends on a variety of devices and screen sizes
 ## Bugs
 
 When username is entered in modal userimag
-e dissapears
+e dissapearshe lightning bolts image does not turn to the correct image of 5 lightning bolts.
 
 ## Credits
 

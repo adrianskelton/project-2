@@ -1,6 +1,5 @@
 body {
     font-family: "Bangers", cursive;
-    size: 22px;
     max-width: 1030px;
     padding-left: 5%;
     display: table-cell;
@@ -89,7 +88,7 @@ h1 {
 }
 
 .top-menu {
-    display: flexbox;
+    display: flex;
     width: 40%;
     flex-wrap: nowrap;
     align-self: flex-end;
@@ -155,10 +154,6 @@ h1 {
     width: 50%;
 }
 
-#paperimg:hover {
-    size-adjust: 120%;
-}
-
 #scissorimg {
     width: 50%;
 }
@@ -202,10 +197,6 @@ h1 {
 
 .scissors:hover {
     transform: scale(1.5);
-}
-
-.vshidden {
-    display: hidden;
 }
 
 /*code to overwrite the default bootstrap modal styling*/

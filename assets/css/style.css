@@ -44,8 +44,8 @@ h1 {
     font-size: 14px;
 }
 
-#rounds-one-pc, 
-#computer-roundswon
+#computer-roundswon,
+#rounds-one-pc
  {
     display: inline;
     font-size: 18px;
@@ -153,10 +153,6 @@ h1 {
     height: 150px;
 }
 
-.rock:hover {
-    transform: scale(1.5);
-}
-
 .paper {
     background: url("/assets/images/paper.png") center;
     background-size: 30%;
@@ -168,10 +164,6 @@ h1 {
     height: 150px;
 }
 
-.paper:hover {
-    transform: scale(1.5);
-}
-
 .scissors {
     background: url("/assets/images/scissors.png") center;
     background-size: 30%;
@@ -179,10 +171,6 @@ h1 {
     display: block;
     border: 0;
     height: 150px;
-}
-
-.scissors:hover {
-    transform: scale(1.5);
 }
 
 /*code to overwrite the default bootstrap modal styling*/

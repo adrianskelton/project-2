@@ -81,7 +81,6 @@ The target audience simply is anyone wanting to play an easy to understand game 
 
 The colour scheme is very basic with two major colours blue and yellow for the graphics. This was to keep the game from looking too busy, especially on smaller devices which makes it easier to navigate and separate the different sections.
 
-
 ### Typography
 
 I went for a google font Bangers because it looked clean and modern and was easy to setup. Below is a screenshot of the font.
@@ -96,11 +95,9 @@ Due to the nature of the project it is not image intensive however I sourced ima
 
 ### Desktop view - start-up screen
 
-
 ![alt text](assets/images/wireddesktopstart.png)<br>
 
-### Desktop view - the first screen shown to the user when the page loads (shown above). The footer was later taken off in the actual to make the game look less busy. 
-
+### Desktop view - the first screen shown to the user when the page loads (shown above). The footer was later taken off in the actual to make the game look less busy
 
 ![alt text](assets/images/wireddesktop.png)<br>
 
@@ -127,10 +124,10 @@ I used Balsamiq to design my wireframes.
 
 The game is only one page with a popup modal automatically set to appear when the page is loaded. The modal contains the rules of the game and a text area for the player to enter their name.
 
-### Popup modal with rules and form for players name.
+### Popup modal with rules and form for players name
+
 This is a bootstrap modal that pops up automatically on the loading of the homepage.
 The user can read the rules of the game in the modal and then enter their name to start.
-
 
 ![alt text](assets/images/readme/headerscreen.png)<br>
 
@@ -140,10 +137,11 @@ This contains 3 buttons of:
 
 ![alt text](assets/images/readme/screenshot_buttons.png)
 
-### Restart game button.
+### Restart game button
 
 The restart game button resets all the variables to their start stage.
 Namely:
+
 - The round score and game score to zero of both player and computer.
 - The lightning bolt images of both player and computer.
 - The computer choice and user choice image resets to a question mark image.
@@ -154,7 +152,6 @@ Namely:
 ### Rules button
 
 When the user clicks on the rules button a popup similar to the one at the start pops up with the game rules. The only difference is there is no form requiring a username.
-
 
 "Sound on/off" toggle button.
 
@@ -180,7 +177,7 @@ Games one view with lightning bolts that reflect the score. (shown above)
 The exact same block is shown on the opposite side of the screen, the only difference is the word computer instead of the user name.
 No more screenshots added of this image changing as it is the same as the users functionality and would be redundant.
 
-### Changing facial expression image with appropriate text of who wins and how.
+### Changing facial expression image with appropriate text of who wins and how
 
 There are 4 different states of the images, static when the game starts, a win, a lose and a draw.
 Each of these are reflected in the text above the image and the girls expression to match.
@@ -189,22 +186,20 @@ These images are shown below.
 ![alt text](assets/images/readme/screenshot_girl_expression1.png).\
 Static image (shown above)
 
-
 ![alt text](assets/images/readme/screenshot_girl_expression3.png).\
 Win image (shown above)
 
 ![alt text](assets/images/readme/screenshot_girl_expression4.png).\
 Player Loses image (shown above)
 
-
 ![alt text](assets/images/readme/screenshot_girl_expression2.png).\
 Draw image (shown above)
 
-### The 3 option images for the player to select: rock, paper or scissors.
+### The 3 option images for the player to select: rock, paper or scissors
 
 ![alt text](assets/images/readme/screenshot_user_choice.png)
 
-### Two alert boxes for a win or a lose.
+### Two alert boxes for a win or a lose
 
 ![alt text](assets/images/readme/screenshot_alert_pcwin.png)
 
@@ -223,7 +218,7 @@ ___
 
 ### Accessibility
 
-Added aria names added.
+Added aria labels where needed.
 
 ___
 
@@ -243,11 +238,9 @@ ___
 **coolors.co** - Website used for the colour pallete.\
 **Lighthouse in chrome - Used to see the performance of the site.\
 
-
 ### Languages Used
 
 HTML, CSS, Javascript.
-
 
 ### Frameworks, Libraries & Programs Used
 
@@ -285,8 +278,6 @@ To fork the repository:
 
 ## Manual Testing
 
-
-
 ### W3C Validator
 
 [W3C](https://validator.w3.org/) was used to validate the HTML of website.
@@ -296,10 +287,10 @@ To fork the repository:
 ___
 
 ### Jigsaw CSS Validator
+
 [Jigsaw](https://jigsaw.w3.org/css-validator/validator) was used to validate the css code
 
 ![alt text](assets/images/readme/screenshot_validator_css.png) - CSS Pass
-
 
 ### Lighthouse
 
@@ -342,30 +333,31 @@ Additional testing was taken by friends on a variety of devices and screen sizes
 ## Bugs
 
 The lightning bolts do not reach the 5th bolt for some reason. Even though it reflects it in the score, needs to be fixed.
+The scores do not align on the computer side.
 
 ## Credits
 
 ### Code Used
 
-Tutorial I based my game on... https://www.youtube.com/watch?v=jaVNP3nIAv0
+Tutorial I based my game on... <https://www.youtube.com/watch?v=jaVNP3nIAv0>
 Tip to over-ride bootstrap modal css <https://stackoverflow.com/questions/20854035/is-it-possible-to-customize-style-of-bootstrap-modal>
 Help aligning entire html to centre <https://stackoverflow.com/questions/6464592/how-to-align-entire-html-body-to-the-cente>
-When I was stuck I referred to help from w3schools to figure it out https://www.w3schools.com/
+When I was stuck I referred to help from w3schools to figure it out <https://www.w3schools.com/>
 
 ### Content
 
-Sound effects used for the loss https://mixkit.co/free-sound-effects/lose/
-Sound effects used for the win https://pixabay.com/sound-effects/8-bit-victory-sound-101319/
+Sound effects used for the loss <https://mixkit.co/free-sound-effects/lose/>
+Sound effects used for the win <https://pixabay.com/sound-effects/8-bit-victory-sound-101319/>
 
 ### Media
 
-Girls facial expression from pixel website https://www.pexels.com/photo/collage-photo-of-woman-3812743/
+Girls facial expression from pixel website <https://www.pexels.com/photo/collage-photo-of-woman-3812743/>
 
-Hand Gestures image https://img.freepik.com/free-vector/hand-wrist-gesture-black-engraving-icon-set-with-thumb-up-down-fist-middle-finger-other-gestures-vector-illustration_1284-74114.jpg?t=st=1694768463~exp=1694769063~hmac=9ad88b1414c8b4c9f95ba60a21de19bceb648546784d80ecab60baffd1850111
+Hand Gestures image <https://img.freepik.com/free-vector/hand-wrist-gesture-black-engraving-icon-set-with-thumb-up-down-fist-middle-finger-other-gestures-vector-illustration_1284-74114.jpg?t=st=1694768463~exp=1694769063~hmac=9ad88b1414c8b4c9f95ba60a21de19bceb648546784d80ecab60baffd1850111>
 (Excuse the direct link to the image above but the sharing link on the website did not work)
 
 Frame image used for hand gestures
-https://www.vecteezy.com/vector-art/1952391-explosion-pop-art-style-icon
+<https://www.vecteezy.com/vector-art/1952391-explosion-pop-art-style-icon>
 
 ### Acknowledgments
 

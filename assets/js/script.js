@@ -94,18 +94,15 @@ function updateLightning() {
     changeLightningPc();
     lightningPlayer.src = `assets/images/lightning${currentLightning}.png`;
     lightningPc.src = `assets/images/lightning${currentLightningPc}.png`;
-    console.log("playerlightning" + currentLightning);
-    console.log("pclightning" + currentLightningPc);
     winGame();
     winRounds();
-    console.log(`User score is ${userScore}`);
 }
 
 function getComputerChoice() {
     const choices = ["r", "p", "s"];
     const randomNumber = Math.floor(Math.random() * 3);
     const computerChoice = choices[randomNumber];
-    //const playerChoice = choices[randomNumber];
+
     console.log("pc choice =" + choices[randomNumber]);
     pcChoiceImg(computerChoice);
     return choices[randomNumber];

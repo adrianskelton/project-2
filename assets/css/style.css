@@ -45,11 +45,9 @@ h1 {
 }
 
 #computer-roundswon,
-#rounds-one-pc
- {
+#rounds-one-pc {
     display: inline;
     font-size: 18px;
-    clear: both;
 }
 
 #user-roundswon,
@@ -121,7 +119,10 @@ h1 {
     justify-self: center;
 }
 
-
+.forcealign {
+    display: inline-block;
+    overflow: auto;
+}
 
 /* Choose weapon section*/
 .chooseweapon {

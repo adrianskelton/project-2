@@ -130,12 +130,7 @@ The game is only one page with a popup modal automatically set to appear when th
 ### Popup modal with rules and form for players name.
 This is a bootstrap modal that pops up automatically on the loading of the homepage.
 The user can read the rules of the game in the modal and then enter their name to start.
-The click
-<font color="red">POPUP MODAL SCREENSHOT GOES HERE!!!!!!!!</font>
 
-
-
-<font color="red">REPLACE THIS SCREENSHOT BELOW!!!!!!!!!!!!!!!!!!!!!!!!</font>
 
 ![alt text](assets/images/readme/headerscreen.png)<br>
 
@@ -192,18 +187,18 @@ Each of these are reflected in the text above the image and the girls expression
 These images are shown below.
 
 ![alt text](assets/images/readme/screenshot_girl_expression1.png).\
-Static image (shown above).\.\
+Static image (shown above)
 
 
 ![alt text](assets/images/readme/screenshot_girl_expression3.png).\
-Win image (shown above).\.\
+Win image (shown above)
 
 ![alt text](assets/images/readme/screenshot_girl_expression4.png).\
-Player Loses image (shown above).\.\
+Player Loses image (shown above)
 
 
 ![alt text](assets/images/readme/screenshot_girl_expression2.png).\
-Draw image (shown above).\.\
+Draw image (shown above)
 
 ### The 3 option images for the player to select: rock, paper or scissors.
 
@@ -228,7 +223,7 @@ ___
 
 ### Accessibility
 
-<font color="red"> CHECK ACCESSIBILITY OF THE SITE AND ENTER HERE!!!!!!!!!!!!!!!!!!!!!!!</font>
+Added aria names added.
 
 ___
 
@@ -251,7 +246,7 @@ ___
 
 ### Languages Used
 
-HTML, CSS, Javascript.<font color="red"> CHECK IF IT WAS ONLY THESE!!!!!!!!!!!!!!!!!!!!!!!</font>
+HTML, CSS, Javascript.
 
 
 ### Frameworks, Libraries & Programs Used

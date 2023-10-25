@@ -34,11 +34,6 @@ document.getElementById("youWinClose").addEventListener("click", hardReloadgame)
 document.getElementById("youLoseClose").addEventListener("click", hardReloadgame);
 addName.addEventListener("click", nameToCookies);
 
-//show into modal on page load
-$(document).ready(function () {
-    $("#rulesModal").modal('show');
-});
-
 
 //Add player name to cookie function
 function nameToCookies() {
@@ -257,6 +252,7 @@ function changeLightningPc() {
 function winGame() {
     if (userScore == 5) {
         currentLightning = 5;
+        changeLightning();
         userRoundswon++;
         userRound.innerHTML = userRoundswon;
         playWinaudio.play();
@@ -265,6 +261,7 @@ function winGame() {
         //function reloadGame();
     } else if (computerScore == 5) {
         currentLightningPc = 5;
+        changeLightningPc();
         computerRoundswon++;
         computerRound.innerHTML = computerRoundswon;
         playLoseaudio.play();

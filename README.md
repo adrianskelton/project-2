@@ -85,7 +85,7 @@ The colour scheme is very basic with two major colours blue and yellow for the g
 
 I went for a google font Bangers because it looked clean and modern and was easy to setup. Below is a screenshot of the font.
 
-![alt text](assets/images/readme/typography.png)<br>
+![alt text][assets/images/readme/typography.png](Follow link)br>
 
 ### Imagery
 
@@ -95,11 +95,11 @@ Due to the nature of the project it is not image intensive however I sourced ima
 
 ### Desktop view - start-up screen
 
-![alt text](assets/images/wireddesktopstart.png)<br>
+![alt text][assets/images/wireddesktopstart.png](Follow link)br>
 
 ### Desktop view - the first screen shown to the user when the page loads (shown above). The footer was later taken off in the actual to make the game look less busy
 
-![alt text](assets/images/wireddesktop.png)<br>
+![alt text][assets/images/wireddesktop.png](Follow link)br>
 
 ### Desktop view - game screen (shown above)
 
@@ -107,12 +107,12 @@ ___
 
 ### Mobile view
 
-![alt text](assets/images/readme/wiredmobile.png)<br>
+![alt text][assets/images/readme/wiredmobile.png](Follow link)br>
 Start screen (above left) In game screen (above right)
 
 ### Tablet view
 
-![alt text](assets/images/wiredtablet.png)<br>
+![alt text][assets/images/wiredtablet.png](Follow link)br>
 
 I used Balsamiq to design my wireframes.
 
@@ -120,7 +120,7 @@ I used Balsamiq to design my wireframes.
 
 ### Landing page
 
-![alt text](assets/images/readme/firstscreen.png)<br>
+![alt text][assets/images/readme/firstscreen.png](Follow link)br>
 
 The game is only one page with a popup modal automatically set to appear when the page is loaded. The modal contains the rules of the game and a text area for the player to enter their name.
 
@@ -129,7 +129,7 @@ The game is only one page with a popup modal automatically set to appear when th
 This is a bootstrap modal that pops up automatically on the loading of the homepage.
 The user can read the rules of the game in the modal and then enter their name to start.
 
-![alt text](assets/images/readme/headerscreen.png)<br>
+![alt text][assets/images/readme/headerscreen.png](Follow link)br>
 
 ### Top menu bar
 
@@ -339,25 +339,29 @@ The scores do not align on the computer side.
 
 ### Code Used
 
-Tutorial I based my game on... <https://www.youtube.com/watch?v=jaVNP3nIAv0>
-Tip to over-ride bootstrap modal css <https://stackoverflow.com/questions/20854035/is-it-possible-to-customize-style-of-bootstrap-modal>
-Help aligning entire html to centre <https://stackoverflow.com/questions/6464592/how-to-align-entire-html-body-to-the-cente>
-When I was stuck I referred to help from w3schools to figure it out <https://www.w3schools.com/>
+Tutorial I based my game on... [Follow link](https://www.youtube.com/watch?v=jaVNP3nIAv0)
+Tip to over-ride bootstrap modal css [Follow link](https://stackoverflow.com/questions/20854035/is-it-possible-to-customize-style-of-bootstrap-modal)
+Help aligning entire html to centre [Follow link](https://stackoverflow.com/questions/6464592/how-to-align-entire-html-body-to-the-cente)
+When I was stuck I referred to help from w3schools to figure it out [Follow link](https://www.w3schools.com/)
+
+### Gathering knowledge
+
+Was unsure about commit message to use when taking away features [Follow link](https://stackoverflow.com/questions/48075169/semantic-commit-type-when-remove-something>)
 
 ### Content
 
-Sound effects used for the loss <https://mixkit.co/free-sound-effects/lose/>
-Sound effects used for the win <https://pixabay.com/sound-effects/8-bit-victory-sound-101319/>
+Sound effects used for the loss [Follow link](https://mixkit.co/free-sound-effects/lose/)\
+Sound effects used for the win [Follow link](https://pixabay.com/sound-effects/8-bit-victory-sound-101319/)
 
 ### Media
 
-Girls facial expression from pixel website <https://www.pexels.com/photo/collage-photo-of-woman-3812743/>
+Girls facial expression from pixel website [Follow link](https://www.pexels.com/photo/collage-photo-of-woman-3812743/)
 
-Hand Gestures image <https://img.freepik.com/free-vector/hand-wrist-gesture-black-engraving-icon-set-with-thumb-up-down-fist-middle-finger-other-gestures-vector-illustration_1284-74114.jpg?t=st=1694768463~exp=1694769063~hmac=9ad88b1414c8b4c9f95ba60a21de19bceb648546784d80ecab60baffd1850111>
+Hand Gestures image [Follow link](https://img.freepik.com/free-vector/hand-wrist-gesture-black-engraving-icon-set-with-thumb-up-down-fist-middle-finger-other-gestures-vector-illustration_1284-74114.jpg?t=st=1694768463~exp=1694769063~hmac=9ad88b1414c8b4c9f95ba60a21de19bceb648546784d80ecab60baffd1850111)
 (Excuse the direct link to the image above but the sharing link on the website did not work)
 
 Frame image used for hand gestures
-<https://www.vecteezy.com/vector-art/1952391-explosion-pop-art-style-icon>
+[Follow link](https://www.vecteezy.com/vector-art/1952391-explosion-pop-art-style-icon)
 
 ### Acknowledgments
 

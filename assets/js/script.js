@@ -15,6 +15,8 @@ const computerRound = document.getElementById("computer-roundswon");
 const userRound = document.getElementById("user-roundswon");
 const playLoseaudio = document.getElementById("pcwin_audio");
 const playWinaudio = document.getElementById("userwin_audio");
+const makeChoiceParagraph = document.getElementById("make-choice");
+
 
 
 //update lightning bolts
@@ -80,6 +82,20 @@ function hardReloadgame() {
     userRoundswon = 0;
     computerRoundswon = 0;
 }
+
+//my function to change text if user wins round
+function playerWinMesssage() {
+    let message = "Congratulations you win the round!!";
+    makeChoiceParagraph.textContent = message;
+}
+
+//my function to change text if computer wins round
+function pcWinMesssage() {
+    let message = "ARG!! You lost the round, better luck next time!!";
+    makeChoiceParagraph.textContent = message;
+}
+
+
 
 //my function to change the lightning images based on the players score
 function updateLightning() {
@@ -248,28 +264,41 @@ function changeLightningPc() {
 
 //function that stops the game when someone gets to 5 points and prompts an alert.
 function winGame() {
-    if (userScore == 5) {
+    if (userScore === 5) {
         currentLightning = 5;
-        changeLightning();
+        changeLightning(5);
+        playerWinMesssage();
         userRoundswon++;
         userRound.innerHTML = userRoundswon;
         playWinaudio.play();
-        window.alert("You Win");
-        reloadGame();
-        //function reloadGame();
-    } else if (computerScore == 5) {
+        message = "Congatulations you win the round!";
+        //makeChoiceParagraph.textContent = message;
+        console.log("message");
+
+        // Delay for 5 seconds (5000 milliseconds) before reloading the game
+        setTimeout(function () {
+            reloadGame();
+        }, 5000);
+    } else if (computerScore === 5) {
         currentLightningPc = 5;
-        changeLightningPc();
+        changeLightningPc(5);
+        pcWinMesssage();
         computerRoundswon++;
         computerRound.innerHTML = computerRoundswon;
         playLoseaudio.play();
-        window.alert("Computer Wins");
-        reloadGame();
-        //function reloadGame();
+        //message = "Better luck next time pc wins this round!";
+        //makeChoiceParagraph.textContent = message;
+        console.log("computer-round");
+
+        // Delay for 5 seconds (5000 milliseconds) before reloading the game
+        setTimeout(function () {
+            reloadGame();
+        }, 5000);
     } else {
         return;
     }
 }
+
 
 //Function that stops the game when someone wins 5 rounds and prompts an alert.
 function winRounds() {

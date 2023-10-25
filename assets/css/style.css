@@ -33,19 +33,20 @@ h1 {
     visibility: hidden;
 }
 
-#user-name,
-#user-score {
-    display: inline;
-    font-size: 14px;
+#user-name {
+    font-size: 22px;
+    display: flex;
+    flex-grow: 3;
+}
+
+#computer-score {
     visibility: hidden;
 }
 
-#computer-label,
-#computer-score {
-    display: inline;
-    font-size: 14px;
-    visibility: hidden;
+#computer-label {
+    font-size: 22px;
 }
+
 
 #computer-roundswon,
 #rounds-one-pc {

@@ -103,7 +103,7 @@ Due to the nature of the project it is not image intensive however I sourced ima
 
 ### Desktop view - game screen (shown above)
 
-___
+---
 
 ### Mobile view
 
@@ -158,7 +158,7 @@ When the user clicks on the rules button a popup similar to the one at the start
 This button toggles between a "sound on" and a "sound off" state, muting the two mp3 files listed at the bottom of the html.
 The text then reflects what the user should push on or off for their desired choice.
 
-___
+---
 
 ### User game score, round score and lightning bolt
 
@@ -205,7 +205,7 @@ Draw image (shown above)
 
 ![alt text](assets/images/readme/screenshot_alert_userwin.png)
 
-___
+---
 
 ### Future Implementations
 
@@ -220,7 +220,7 @@ ___
 
 Added aria labels where needed.
 
-___
+---
 
 ## Technologies Used
 
@@ -236,7 +236,7 @@ ___
 **Codebeautify Website** - Used to clean up css and html code\
 **Favicon Generator Website** - Converted PNG file that I made from the logo using photoshop and converted it into a favicon on website favicon.io\
 **coolors.co** - Website used for the colour pallete.\
-**Lighthouse in chrome - Used to see the performance of the site.\
+\*\*Lighthouse in chrome - Used to see the performance of the site.\
 
 ### Languages Used
 
@@ -248,7 +248,7 @@ HTML, CSS, Javascript.
 **Github** - I used GitHub for the storage of my site and Gitpages to pubish my website.\
 **Photoshop** - Used photoshop for some of my image resizing and editing of the images.\
 
-___
+---
 
 ## Deployment & Local Development
 
@@ -284,7 +284,7 @@ To fork the repository:
 
 ![alt text](assets/images/readme/screenshot_validator_html.png) - HTML Pass
 
-___
+---
 
 ### Jigsaw CSS Validator
 
@@ -318,22 +318,25 @@ Each device tested the site using the following browsers:
 
 Additional testing was taken by friends on a variety of devices and screen sizes.
 
-| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
-| ----------------- | --------------------------------------------------------------------------------------------------------------------- | ---------------------- | ------------------------------------ | --------- |
-| |
-| | | | | |
-| Game title | This remains static and unclickable if a user wants the game to reset that can be done using the rest button instead. | Clicked Logo and title | Nothing happens. | Pass |
-| Start-up Popup modal | Pops up on page load and when the user enters the name and clicks on the button the name is stored and reflected in the game on the scoreboard. | Entered name and clicked button | Name now shows on the scoreboard. | Pass |
-| Restart game | When clicked during play everything will be reset to the start page, score, images etc. | Clicked on restart button | Everything reset to default state. |Pass |
-| Sound toggle button | When clicked the sound will turn off for the game and the button text will turn to 'Sound On' When clicked again the sound will then return and the button text will revert to 'Sound Off'. | Clicked button | Performed as expected | Pass |
-| Yellow images of rock, paper and scissors | When clicked they will result in the scores changing, the girls expression, the text of who wins or loses, the blue images of the choices will also change as well as the lightning bolts until the game is won. | Tested each image individually until a win or loss was the result | Preformed as expected | Pass |
+| Feature                                   | Expected Outcome                                                                                                                                                                                                 | Testing Performed                                                 | Result                             | Pass/Fail |
+| ----------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- | ---------------------------------- | --------- |
+|                                           |
+|                                           |                                                                                                                                                                                                                  |                                                                   |                                    |           |
+| Game title                                | This remains static and unclickable if a user wants the game to reset that can be done using the rest button instead.                                                                                            | Clicked Logo and title                                            | Nothing happens.                   | Pass      |
+| Start-up Popup modal                      | Pops up on page load and when the user enters the name and clicks on the button the name is stored and reflected in the game on the scoreboard.                                                                  | Entered name and clicked button                                   | Name now shows on the scoreboard.  | Pass      |
+| Restart game                              | When clicked during play everything will be reset to the start page, score, images etc.                                                                                                                          | Clicked on restart button                                         | Everything reset to default state. | Pass      |
+| Sound toggle button                       | When clicked the sound will turn off for the game and the button text will turn to 'Sound On' When clicked again the sound will then return and the button text will revert to 'Sound Off'.                      | Clicked button                                                    | Performed as expected              | Pass      |
+| Yellow images of rock, paper and scissors | When clicked they will result in the scores changing, the girls expression, the text of who wins or loses, the blue images of the choices will also change as well as the lightning bolts until the game is won. | Tested each image individually until a win or loss was the result | Preformed as expected              | Pass      |
 
 ---
 
 ## Bugs
 
-The lightning bolts do not reach the 5th bolt for some reason. Even though it reflects it in the score, needs to be fixed.
-The scores do not align on the computer side.
+### Bugs fixed
+
+The lightning bolts do not reach the 5th bolt for some reason, they only show 4 lightning bolts when it should be 5 to reflect 5 points.
+
+### Bugs fixed
 
 ## Credits
 

@@ -102,8 +102,6 @@ function getComputerChoice() {
     const choices = ["r", "p", "s"];
     const randomNumber = Math.floor(Math.random() * 3);
     const computerChoice = choices[randomNumber];
-
-    console.log("pc choice =" + choices[randomNumber]);
     pcChoiceImg(computerChoice);
     return choices[randomNumber];
 }
@@ -112,13 +110,10 @@ function getComputerChoice() {
 function pcChoiceImg(choice) {
     if (choice === "r") {
         document.getElementById("computerimg").src = "assets/images/rock.png";
-        console.log("PcChoiceImg is set to" + " " + choice);
     } else if (choice === "p") {
         document.getElementById("computerimg").src = "assets/images/paper.png";
-        console.log("PcChoiceImg is set to" + " " + choice);
     } else {
         document.getElementById("computerimg").src = "assets/images/scissors.png";
-        console.log("PcChoiceImg is set to" + " " + choice);
     }
 }
 
@@ -230,7 +225,6 @@ function changeLightning() {
             break;
         default:
             currentLightning = 0;
-            console.log("defaultswitchcase");
     }
     return currentLightning;
 }
@@ -255,7 +249,6 @@ function changeLightningPc() {
             break;
         default:
             currentLightningPc = 0;
-            console.log("defaultswitchcasePc");
     }
     return currentLightningPc;
 }
@@ -267,7 +260,6 @@ function winGame() {
         userRoundswon++;
         userRound.innerHTML = userRoundswon;
         playWinaudio.play();
-        console.log("user-round");
         window.alert("You Win");
         reloadGame();
         //function reloadGame();
@@ -276,7 +268,6 @@ function winGame() {
         computerRoundswon++;
         computerRound.innerHTML = computerRoundswon;
         playLoseaudio.play();
-        console.log("computer-round");
         window.alert("Computer Wins");
         reloadGame();
         //function reloadGame();
@@ -289,13 +280,11 @@ function winGame() {
 function winRounds() {
     if (userRoundswon == 5) {
         userRound.innerHTML = userRoundswon;
-        console.log("user-WINS EVERYTHING");
         playWinaudio.play();
         $("#youWinModal").modal("show");
     } else if (computerRoundswon == 5) {
         computerRound.innerHTML = computerRoundswon;
         playLoseaudio.play();
-        console.log("COMPUTERWINS");
         $("#youLoseModal").modal("show");
     } else {
         return;

@@ -36,35 +36,6 @@
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
-    <!--Modal popup to welcome player after they enter their name-->
-    <div class="modal" id="welcomeplayer" tabindex="-1">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Lets play Rock Paper Scissors!</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <p>Welcome</p>
-            <p id="theplayersname"></p>
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              Close
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
     <!--Modal popup for round winner and scoreboard-->
     <div class="modal" id="youWinModal" tabindex="-1">
       <div class="modal-dialog">
@@ -293,9 +264,8 @@
           alt="player lightning score image"
         />
         <br />
-        <span id="user-name"> user</span> Score
+        <span id="user-name"> user</span>
         <div id="user-score">0</div>
-        <div id="rounds-won-user">Rounds won</div>
         <div id="user-roundswon">0</div>
         <img
           src="assets/images/question.png"
@@ -320,10 +290,9 @@
           alt="computer lightning score image"
         />
         <br />
-        <span id="computer-label">Computer</span> Score
+        <span id="computer-label">Computer</span>
         <div id="computer-score">0</div>
         <div class="forcealign">
-          <div id="rounds-won-pc">Rounds won</div>
           <div id="computer-roundswon">0</div>
         </div>
         <img

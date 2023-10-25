@@ -30,24 +30,28 @@ h1 {
 
 #user-score {
     padding-right: 5px;
+    visibility: hidden;
 }
 
 #user-name,
 #user-score {
     display: inline;
     font-size: 14px;
+    visibility: hidden;
 }
 
 #computer-label,
 #computer-score {
     display: inline;
     font-size: 14px;
+    visibility: hidden;
 }
 
 #computer-roundswon,
 #rounds-one-pc {
     display: inline;
     font-size: 18px;
+    visibility: hidden;
 }
 
 #user-roundswon,
@@ -55,6 +59,7 @@ h1 {
     display: inline;
     font-size: 18px;
     clear: both;
+    visibility: hidden;
 }
 
 #lightningcomputer {

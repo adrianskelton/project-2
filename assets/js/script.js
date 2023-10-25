@@ -23,7 +23,7 @@ let currentLightningPc = 0;
 let lightningPlayer = document.getElementById("lightningplayer");
 let lightningPc = document.getElementById("lightningcomputer");
 const lightningScore = document.getElementById("myBtn");
-const addName = document.getElementById("closeModal");
+
 
 
 
@@ -32,7 +32,7 @@ lightningScore.addEventListener("click", updateLightning);
 document.getElementById("restart").addEventListener("click", hardReloadgame);
 document.getElementById("youWinClose").addEventListener("click", hardReloadgame);
 document.getElementById("youLoseClose").addEventListener("click", hardReloadgame);
-addName.addEventListener("click", nameToCookies);
+
 
 
 //Add player name to cookie function
@@ -65,8 +65,6 @@ function reloadGame() {
 function hardReloadgame() {
     document.getElementById("user-score").innerText = 0;
     document.getElementById("computer-score").innerText = 0;
-    document.getElementById("user-roundswon").innerText = 0;
-    document.getElementById("computer-roundswon").innerText = 0;
     document.getElementById("lightningplayer").src =
         "assets/images/lightning0.png";
     document.getElementById("lightningcomputer").src =

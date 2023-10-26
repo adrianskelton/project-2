@@ -33,6 +33,30 @@ h1 {
     visibility: hidden;
 }
 
+/*Hidden buttons that only appear after round has been won*/
+#round-over {
+    padding-top: 20px;
+    visibility: visible;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+#play-again {
+    background-color: yellow;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#quit {
+    background-color: yellow;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 #user-name {
     font-size: 22px;
     display: inline;
@@ -45,7 +69,6 @@ h1 {
 #computer-label {
     font-size: 22px;
 }
-
 
 #computer-roundswon,
 #rounds-one-pc {
@@ -216,7 +239,6 @@ h1 {
 /*Media query for mobile phones*/
 
 @media screen and (max-width: 480px) {
-
     .title-makechoice {
         color: #3b3b3b;
         align-self: center;
@@ -266,8 +288,6 @@ h1 {
 /*Media query for tablets*/
 
 @media (481px <=width <=1024px) {
-
-
     h1 {
         align-self: center;
         font-size: 50px;

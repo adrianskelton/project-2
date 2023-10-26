@@ -35,8 +35,14 @@ lightningScore.addEventListener("click", updateLightning);
 document.getElementById("restart").addEventListener("click", hardReloadgame);
 document.getElementById("youWinClose").addEventListener("click", hardReloadgame);
 document.getElementById("youLoseClose").addEventListener("click", hardReloadgame);
+document.getElementById("play-again").addEventListener("click", hardReloadgame);
+document.getElementById("quit").addEventListener("click", quitMessage);
 
+//temp placeholder for quitMessage fuction
 
+function quitMessage() {
+    console.log("game be over");
+}
 
 //Add player name to cookie function
 function nameToCookies() {

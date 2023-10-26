@@ -35,8 +35,7 @@ h1 {
 
 #user-name {
     font-size: 22px;
-    display: flex;
-    flex-grow: 3;
+    display: inline;
 }
 
 #computer-score {

@@ -218,6 +218,7 @@
             <div class="modal-body">
               <p>
                 Rock beats scissors, scissors beat paper, and paper beats rock.
+              </p><p>
                 First to 5 points wins the round and first to 5 rounds wins the
                 game!
               </p>
@@ -282,7 +283,7 @@
         />
         <!--computer score section-->
       </div>
-      <div class="col float-end text-end">
+      <div class="col float-end text-end container">
         <img
           id="lightningcomputer"
           src="assets/images/lightning0.png"
@@ -301,6 +302,16 @@
         />
       </div>
     </div>
+    <!--Hidden section revealed on round won-->
+    <aside id="round-over">
+            <button type="button" class="" data-bs-target="#rulesOnlyModal">
+                Play again
+            </button>
+            <button type="button" class="" data-bs-target="#rulesOnlyModal">
+                Quit
+            </button>
+    </aside>
+
     <!--Make your choice bottom section-->
     <div class="container text-center">
       <p class="col title-makechoice" id="make-choice">Make your choice!</p>

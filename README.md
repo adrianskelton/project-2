@@ -335,6 +335,7 @@ Additional testing was taken by friends on a variety of devices and screen sizes
 ### Bugs fixed
 
 The lightning bolts do not reach the 5th bolt for some reason, they only show 4 lightning bolts when it should be 5 to reflect 5 points.
+Solution: called the changeLightning() function from the winGame() function forcing the bolts to update.
 
 ### Bugs fixed
 

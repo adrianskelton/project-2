@@ -4,6 +4,7 @@ let computerScore = 0;
 let userRoundswon = 0;
 let computerRoundswon = 0;
 let userTotalscore = 0;
+let gamePaused = false;
 const userScore_span = document.getElementById("user-score");
 const computerScore_span = document.getElementById("computer-score");
 //const scoreBoard_div = document.querySelector(".score-board");
@@ -49,6 +50,7 @@ function nameToCookies() {
 
 // My function to restart the game when clicked resets all images and scores to default
 function reloadGame() {
+    document.getElementById("");
     document.getElementById("user-score").innerText = 0;
     document.getElementById("computer-score").innerText = 0;
     document.getElementById("lightningplayer").src =
@@ -114,6 +116,8 @@ function getComputerChoice() {
     pcChoiceImg(computerChoice);
     return choices[randomNumber];
 }
+
+
 
 // My function that gets the computers choice and updates the image.
 function pcChoiceImg(choice) {
@@ -191,26 +195,37 @@ function game(userChoice) {
     }
 }
 
+
+
 //Event listener for choices of rock paper scissor icons and also added code to change the player image choice
 
 function main() {
-    rock_div.addEventListener("click", function () {
-        game("r");
-        document.getElementById("playerimg").src = "assets/images/rock.png";
-        updateLightning();
-    });
+    // my gamePaused condition to pause game scoring and lightning when round is won
+    {
+        rock_div.addEventListener("click", function () {
+            if (!gamePaused) {
+                game("r");
+                document.getElementById("playerimg").src = "assets/images/rock.png";
+                updateLightning();
+            }
+        });
 
-    paper_div.addEventListener("click", function () {
-        game("p");
-        document.getElementById("playerimg").src = "assets/images/paper.png";
-        updateLightning();
-    });
+        paper_div.addEventListener("click", function () {
+            if (!gamePaused) {
+                game("p");
+                document.getElementById("playerimg").src = "assets/images/paper.png";
+                updateLightning();
+            }
+        });
 
-    scissors_div.addEventListener("click", function () {
-        game("s");
-        document.getElementById("playerimg").src = "assets/images/scissors.png";
-        updateLightning();
-    });
+        scissors_div.addEventListener("click", function () {
+            if (!gamePaused) {
+                game("s");
+                document.getElementById("playerimg").src = "assets/images/scissors.png";
+                updateLightning();
+            }
+        });
+    }
 }
 
 //function to change the lightning image to reflect the user score
@@ -266,34 +281,27 @@ function changeLightningPc() {
 function winGame() {
     if (userScore === 5) {
         currentLightning = 5;
-        changeLightning(5);
+        changeLightning();
         playerWinMesssage();
         userRoundswon++;
         userRound.innerHTML = userRoundswon;
         playWinaudio.play();
         message = "Congatulations you win the round!";
+        //disable rock, paper, scissor button clicks
+        gamePaused = true;
         //makeChoiceParagraph.textContent = message;
-        console.log("message");
 
-        // Delay for 5 seconds (5000 milliseconds) before reloading the game
-        setTimeout(function () {
-            reloadGame();
-        }, 5000);
     } else if (computerScore === 5) {
         currentLightningPc = 5;
-        changeLightningPc(5);
+        changeLightningPc();
         pcWinMesssage();
         computerRoundswon++;
         computerRound.innerHTML = computerRoundswon;
         playLoseaudio.play();
-        //message = "Better luck next time pc wins this round!";
-        //makeChoiceParagraph.textContent = message;
-        console.log("computer-round");
-
-        // Delay for 5 seconds (5000 milliseconds) before reloading the game
-        setTimeout(function () {
-            reloadGame();
-        }, 5000);
+        message = "Better luck next time pc wins this round!";
+        makeChoiceParagraph.textContent = message;
+        //disable rock, paper, scissor button clicks
+        gamePaused = true;
     } else {
         return;
     }

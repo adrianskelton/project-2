@@ -363,6 +363,7 @@ Girls facial expression from pixel website [Follow link](https://www.pexels.com/
 
 Hand Gestures image [Follow link](https://img.freepik.com/free-vector/hand-wrist-gesture-black-engraving-icon-set-with-thumb-up-down-fist-middle-finger-other-gestures-vector-illustration_1284-74114.jpg?t=st=1694768463~exp=1694769063~hmac=9ad88b1414c8b4c9f95ba60a21de19bceb648546784d80ecab60baffd1850111)
 (Excuse the direct link to the image above but the sharing link on the website did not work)
+Googly eyes added to facial expression sourced from [Follow link](https://commons.wikimedia.org/wiki/File:Big_eyes.png)
 
 Frame image used for hand gestures
 [Follow link](https://www.vecteezy.com/vector-art/1952391-explosion-pop-art-style-icon)

@@ -85,6 +85,7 @@ function hardReloadgame() {
     document.getElementById("middleImg").src = "assets/images/facestart.png";
     document.getElementById("whowontext").innerHTML =
         "Lets play rock paper scissors!";
+    gamePaused = false;
     userScore = 0;
     computerScore = 0;
     userRoundswon = 0;

@@ -36,7 +36,6 @@ h1 {
 /*Hidden buttons that only appear after round has been won*/
 #round-over {
     padding-top: 20px;
-    visibility: visible;
     display: flex;
     gap: 10px;
     align-items: center;
@@ -44,6 +43,7 @@ h1 {
 }
 
 #play-again {
+    font-size: 1.5rem;
     background-color: yellow;
     display: flex;
     align-items: center;
@@ -51,6 +51,7 @@ h1 {
 }
 
 #quit {
+    font-size: 1.5rem;
     background-color: yellow;
     display: flex;
     align-items: center;

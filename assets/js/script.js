@@ -137,6 +137,13 @@ function pcChoiceImg(choice) {
     }
 }
 
+// googley eye function
+function googleEyes() {
+    if (gamePaused) {
+        document.getElementById("middleImg").src = "assets/images/face_googleyes_reset.png";
+    }
+}
+
 // convert the letters to words
 
 function convertToWord(letter) {

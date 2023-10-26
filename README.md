@@ -69,6 +69,7 @@ The target audience simply is anyone wanting to play an easy to understand game 
 
 - As a user, I want to be able to recognise what the game is.
 - As a user, I want to easily understand the concepts of the game.
+- As a user, I want the game to be simple and fun
 - As a user, I want to know my score vs the computer score.
 - As a user, I want to navigate the games controls easily.
 - As a user, I want to easily see who is winning.

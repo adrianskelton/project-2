@@ -16,8 +16,10 @@ const computerRound = document.getElementById("computer-roundswon");
 const userRound = document.getElementById("user-roundswon");
 const playLoseaudio = document.getElementById("pcwin_audio");
 const playWinaudio = document.getElementById("userwin_audio");
-const makeChoiceParagraph = document.getElementById("make-choice");
-
+const makeChoiceParagraph = document.getElementById("whowontext");
+document.addEventListener("DOMContentLoaded", function () {
+    googleEyes();
+});
 
 
 //update lightning bolts
@@ -150,24 +152,28 @@ function googleEyes() {
     quitbutton.addEventListener("mouseover", function () {
         if (gamePaused) {
             middleImg.src = "assets/images/face_googleyes_quit.png";
+            console.log("mouseoverquit");
         }
     });
 
     quitbutton.addEventListener("mouseout", function () {
         if (gamePaused) {
             middleImg.src = "assets/images/face_googleyes_reset.png";
+            console.log("mouseoutquit");
         }
 
     });
     replaybutton.addEventListener("mouseover", function () {
         if (gamePaused) {
             middleImg.src = "assets/images/face_googleyes_play.png";
+            console.log("mouseoverplay");
         }
     });
 
     replaybutton.addEventListener("mouseout", function () {
         if (gamePaused) {
             middleImg.src = "assets/images/face_googleyes_reset.png";
+            console.log("mouseoutplay");
         }
     });
 }

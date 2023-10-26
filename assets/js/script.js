@@ -139,10 +139,40 @@ function pcChoiceImg(choice) {
 
 // googley eye function
 function googleEyes() {
+    const middleImg = document.getElementById("middleImage");
+    const quitbutton = document.getElementById("quit");
+    const replaybutton = document.getElementById("play-again");
+
     if (gamePaused) {
         document.getElementById("middleImg").src = "assets/images/face_googleyes_reset.png";
     }
+
+    quitbutton.addEventListener("mouseover", function () {
+        if (gamePaused) {
+            middleImg.src = "assets/images/face_googleyes_quit.png";
+        }
+    });
+
+    quitbutton.addEventListener("mouseout", function () {
+        if (gamePaused) {
+            middleImg.src = "assets/images/face_googleyes_reset.png";
+        }
+
+    });
+    replaybutton.addEventListener("mouseover", function () {
+        if (gamePaused) {
+            middleImg.src = "assets/images/face_googleyes_play.png";
+        }
+    });
+
+    replaybutton.addEventListener("mouseout", function () {
+        if (gamePaused) {
+            middleImg.src = "assets/images/face_googleyes_reset.png";
+        }
+    });
 }
+
+
 
 // convert the letters to words
 
@@ -303,6 +333,7 @@ function winGame() {
         message = "Congatulations you win the round!";
         //disable rock, paper, scissor button clicks
         gamePaused = true;
+        googleEyes();
         //makeChoiceParagraph.textContent = message;
 
     } else if (computerScore === 5) {
@@ -316,6 +347,7 @@ function winGame() {
         makeChoiceParagraph.textContent = message;
         //disable rock, paper, scissor button clicks
         gamePaused = true;
+        googleEyes();
     } else {
         return;
     }

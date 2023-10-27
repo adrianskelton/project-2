@@ -144,7 +144,7 @@ function pcChoiceImg(choice) {
 
 // googley eye function
 function googleEyes() {
-    const middleImg = document.getElementById("middleImg");
+    //const middleImg = document.getElementById("middleImg");
     const quitbutton = document.getElementById("quit");
     const replaybutton = document.getElementById("play-again");
 
@@ -340,10 +340,11 @@ function winGame() {
         message = "Congatulations you win the round!";
         //disable rock, paper, scissor button clicks
         gamePaused = true;
+        googleEyes();
         document.querySelectorAll("#quit, #play-again").forEach(function (element) {
             element.style.display = "block";
         });
-        googleEyes();
+
         //makeChoiceParagraph.textContent = message;
 
     } else if (computerScore === 5) {
@@ -357,10 +358,10 @@ function winGame() {
         makeChoiceParagraph.textContent = message;
         //disable rock, paper, scissor button clicks
         gamePaused = true;
+        googleEyes();
         document.querySelectorAll("#quit, #play-again").forEach(function (element) {
             element.style.display = "block";
         });
-        googleEyes();
     } else {
         return;
     }

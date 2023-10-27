@@ -352,6 +352,7 @@ When I was stuck I referred to help from w3schools to figure it out [Follow link
 ### Gathering knowledge
 
 Was unsure about commit message to use when taking away features [Follow link](https://stackoverflow.com/questions/48075169/semantic-commit-type-when-remove-something>)
+I used w3 schools website a lot when I got stuck with trying out new functions I got stuck on [Follow link](https://www.w3schools.com/jsref/prop_style_display.asp)
 
 ### Content
 

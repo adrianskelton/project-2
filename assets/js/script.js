@@ -339,6 +339,9 @@ function winGame() {
         message = "Congatulations you win the round!";
         //disable rock, paper, scissor button clicks
         gamePaused = true;
+        document.querySelectorAll("#quit, #play-again").forEach(function (element) {
+            element.style.display = "block";
+        });
         googleEyes();
         //makeChoiceParagraph.textContent = message;
 
@@ -353,6 +356,9 @@ function winGame() {
         makeChoiceParagraph.textContent = message;
         //disable rock, paper, scissor button clicks
         gamePaused = true;
+        document.querySelectorAll("#quit, #play-again").forEach(function (element) {
+            element.style.display = "block";
+        });
         googleEyes();
     } else {
         return;

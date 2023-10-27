@@ -40,23 +40,20 @@ h1 {
     gap: 20px;
     align-items: center;
     justify-content: center;
-    visibility: hidden;
 }
 
 #play-again {
     font-size: 1.5rem;
     background-color: yellow;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    display: none;
 }
 
 #quit {
     font-size: 1.5rem;
     background-color: yellow;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    display: none;
 }
 
 #user-name {

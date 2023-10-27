@@ -21,7 +21,6 @@ document.addEventListener("DOMContentLoaded", function () {
     googleEyes();
 });
 
-
 //update lightning bolts
 let currentLightning = 0;
 let currentLightningPc = 0;
@@ -58,6 +57,7 @@ function nameToCookies() {
 
 // My function to restart the game when clicked resets all images and scores to default
 function reloadGame() {
+    gamePaused = false;
     document.getElementById("");
     document.getElementById("user-score").innerText = 0;
     document.getElementById("computer-score").innerText = 0;
@@ -75,6 +75,10 @@ function reloadGame() {
 
 //my function to reset the rounds and the game
 function hardReloadgame() {
+    gamePaused = false;
+    document.querySelectorAll("#quit, #play-again").forEach(function (element) {
+        element.style.display = "none";
+    });
     document.getElementById("user-score").innerText = 0;
     document.getElementById("computer-score").innerText = 0;
     document.getElementById("lightningplayer").src =
@@ -87,7 +91,6 @@ function hardReloadgame() {
     document.getElementById("middleImg").src = "assets/images/facestart.png";
     document.getElementById("whowontext").innerHTML =
         "Lets play rock paper scissors!";
-    gamePaused = false;
     userScore = 0;
     computerScore = 0;
     userRoundswon = 0;
@@ -141,7 +144,7 @@ function pcChoiceImg(choice) {
 
 // googley eye function
 function googleEyes() {
-    const middleImg = document.getElementById("middleImage");
+    const middleImg = document.getElementById("middleImg");
     const quitbutton = document.getElementById("quit");
     const replaybutton = document.getElementById("play-again");
 
@@ -177,8 +180,6 @@ function googleEyes() {
         }
     });
 }
-
-
 
 // convert the letters to words
 

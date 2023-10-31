@@ -16,7 +16,6 @@ The score and the image of the girls face changes according to the results which
 ## Table of Contents
 
 - [Rock Paper Scissors Javascript game](#rock-paper-scissors-javascript-game)
-- [Table of Contents](#contents)
 - [User stories](#user-stories)
 - [Target Audience](#target-audience)
 - [Visitor Goals](#visitor-goals)
@@ -49,7 +48,6 @@ The score and the image of the girls face changes according to the results which
 - [Jigsaw CSS Validator](#jigsaw-css-validator)
 - [W3C Validator](#w3c-validator)
 - [Lighthouse](#lighthouse)
-- [Index page](#index-page)
 - [Full Testing](#full-testing)
 - [Credits](#credits)
 - [Code Used](#code-used)

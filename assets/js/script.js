@@ -7,7 +7,7 @@ let userTotalscore = 0;
 let gamePaused = false;
 const userScore_span = document.getElementById("user-score");
 const computerScore_span = document.getElementById("computer-score");
-//const scoreBoard_div = document.querySelector(".score-board");
+const scoreBoard_div = document.querySelector(".score-board");
 const result_p = document.querySelector(".result > p");
 const rock_div = document.getElementById("r");
 const paper_div = document.getElementById("p");
@@ -16,7 +16,10 @@ const computerRound = document.getElementById("computer-roundswon");
 const userRound = document.getElementById("user-roundswon");
 const playLoseaudio = document.getElementById("pcwin_audio");
 const playWinaudio = document.getElementById("userwin_audio");
+const makeChoice = document.getElementById("make-choice");
 const makeChoiceParagraph = document.getElementById("whowontext");
+
+// makes sure googleEyes animation is loaded and not affected by lazyload
 document.addEventListener("DOMContentLoaded", function () {
     googleEyes();
 });
@@ -28,22 +31,17 @@ let lightningPlayer = document.getElementById("lightningplayer");
 let lightningPc = document.getElementById("lightningcomputer");
 const lightningScore = document.getElementById("myBtn");
 
-
-
-
 //eventlisteners
 lightningScore.addEventListener("click", updateLightning);
 document.getElementById("restart").addEventListener("click", hardReloadgame);
-document.getElementById("youWinClose").addEventListener("click", hardReloadgame);
-document.getElementById("youLoseClose").addEventListener("click", hardReloadgame);
+document
+    .getElementById("youWinClose")
+    .addEventListener("click", hardReloadgame);
+document
+    .getElementById("youLoseClose")
+    .addEventListener("click", hardReloadgame);
 document.getElementById("play-again").addEventListener("click", hardReloadgame);
 document.getElementById("quit").addEventListener("click", quitMessage);
-
-//temp placeholder for quitMessage fuction
-
-function quitMessage() {
-    console.log("game be over");
-}
 
 //Add player name to cookie function
 function nameToCookies() {
@@ -54,6 +52,32 @@ function nameToCookies() {
     $("#rulesModal").modal("show");
     playerNameDisplay.innerText = playerName;
 }
+
+// My function to hide the game section with a thanks for playing message
+function quitMessage() {
+    const mainGameSection = document.getElementById("game-contain");
+    if (mainGameSection) {
+        while (mainGameSection.firstChild) {
+            mainGameSection.removeChild(mainGameSection.firstChild);
+        }
+
+        //insert this message instead
+        const thanksMessage = document.createElement("div");
+        thanksMessage.innerHTML =
+            "<p class='thanks-message'>Thanks for playing, have a great day further!</center></p>";
+        mainGameSection.appendChild(thanksMessage);
+    }
+}
+
+// My function to disable rock paper scissors buttons when round is won
+
+function disableChoices(disabled) {
+    rock_div.disabled = true;
+    paper_div.disabled = true;
+    scissors_div.disabled = true;
+}
+
+
 
 // My function to restart the game when clicked resets all images and scores to default
 function reloadGame() {
@@ -73,9 +97,10 @@ function reloadGame() {
     computerScore = 0;
 }
 
-//my function to reset the rounds and the game
+//my function to reset the rounds and the game;
 function hardReloadgame() {
     gamePaused = false;
+    disableChoices(false);
     document.querySelectorAll("#quit, #play-again").forEach(function (element) {
         element.style.display = "none";
     });
@@ -109,8 +134,6 @@ function pcWinMesssage() {
     makeChoiceParagraph.textContent = message;
 }
 
-
-
 //my function to change the lightning images based on the players score
 function updateLightning() {
     changeLightning();
@@ -118,7 +141,7 @@ function updateLightning() {
     lightningPlayer.src = `assets/images/lightning${currentLightning}.png`;
     lightningPc.src = `assets/images/lightning${currentLightningPc}.png`;
     winGame();
-    winRounds();
+    //winRounds();
 }
 
 function getComputerChoice() {
@@ -128,8 +151,6 @@ function getComputerChoice() {
     pcChoiceImg(computerChoice);
     return choices[randomNumber];
 }
-
-
 
 // My function that gets the computers choice and updates the image.
 function pcChoiceImg(choice) {
@@ -142,14 +163,19 @@ function pcChoiceImg(choice) {
     }
 }
 
-// googley eye function
+// my googley eye function for animation of girls eyes when game ends
 function googleEyes() {
-    //const middleImg = document.getElementById("middleImg");
+    const middleImg = document.getElementById("middleImg");
     const quitbutton = document.getElementById("quit");
     const replaybutton = document.getElementById("play-again");
 
     if (gamePaused) {
-        document.getElementById("middleImg").src = "assets/images/face_googleyes_reset.png";
+        makeChoice.style.display = "none"; //hide make choice paragraph
+    }
+
+    if (gamePaused) {
+        document.getElementById("middleImg").src =
+            "assets/images/face_googleyes_reset.png";
     }
 
     quitbutton.addEventListener("mouseover", function () {
@@ -164,7 +190,6 @@ function googleEyes() {
             middleImg.src = "assets/images/face_googleyes_reset.png";
             console.log("mouseoutquit");
         }
-
     });
     replaybutton.addEventListener("mouseover", function () {
         if (gamePaused) {
@@ -246,8 +271,6 @@ function game(userChoice) {
     }
 }
 
-
-
 //Event listener for choices of rock paper scissor icons and also added code to change the player image choice
 
 function main() {
@@ -279,7 +302,7 @@ function main() {
     }
 }
 
-//function to change the lightning image to reflect the user score
+// My function to change the lightning image to reflect the user score
 
 function changeLightning() {
     switch (userScore) {
@@ -303,7 +326,7 @@ function changeLightning() {
     }
     return currentLightning;
 }
-//function to change the lightning image to reflect the computer score
+// My function to change the lightning image to reflect the computer score
 
 function changeLightningPc() {
     switch (computerScore) {
@@ -331,33 +354,34 @@ function changeLightningPc() {
 //function that stops the game when someone gets to 5 points and prompts an alert.
 function winGame() {
     if (userScore === 5) {
+        gamePaused = true;
+        playWinaudio.play();
         currentLightning = 5;
         changeLightning();
         playerWinMesssage();
+        disableChoices(true);
         userRoundswon++;
         userRound.innerHTML = userRoundswon;
-        playWinaudio.play();
         message = "Congatulations you win the round!";
         //disable rock, paper, scissor button clicks
-        gamePaused = true;
         googleEyes();
         document.querySelectorAll("#quit, #play-again").forEach(function (element) {
             element.style.display = "block";
         });
 
         //makeChoiceParagraph.textContent = message;
-
     } else if (computerScore === 5) {
+        gamePaused = true;
         currentLightningPc = 5;
         changeLightningPc();
+        playLoseaudio.play();
         pcWinMesssage();
+        disableChoices(true);
         computerRoundswon++;
         computerRound.innerHTML = computerRoundswon;
-        playLoseaudio.play();
         message = "Better luck next time pc wins this round!";
         makeChoiceParagraph.textContent = message;
         //disable rock, paper, scissor button clicks
-        gamePaused = true;
         googleEyes();
         document.querySelectorAll("#quit, #play-again").forEach(function (element) {
             element.style.display = "block";
@@ -367,8 +391,7 @@ function winGame() {
     }
 }
 
-
-//Function that stops the game when someone wins 5 rounds and prompts an alert.
+//Function that stops the game when someone wins 5 rounds and prompts an alert.;
 function winRounds() {
     if (userRoundswon == 5) {
         userRound.innerHTML = userRoundswon;
@@ -410,5 +433,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+
 
 main();

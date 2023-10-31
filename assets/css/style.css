@@ -46,14 +46,12 @@ h1 {
     font-size: 1.5rem;
     background-color: yellow;
     display: flex;
-    display: none;
 }
 
 #quit {
     font-size: 1.5rem;
     background-color: yellow;
     display: flex;
-    display: none;
 }
 
 #user-name {
@@ -146,10 +144,7 @@ h1 {
     justify-self: center;
 }
 
-.forcealign {
-    display: inline-block;
-    overflow: auto;
-}
+
 
 /* Choose weapon section*/
 .chooseweapon {
@@ -190,6 +185,12 @@ h1 {
     display: block;
     border: 0;
     height: 150px;
+}
+
+.thanks-message {
+    font-size: 1.7em;
+    text-align: center;
+    padding-top: 30px;
 }
 
 .scissors {

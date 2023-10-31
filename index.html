@@ -102,13 +102,14 @@
         </div>
       </div>
     </div>
+
     <!--End of Modal popup for if user loses-->
     <!--Modal popup for rules only-->
     <div class="modal" id="rulesOnlyModal" tabindex="-1">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title">Game Rules</h5>
+            <h3 class="modal-title">Welcome to rock, paper, scissors game</h3>
             <div id="rules_content"></div>
             <button
               type="button"
@@ -118,10 +119,11 @@
             ></button>
           </div>
           <div class="modal-body">
+            <h2>Rules</h2>
             <p>
               Rock beats scissors, scissors beat paper, and paper beats rock.
-              First to 5 points/lightning bolts wins the round!
             </p>
+            <p>First to 5 points/lightning bolts wins the round!</p>
           </div>
           <div class="modal-footer">
             <button
@@ -129,7 +131,7 @@
               class="btn btn-secondary"
               data-bs-dismiss="modal"
             >
-              Close
+              Play Game!
             </button>
           </div>
         </div>
@@ -207,66 +209,68 @@
     <div class="score-board">
       <div id="user-label" class="badge"></div>
     </div>
-    <!--Who beats who section-->
-    <aside class="who-wins">
-      <div class="result">
-        <p id="whowontext" class="result-text results">
-          Lets play rock paper scissors!
-        </p>
-      </div>
-    </aside>
-    <!--player score section-->
-    <div class="row" id="score-section">
-      <div class="col">
-        <img
-          id="lightningplayer"
-          src="assets/images/lightning0.png"
-          alt="player lightning score image"
-        />
-        <span id="user-name">PLAYER</span>
-        <div id="user-score">0</div>
-        <div id="user-roundswon">0</div>
-        <img
-          src="assets/images/question.png"
-          id="playerimg"
-          alt="image of players choice"
-        />
-      </div>
-      <!--girl facial expression image-->
-      <div class="col d-flex justify-content-center">
-        <img
-          id="middleImg"
-          src="assets/images/facestart.png"
-          class="col-md-auto"
-          alt="changing image of girl based on win or lose"
-        />
-        <!--computer score section-->
-      </div>
-      <div class="col float-end text-end container">
-        <img
-          id="lightningcomputer"
-          src="assets/images/lightning0.png"
-          alt="computer lightning score image"
-        />
-        <span id="computer-label">Computer</span>
-        <div id="computer-score">0</div>
-        <div class="forcealign">
-          <div id="computer-roundswon">0</div>
+    <!--game contain hidden when the quit button used at end of game-->
+    <section id="game-contain" class="thanks-message">
+      <!--Who beats who section-->
+      <aside class="who-wins">
+        <div class="result">
+          <p id="whowontext" class="result-text results">
+            Lets play rock paper scissors!
+          </p>
         </div>
-        <img
-          id="computerimg"
-          src="assets/images/questionreverse.png"
-          class="flip-horizontal"
-          alt="image of computer choice"
-        />
+      </aside>
+      <!--player score section-->
+      <div class="row" id="main-game">
+        <div class="col">
+          <img
+            id="lightningplayer"
+            src="assets/images/lightning0.png"
+            alt="player lightning score image"
+          />
+          <span id="user-name">PLAYER</span>
+          <div id="user-score">0</div>
+          <!--<div id="user-roundswon">0</div>-->
+          <img
+            src="assets/images/question.png"
+            id="playerimg"
+            alt="image of players choice"
+          />
+        </div>
+        <!--girl facial expression image-->
+        <div class="col d-flex justify-content-center">
+          <img
+            id="middleImg"
+            src="assets/images/facestart.png"
+            class="col-md-auto"
+            alt="changing image of girl based on win or lose"
+          />
+          <!--computer score section-->
+        </div>
+        <div class="col float-end text-end container">
+          <img
+            id="lightningcomputer"
+            src="assets/images/lightning0.png"
+            alt="computer lightning score image"
+          />
+          <span id="computer-label">Computer</span>
+          <div id="computer-score">0</div>
+          <div class="forcealign">
+            <!--<div id="computer-roundswon">0</div>-->
+          </div>
+          <img
+            id="computerimg"
+            src="assets/images/questionreverse.png"
+            class="flip-horizontal"
+            alt="image of computer choice"
+          />
+        </div>
       </div>
-    </div>
-    <!--Hidden section revealed on round won-->
-    <aside id="round-over">
-      <button type="button" id="play-again">Play again</button>
-      <button type="button" id="quit">Quit</button>
-    </aside>
-
+      <!--Hidden section revealed on round won-->
+      <aside id="round-over">
+        <button type="button" id="play-again">Play again</button>
+        <button type="button" id="quit">Quit</button>
+      </aside>
+    </section>
     <!--Make your choice bottom section-->
     <div class="container text-center">
       <p class="col title-makechoice" id="make-choice">Make your choice!</p>

@@ -5,6 +5,7 @@ let userRoundswon = 0;
 let computerRoundswon = 0;
 let userTotalscore = 0;
 let gamePaused = false;
+let quitMessageRun = false;
 const userScore_span = document.getElementById("user-score");
 const computerScore_span = document.getElementById("computer-score");
 const scoreBoard_div = document.querySelector(".score-board");
@@ -18,6 +19,17 @@ const playLoseaudio = document.getElementById("pcwin_audio");
 const playWinaudio = document.getElementById("userwin_audio");
 const makeChoice = document.getElementById("make-choice");
 const makeChoiceParagraph = document.getElementById("whowontext");
+const roundOverSection = document.getElementById("round-over");
+
+
+window.onload = loadedAtStart;
+
+function loadedAtStart() {
+    document.querySelectorAll("#quit, #play-again").forEach(function (element) {
+            element.style.display = "none";
+        });
+}
+
 
 // makes sure googleEyes animation is loaded and not affected by lazyload
 document.addEventListener("DOMContentLoaded", function () {
@@ -43,7 +55,7 @@ document
 document.getElementById("play-again").addEventListener("click", hardReloadgame);
 document.getElementById("quit").addEventListener("click", quitMessage);
 
-//Add player name to cookie function
+// Add player name to cookie function
 function nameToCookies() {
     let playerName = document.getElementById("username").value;
     sessionStorage.setItem("name", playerName);
@@ -55,13 +67,17 @@ function nameToCookies() {
 
 // My function to hide the game section with a thanks for playing message
 function quitMessage() {
+    quitMessageRun = true;
     const mainGameSection = document.getElementById("game-contain");
     if (mainGameSection) {
         while (mainGameSection.firstChild) {
             mainGameSection.removeChild(mainGameSection.firstChild);
         }
 
-        //insert this message instead
+        // Hide make choice element
+        makeChoice.style.display = "none";
+
+        // Insert this message instead
         const thanksMessage = document.createElement("div");
         thanksMessage.innerHTML =
             "<p class='thanks-message'>Thanks for playing, have a great day further!</center></p>";
@@ -76,8 +92,6 @@ function disableChoices(disabled) {
     paper_div.disabled = true;
     scissors_div.disabled = true;
 }
-
-
 
 // My function to restart the game when clicked resets all images and scores to default
 function reloadGame() {
@@ -99,13 +113,17 @@ function reloadGame() {
 
 //my function to reset the rounds and the game;
 function hardReloadgame() {
+    if (quitMessageRun) {
+        location.reload();
+    } else {
+    (quitMessage)
     gamePaused = false;
     disableChoices(false);
     document.querySelectorAll("#quit, #play-again").forEach(function (element) {
         element.style.display = "none";
     });
-    document.getElementById("user-score").innerText = 0;
-    document.getElementById("computer-score").innerText = 0;
+    //document.getElementById("user-score").innerText = 0;
+    //document.getElementById("computer-score").innerText = 0;
     document.getElementById("lightningplayer").src =
         "assets/images/lightning0.png";
     document.getElementById("lightningcomputer").src =
@@ -120,6 +138,7 @@ function hardReloadgame() {
     computerScore = 0;
     userRoundswon = 0;
     computerRoundswon = 0;
+}
 }
 
 //my function to change text if user wins round
@@ -354,6 +373,9 @@ function changeLightningPc() {
 //function that stops the game when someone gets to 5 points and prompts an alert.
 function winGame() {
     if (userScore === 5) {
+        document.querySelectorAll("#quit, #play-again").forEach(function (element) {
+            element.style.display = "block";
+        });
         gamePaused = true;
         playWinaudio.play();
         currentLightning = 5;
@@ -365,12 +387,13 @@ function winGame() {
         message = "Congatulations you win the round!";
         //disable rock, paper, scissor button clicks
         googleEyes();
-        document.querySelectorAll("#quit, #play-again").forEach(function (element) {
-            element.style.display = "block";
-        });
+        
 
         //makeChoiceParagraph.textContent = message;
     } else if (computerScore === 5) {
+        document.querySelectorAll("#quit, #play-again").forEach(function (element) {
+            element.style.display = "block";
+        });
         gamePaused = true;
         currentLightningPc = 5;
         changeLightningPc();
@@ -383,9 +406,6 @@ function winGame() {
         makeChoiceParagraph.textContent = message;
         //disable rock, paper, scissor button clicks
         googleEyes();
-        document.querySelectorAll("#quit, #play-again").forEach(function (element) {
-            element.style.display = "block";
-        });
     } else {
         return;
     }
@@ -434,6 +454,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-
+    $(document).ready(function(){
+        $("#rulesOnlyModal").modal('show');
+    });
 
 main();

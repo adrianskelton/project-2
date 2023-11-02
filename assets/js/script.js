@@ -1,8 +1,6 @@
 //global variables
 let userScore = 0;
 let computerScore = 0;
-let userRoundswon = 0;
-let computerRoundswon = 0;
 let userTotalscore = 0;
 let gamePaused = false;
 let quitMessageRun = false;
@@ -13,8 +11,6 @@ const result_p = document.querySelector(".result > p");
 const rock_div = document.getElementById("r");
 const paper_div = document.getElementById("p");
 const scissors_div = document.getElementById("s");
-const computerRound = document.getElementById("computer-roundswon");
-const userRound = document.getElementById("user-roundswon");
 const playLoseaudio = document.getElementById("pcwin_audio");
 const playWinaudio = document.getElementById("userwin_audio");
 const makeChoice = document.getElementById("make-choice");
@@ -80,7 +76,7 @@ function quitMessage() {
         // Insert this message instead
         const thanksMessage = document.createElement("div");
         thanksMessage.innerHTML =
-            "<p class='thanks-message'>Thanks for playing, have a great day further!</center></p>";
+            "<p class='thanks-message'>Thanks for playing! Click Restart Game if you want to play again.</center></p>";
         mainGameSection.appendChild(thanksMessage);
     }
 }
@@ -116,14 +112,12 @@ function hardReloadgame() {
     if (quitMessageRun) {
         location.reload();
     } else {
-    (quitMessage)
     gamePaused = false;
     disableChoices(false);
     document.querySelectorAll("#quit, #play-again").forEach(function (element) {
         element.style.display = "none";
     });
-    //document.getElementById("user-score").innerText = 0;
-    //document.getElementById("computer-score").innerText = 0;
+
     document.getElementById("lightningplayer").src =
         "assets/images/lightning0.png";
     document.getElementById("lightningcomputer").src =
@@ -136,8 +130,6 @@ function hardReloadgame() {
         "Lets play rock paper scissors!";
     userScore = 0;
     computerScore = 0;
-    userRoundswon = 0;
-    computerRoundswon = 0;
 }
 }
 
@@ -160,7 +152,6 @@ function updateLightning() {
     lightningPlayer.src = `assets/images/lightning${currentLightning}.png`;
     lightningPc.src = `assets/images/lightning${currentLightningPc}.png`;
     winGame();
-    //winRounds();
 }
 
 function getComputerChoice() {
@@ -173,12 +164,14 @@ function getComputerChoice() {
 
 // My function that gets the computers choice and updates the image.
 function pcChoiceImg(choice) {
+    if (!quitMessageRun) {
     if (choice === "r") {
         document.getElementById("computerimg").src = "assets/images/rock.png";
     } else if (choice === "p") {
         document.getElementById("computerimg").src = "assets/images/paper.png";
     } else {
         document.getElementById("computerimg").src = "assets/images/scissors.png";
+    }
     }
 }
 
@@ -200,27 +193,23 @@ function googleEyes() {
     quitbutton.addEventListener("mouseover", function () {
         if (gamePaused) {
             middleImg.src = "assets/images/face_googleyes_quit.png";
-            console.log("mouseoverquit");
         }
     });
 
     quitbutton.addEventListener("mouseout", function () {
         if (gamePaused) {
             middleImg.src = "assets/images/face_googleyes_reset.png";
-            console.log("mouseoutquit");
         }
     });
     replaybutton.addEventListener("mouseover", function () {
         if (gamePaused) {
             middleImg.src = "assets/images/face_googleyes_play.png";
-            console.log("mouseoverplay");
         }
     });
 
     replaybutton.addEventListener("mouseout", function () {
         if (gamePaused) {
             middleImg.src = "assets/images/face_googleyes_reset.png";
-            console.log("mouseoutplay");
         }
     });
 }
@@ -382,13 +371,8 @@ function winGame() {
         changeLightning();
         playerWinMesssage();
         disableChoices(true);
-        userRoundswon++;
-        userRound.innerHTML = userRoundswon;
-        message = "Congatulations you win the round!";
-        //disable rock, paper, scissor button clicks
         googleEyes();
-        
-
+        message = "Congatulations you win the round!";
         //makeChoiceParagraph.textContent = message;
     } else if (computerScore === 5) {
         document.querySelectorAll("#quit, #play-again").forEach(function (element) {
@@ -400,27 +384,11 @@ function winGame() {
         playLoseaudio.play();
         pcWinMesssage();
         disableChoices(true);
-        computerRoundswon++;
-        computerRound.innerHTML = computerRoundswon;
+        googleEyes();
         message = "Better luck next time pc wins this round!";
         makeChoiceParagraph.textContent = message;
         //disable rock, paper, scissor button clicks
-        googleEyes();
-    } else {
-        return;
-    }
-}
-
-//Function that stops the game when someone wins 5 rounds and prompts an alert.;
-function winRounds() {
-    if (userRoundswon == 5) {
-        userRound.innerHTML = userRoundswon;
-        playWinaudio.play();
-        $("#youWinModal").modal("show");
-    } else if (computerRoundswon == 5) {
-        computerRound.innerHTML = computerRoundswon;
-        playLoseaudio.play();
-        $("#youLoseModal").modal("show");
+       
     } else {
         return;
     }

@@ -336,13 +336,18 @@ Additional testing was taken by friends on a variety of devices and screen sizes
 
 ### Bugs fixed
 
-The lightning bolts do not reach the 5th bolt for some reason, they only show 4 lightning bolts when it should be 5 to reflect 5 points.
+Problem: The lightning bolts do not reach the 5th bolt for some reason, they only show 4 lightning bolts when it should be 5 to reflect 5 points.
 Solution: called the changeLightning() function from the winGame() function forcing the bolts to update.
-When I ran my quitmessage function this caused the hardreload function to stop working properly as there was now html ID's that were hidden and trying to be targeted by the hardreload function.
+
+Problem: When I ran my quitmessage function this caused the hardreload function to stop working properly as there was now html ID's that were hidden and trying to be targeted by the hardreload function.
 Solution: I had to make an if statement in the hardreload function to check if the quitgame function had been run. If it had been it would just use the "location.reload();" option instead of running the code affected by the hidden html.
+Problem: I also had errors coming up as shown below when the quitmessage was run.
 
 
-## Credits
+
+
+
+## Credits 
 
 ### Code Used
 

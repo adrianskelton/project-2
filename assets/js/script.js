@@ -204,8 +204,6 @@ function convertToWord(letter) {
 function win(userChoice, computerChoice) {
     userScore++;
     userTotalscore++;
-    userScore_span.innerHTML = userScore;
-    computerScore_span.innerHTML = computerScore;
     //girls face changes to a sad face when computer wins
     document.getElementById("middleImg").src = "assets/images/facewin.png";
     result_p.innerHTML = `${convertToWord(userChoice)} beats ${convertToWord(
@@ -216,8 +214,6 @@ function win(userChoice, computerChoice) {
 //function if computer wins
 function lose(userChoice, computerChoice) {
     computerScore++;
-    userScore_span.innerHTML = userScore;
-    computerScore_span.innerHTML = computerScore;
     //girls face changes to a sad face when computer wins
     document.getElementById("middleImg").src = "assets/images/facehand.png";
     result_p.innerHTML = `${convertToWord(userChoice)} loses to ${convertToWord(

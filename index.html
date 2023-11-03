@@ -36,74 +36,6 @@
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
-    <!--Modal popup for round winner and scoreboard-->
-    <div class="modal" id="youWinModal" tabindex="-1">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">You won 5 Rounds!!</h5>
-            <div id="youWin_content"></div>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <p></p>
-            <p>Well done! You were the first to win 5 Rounds!</p>
-            Play again?
-          </div>
-          <div class="modal-footer">
-            <button
-              id="youWinClose"
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              Play Again
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!--End of Modal popup for round winner and scoreboard-->
-    <!--Modal popup for round winner and scoreboard-->
-    <div class="modal" id="youLoseModal" tabindex="-1">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">You lost, better luck next time!!</h5>
-            <div id="highscore_content"></div>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <p></p>
-            <p>
-              You lost! Would you like to try again? click the button below!
-            </p>
-          </div>
-          <div class="modal-footer">
-            <button
-              id="youLoseClose"
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              Click to play again
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!--End of Modal popup for if user loses-->
     <!--Modal popup for rules only-->
     <div class="modal" id="rulesOnlyModal" tabindex="-1">
       <div class="modal-dialog">
@@ -210,7 +142,7 @@
       <div id="user-label" class="badge"></div>
     </div>
     <!--game contain hidden when the quit button used at end of game-->
-    <section id="game-contain" class="thanks-message">
+    <div id="game-contain" class="thanks-message">
       <!--Who beats who section-->
       <aside class="who-wins">
         <div class="result">
@@ -254,8 +186,7 @@
           />
           <span id="computer-label">Computer</span>
           <div id="computer-score">0</div>
-          <div class="forcealign">
-          </div>
+          <div class="forcealign"></div>
           <img
             id="computerimg"
             src="assets/images/questionreverse.png"
@@ -269,7 +200,7 @@
         <button type="button" id="play-again">Play again</button>
         <button type="button" id="quit">Quit</button>
       </aside>
-    </section>
+    </div>
     <!--Make your choice bottom section-->
     <div class="container text-center">
       <p class="col title-makechoice" id="make-choice">Make your choice!</p>

@@ -1,29 +1,32 @@
 //global variables
 let userScore = 0;
 let computerScore = 0;
+let userRoundswon = 0;
+let computerRoundswon = 0;
 let userTotalscore = 0;
 let gamePaused = false;
 let quitMessageRun = false;
 const userScore_span = document.getElementById("user-score");
 const computerScore_span = document.getElementById("computer-score");
-const scoreBoard_div = document.querySelector(".score-board");
 const result_p = document.querySelector(".result > p");
 const rock_div = document.getElementById("r");
 const paper_div = document.getElementById("p");
 const scissors_div = document.getElementById("s");
+const computerRound = document.getElementById("computer-roundswon");
+const userRound = document.getElementById("user-roundswon");
 const playLoseaudio = document.getElementById("pcwin_audio");
 const playWinaudio = document.getElementById("userwin_audio");
 const makeChoice = document.getElementById("make-choice");
 const makeChoiceParagraph = document.getElementById("whowontext");
-const roundOverSection = document.getElementById("round-over");
+
 
 
 window.onload = loadedAtStart;
 
 function loadedAtStart() {
     document.querySelectorAll("#quit, #play-again").forEach(function (element) {
-            element.style.display = "none";
-        });
+        element.style.display = "none";
+    });
 }
 
 
@@ -42,24 +45,10 @@ const lightningScore = document.getElementById("myBtn");
 //eventlisteners
 lightningScore.addEventListener("click", updateLightning);
 document.getElementById("restart").addEventListener("click", hardReloadgame);
-document
-    .getElementById("youWinClose")
-    .addEventListener("click", hardReloadgame);
-document
-    .getElementById("youLoseClose")
-    .addEventListener("click", hardReloadgame);
 document.getElementById("play-again").addEventListener("click", hardReloadgame);
 document.getElementById("quit").addEventListener("click", quitMessage);
 
-// Add player name to cookie function
-function nameToCookies() {
-    let playerName = document.getElementById("username").value;
-    sessionStorage.setItem("name", playerName);
-    playerNameDisplay = document.getElementById("theplayersname");
-    playerNameDisplay = document.getElementById("user-name");
-    $("#rulesModal").modal("show");
-    playerNameDisplay.innerText = playerName;
-}
+
 
 // My function to hide the game section with a thanks for playing message
 function quitMessage() {
@@ -76,7 +65,7 @@ function quitMessage() {
         // Insert this message instead
         const thanksMessage = document.createElement("div");
         thanksMessage.innerHTML =
-            "<p class='thanks-message'>Thanks for playing! Click Restart Game if you want to play again.</center></p>";
+            "<p class='thanks-message'>Thanks for playing! Click restart game if you want to play again.</center></p>";
         mainGameSection.appendChild(thanksMessage);
     }
 }
@@ -89,48 +78,34 @@ function disableChoices(disabled) {
     scissors_div.disabled = true;
 }
 
-// My function to restart the game when clicked resets all images and scores to default
-function reloadGame() {
-    gamePaused = false;
-    document.getElementById("");
-    document.getElementById("user-score").innerText = 0;
-    document.getElementById("computer-score").innerText = 0;
-    document.getElementById("lightningplayer").src =
-        "assets/images/lightning0.png";
-    document.getElementById("lightningcomputer").src =
-        "assets/images/lightning0.png";
-    document.getElementById("playerimg").src = "assets/images/question.png";
-    document.getElementById("computerimg").src =
-        "assets/images/questionreverse.png";
-    document.getElementById("middleImg").src = "assets/images/facestart.png";
-    userScore = 0;
-    computerScore = 0;
-}
+
 
 //my function to reset the rounds and the game;
 function hardReloadgame() {
     if (quitMessageRun) {
         location.reload();
     } else {
-    gamePaused = false;
-    disableChoices(false);
-    document.querySelectorAll("#quit, #play-again").forEach(function (element) {
-        element.style.display = "none";
-    });
+        gamePaused = false;
+        disableChoices(false);
+        document.querySelectorAll("#quit, #play-again").forEach(function (element) {
+            element.style.display = "none";
+        });
 
-    document.getElementById("lightningplayer").src =
-        "assets/images/lightning0.png";
-    document.getElementById("lightningcomputer").src =
-        "assets/images/lightning0.png";
-    document.getElementById("playerimg").src = "assets/images/question.png";
-    document.getElementById("computerimg").src =
-        "assets/images/questionreverse.png";
-    document.getElementById("middleImg").src = "assets/images/facestart.png";
-    document.getElementById("whowontext").innerHTML =
-        "Lets play rock paper scissors!";
-    userScore = 0;
-    computerScore = 0;
-}
+        document.getElementById("lightningplayer").src =
+            "assets/images/lightning0.png";
+        document.getElementById("lightningcomputer").src =
+            "assets/images/lightning0.png";
+        document.getElementById("playerimg").src = "assets/images/question.png";
+        document.getElementById("computerimg").src =
+            "assets/images/questionreverse.png";
+        document.getElementById("middleImg").src = "assets/images/facestart.png";
+        document.getElementById("whowontext").innerHTML =
+            "Lets play rock paper scissors!";
+        userScore = 0;
+        computerScore = 0;
+        userRoundswon = 0;
+        computerRoundswon = 0;
+    }
 }
 
 //my function to change text if user wins round
@@ -152,6 +127,7 @@ function updateLightning() {
     lightningPlayer.src = `assets/images/lightning${currentLightning}.png`;
     lightningPc.src = `assets/images/lightning${currentLightningPc}.png`;
     winGame();
+    //winRounds();
 }
 
 function getComputerChoice() {
@@ -164,14 +140,12 @@ function getComputerChoice() {
 
 // My function that gets the computers choice and updates the image.
 function pcChoiceImg(choice) {
-    if (!quitMessageRun) {
     if (choice === "r") {
         document.getElementById("computerimg").src = "assets/images/rock.png";
     } else if (choice === "p") {
         document.getElementById("computerimg").src = "assets/images/paper.png";
     } else {
         document.getElementById("computerimg").src = "assets/images/scissors.png";
-    }
     }
 }
 
@@ -214,12 +188,16 @@ function googleEyes() {
     });
 }
 
-// convert the letters to words
+// modified word to letter code from tutorial
 
 function convertToWord(letter) {
-    if (letter === "r") return "Rock";
-    if (letter === "p") return "Paper";
-    return "Scissors";
+    const wordDictionary = {
+        'r': 'Rock',
+        'p': 'Paper',
+        's': 'Scissors'
+    };
+
+    return wordDictionary[letter] || 'Invalid Choice';
 }
 
 //function if user wins
@@ -371,8 +349,12 @@ function winGame() {
         changeLightning();
         playerWinMesssage();
         disableChoices(true);
+        userRoundswon++;
+        userRound.innerHTML = userRoundswon;
+        //disable rock, paper, scissor button clicks
         googleEyes();
-        message = "Congatulations you win the round!";
+
+
         //makeChoiceParagraph.textContent = message;
     } else if (computerScore === 5) {
         document.querySelectorAll("#quit, #play-again").forEach(function (element) {
@@ -384,11 +366,10 @@ function winGame() {
         playLoseaudio.play();
         pcWinMesssage();
         disableChoices(true);
-        googleEyes();
-        message = "Better luck next time pc wins this round!";
-        makeChoiceParagraph.textContent = message;
+        computerRoundswon++;
+        computerRound.innerHTML = computerRoundswon;
         //disable rock, paper, scissor button clicks
-       
+        googleEyes();
     } else {
         return;
     }
@@ -422,8 +403,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-    $(document).ready(function(){
-        $("#rulesOnlyModal").modal('show');
-    });
+$(document).ready(function () {
+    $("#rulesOnlyModal").modal('show');
+});
 
 main();

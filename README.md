@@ -75,7 +75,7 @@ The target audience simply is anyone wanting to play an easy to understand game 
 - As a user, I want to be able to recognise what the game is.
 - As a user, I want to easily understand the concepts of the game.
 - As a user, I want the game to be simple and fun
-- As a user, I want to know my score vs the computer score.
+- As a user, I want to know my score vs the computer score easily.
 - As a user, I want to navigate the games controls easily.
 - As a user, I want to easily see who is winning.
 
@@ -91,7 +91,7 @@ The colour scheme is very basic with two major colours blue and yellow for the g
 
 I went for a google font Bangers because it looked clean and modern and was easy to setup. Below is a screenshot of the font.
 
-![alt text][assets/images/readme/typography.png(Follow link)br>
+![alt text](assets/images/readme/typography.png)
 
 ### Imagery
 
@@ -105,7 +105,7 @@ Due to the nature of the project it is not image intensive however I sourced ima
 
 ### Desktop view - the first screen shown to the user when the page loads (shown above). The footer was later taken off in the actual to make the game look less busy
 
-![alt text](assets/images/wireddesktop.png)br>
+![alt text](assets/images/wireddesktop.png)
 
 ### Desktop view - game screen (shown above)
 
@@ -113,12 +113,12 @@ Due to the nature of the project it is not image intensive however I sourced ima
 
 ### Mobile view
 
-![alt text][assets/images/readme/wiredmobile.png](Follow link)br>
+![alt text](assets/images/readme/wiredmobile.png)br>
 Start screen (above left) In game screen (above right)
 
 ### Tablet view
 
-![alt text][assets/images/wiredtablet.png](Follow link)br>
+![alt text](assets/images/wiredtablet.png)
 
 I used Balsamiq to design my wireframes.
 
@@ -126,7 +126,7 @@ I used Balsamiq to design my wireframes.
 
 ### Landing page
 
-![alt text][assets/images/readme/firstscreen.png](Follow link)br>
+![alt text](assets/images/readme/firstscreen.png)
 
 The game is only one page with a popup modal automatically set to appear when the page is loaded.
 
@@ -135,7 +135,7 @@ The game is only one page with a popup modal automatically set to appear when th
 This is a bootstrap modal that pops up automatically on the loading of the homepage.
 The user can read the rules of the game in the modal and then enter their name to start.
 
-![alt text][assets/images/readme/headerscreen.png](Follow link)br>
+![alt text](assets/images/readme/headerscreen.png)
 
 ### Top menu bar
 
@@ -157,16 +157,16 @@ Namely:
 
 ### Rules button
 
-When the user clicks on the rules button a popup similar to the one at the start pops up with the game rules. The only difference is there is no form requiring a username.
+When the user clicks on the rules button the rules popup modal pops up.
 
-"Sound on/off" toggle button.
+### "Sound on/off" toggle button.
 
 This button toggles between a "sound on" and a "sound off" state, muting the two mp3 files listed at the bottom of the html.
 The text then reflects what the user should push on or off for their desired choice.
 
 ---
 
-### User game score, round score and lightning bolt
+### User game score and lightning bolt
 
 ![alt text](assets/images/readme/screenshot_user_score.png).\
 Start View when the user has not yet chosen anything and the score is zero (shown above)
@@ -177,7 +177,7 @@ In game-play view with lightning bolts that reflect the score. (shown above)
 ![alt text](assets/images/readme/screenshot_user_score3.png).\
 Games one view with lightning bolts that reflect the score. (shown above)
 
-### Computer game score, round score and lightning bolt
+### Computer game score and lightning bolt
 
 ![alt text](assets/images/readme/screenshot_computer_score.png).\
 The exact same block is shown on the opposite side of the screen, the only difference is the word computer instead of the user name.
@@ -205,11 +205,11 @@ Draw image (shown above)
 
 ![alt text](assets/images/readme/screenshot_user_choice.png)
 
-### Two alert boxes for a win or a lose
+### Screenshots of a round win and loss
 
-![alt text](assets/images/readme/screenshot_alert_pcwin.png)
+![alt text](assets/images/readme/screenshot_pcwin.png)
 
-![alt text](assets/images/readme/screenshot_alert_userwin.png)
+![alt text](assets/images/readme/screenshot_userwin.png)
 
 ---
 
@@ -240,7 +240,7 @@ Added aria labels where needed.
 **Codebeautify Website** - Used to clean up css and html code\
 **Favicon Generator Website** - Converted PNG file that I made from the logo using photoshop and converted it into a favicon on website favicon.io\
 **coolors.co** - Website used for the colour pallete.\
-\*\*Lighthouse in chrome - Used to see the performance of the site.\
+**Lighthouse in chrome** - Used to see the performance of the site.
 
 ### Languages Used
 
@@ -250,7 +250,7 @@ HTML, CSS, Javascript.
 
 **Bootstrap** - for the responsiveness of the website despite having to add a media query for the 1000px breakpoint so that the site looked better on mobile and tablets. I also used bootstrap code for the navbar.\
 **Github** - I used GitHub for the storage of my site and Gitpages to pubish my website.\
-**Photoshop** - Used photoshop for some of my image resizing and editing of the images.\
+**Photoshop** - Used photoshop for some of my image resizing and editing of the images.
 
 ---
 
@@ -327,10 +327,13 @@ Additional testing was taken by friends on a variety of devices and screen sizes
 |                                           |
 |                                           |                                                                                                                                                                                                                  |                                                                   |                                    |           |
 | Game title                                | This remains static and unclickable if a user wants the game to reset that can be done using the rest button instead.                                                                                            | Clicked Logo and title                                            | Nothing happens.                   | Pass      |
-| Start-up Popup modal                      | Pops up on page load and when the user enters the name and clicks on the button the name is stored and reflected in the game on the scoreboard.                                                                  | Entered name and clicked button                                   | Name now shows on the scoreboard.  | Pass      |
+| Start-up Popup modal                      | Pops up on page load and shows the rules of the game. Allows the user to press start game.                                                                  | Clicked play game                                   | Popup closes and game can start  | Pass      |
 | Restart game                              | When clicked during play everything will be reset to the start page, score, images etc.                                                                                                                          | Clicked on restart button                                         | Everything reset to default state. | Pass      |
 | Sound toggle button                       | When clicked the sound will turn off for the game and the button text will turn to 'Sound On' When clicked again the sound will then return and the button text will revert to 'Sound Off'.                      | Clicked button                                                    | Performed as expected              | Pass      |
-| Yellow images of rock, paper and scissors | When clicked they will result in the scores changing, the girls expression, the text of who wins or loses, the blue images of the choices will also change as well as the lightning bolts until the game is won. | Tested each image individually until a win or loss was the result | Preformed as expected              | Pass      |
+| Yellow images of rock, paper and scissors | When clicked they will result in the scores changing, the girls expression, the text of who wins or loses, the blue images of the choices will also change as well as the lightning bolts until the game is won. | Tested each image individually until a win or loss was the result | Preformed as expected              | Pass      || Yellow images of rock, paper and scissors | When clicked they will result in the scores changing, the girls expression, the text of who wins or loses, the blue images of the choices will also change as well as the lightning bolts until the game is won. | Tested each image individually until a win or loss was the result | Preformed as expected              | Pass      |
+| Play again button | This appears after a round is won or lost, when clicked restarts the game | Played game to win and lose and button appeared. Clicked on it in both instances to check for restart of game | Preformed as expected   | Pass      |
+| Quit button | This appears after a round is won or lost, when clicked quits game, hides a section of the game and displays a thank you for playing message | Played game to win and lose and button appeared. Clicked on it to check for thank you message being displayed | Preformed as expected              | Pass      |
+| Googley eyes | This appears after a round is won or lost, the image of the girls eyes follow the mouse when it hovers over the play again and quit button. | Played game to win and lose and then hovered over the play again and quit buttons | Image performed as expected              | Pass      |
 
 ---
 
@@ -339,26 +342,24 @@ Additional testing was taken by friends on a variety of devices and screen sizes
 ### Bugs fixed
 
 **Problem:** The lightning bolts do not reach the 5th bolt for some reason, they only show 4 lightning bolts when it should be 5 to reflect 5 points.\
-Solution: called the changeLightning() function from the winGame() function forcing the bolts to update.
+**Solution:** Called the changeLightning() function from the winGame() function forcing the bolts to update.
 
 **Problem:** When I ran my quitmessage function this caused the hardreload function to stop working properly as there was now html ID's that were hidden and trying to be targeted by the hardreload function.\
 **Solution:** I had to make an if statement in the hardreload function to check if the quitgame function had been run. If it had been it would just use the "location.reload();" option instead of running the code affected by the hidden html.
-
-
 
 ## Credits
 
 ### Code Used
 
 - Tutorial I based my game on... [Follow link](https://www.youtube.com/watch?v=jaVNP3nIAv0)\
-You can view the origonal code for the game and see where I modified it accordingly and added my code to enhance the game visually and functionally. [Follow link](https://github.com/rldiao/web_practice/blob/master/index.js)\
-- Tip to over-ride bootstrap modal css [Follow link](https://stackoverflow.com/questions/20854035/is-it-possible-to-customize-style-of-bootstrap-modal)\
-- Help aligning entire html to centre [Follow link](https://stackoverflow.com/questions/6464592/how-to-align-entire-html-body-to-the-cente)\
+You can view the origonal code for the game and see where I modified it accordingly and added my code to enhance the game visually and functionally. [Follow link](https://github.com/rldiao/web_practice/blob/master/index.js)
+- Tip to over-ride bootstrap modal css [Follow link](https://stackoverflow.com/questions/20854035/is-it-possible-to-customize-style-of-bootstrap-modal)
+- Help aligning entire html to centre [Follow link](https://stackoverflow.com/questions/6464592/how-to-align-entire-html-body-to-the-cente)
 - When I was stuck I referred to help from w3schools to figure it out [Follow link](https://www.w3schools.com/)
 
 ### Gathering knowledge
 
-Was unsure about commit message to use when taking away features [Follow link](https://stackoverflow.com/questions/48075169/semantic-commit-type-when-remove-something>)
+Was unsure about commit message to use when taking away features [Follow link](https://stackoverflow.com/questions/48075169/semantic-commit-type-when-remove-something>)\
 I used w3 schools website a lot when I got stuck with trying out new functions I got stuck on [Follow link](https://www.w3schools.com/jsref/prop_style_display.asp)
 
 ### Content
@@ -379,4 +380,4 @@ Frame image used for hand gestures
 
 ### Acknowledgments
 
-I would like to thank my mentors Narender and Spencer as well as all the users on slack for all their opinions and code reviews. 
+I would like to thank my mentors Narender and Spencer as well as all the users on slack for all their opinions and code reviews.

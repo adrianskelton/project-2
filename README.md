@@ -153,39 +153,31 @@ Namely:
 - The computer choice and user choice image resets to a question mark image.
 - The image of the girls face resets to the start image.
 - The text above the girl face image resets to the text 'Lets play rock paper scissors!'
-- The user name if entered does not change, only refreshing the page does that, thereby popping up the modul and prompting the user to enter a name again.
+
+**Functionality change of restart game button**
+
+- When the game is over I had to make an if statement checking if the player had pushed the quit game button. This was because a lot of elements that were present before to be reset are now hidden and will bring up errors, so if they player clicked on the quit button the game will reload using the location.reload(); code and the page will refresh. Otherwise it will run the script and set all the variables to their default start game state if they player has not clicked on the quit game button.
 
 ### Rules button
 
 When the user clicks on the rules button the rules popup modal pops up.
 
-### "Sound on/off" toggle button.
+### "Sound on/off" toggle button
 
 This button toggles between a "sound on" and a "sound off" state, muting the two mp3 files listed at the bottom of the html.
 The text then reflects what the user should push on or off for their desired choice.
 
 ---
 
-### User game score and lightning bolt
+### User and computer score and lightning bolt
 
-![alt text](assets/images/readme/screenshot_user_score.png).\
-Start View when the user has not yet chosen anything and the score is zero (shown above)
-
-![alt text](assets/images/readme/screenshot_user_score2.png).\
-In game-play view with lightning bolts that reflect the score. (shown above)
-
-![alt text](assets/images/readme/screenshot_user_score3.png).\
-Games one view with lightning bolts that reflect the score. (shown above)
-
-### Computer game score and lightning bolt
-
-![alt text](assets/images/readme/screenshot_computer_score.png).\
-The exact same block is shown on the opposite side of the screen, the only difference is the word computer instead of the user name.
-No more screenshots added of this image changing as it is the same as the users functionality and would be redundant.
+![alt text](assets/images/readme/screenshot_score.png)\
+User score with 4 points and computer with none. (shown above)
 
 ### Changing facial expression image with appropriate text of who wins and how
 
-There are 4 different states of the images, static when the game starts, a win, a lose and a draw.
+There are different states of the images, static when the game starts, a win, a lose and a draw. Then there is the image with glasses when the round is won or lost that has an animation effect that changes the image depending on if the mouse is hovering over the 'play again' or 'quit' button.
+
 Each of these are reflected in the text above the image and the girls expression to match.
 These images are shown below.
 
@@ -200,6 +192,8 @@ Player Loses image (shown above)
 
 ![alt text](assets/images/readme/screenshot_girl_expression2.png).\
 Draw image (shown above)
+
+\*\*
 
 ### The 3 option images for the player to select: rock, paper or scissors
 
@@ -258,7 +252,7 @@ HTML, CSS, Javascript.
 
 ### Deployment
 
-I deployed everything my website onto gitpages.
+I deployed the website onto gitpages.
 
 ### Local Development
 
@@ -322,18 +316,20 @@ Each device tested the site using the following browsers:
 
 Additional testing was taken by friends on a variety of devices and screen sizes.
 
-| Feature                                   | Expected Outcome                                                                                                                                                                                                 | Testing Performed                                                 | Result                             | Pass/Fail |
-| ----------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- | ---------------------------------- | --------- |
+| Feature                                   | Expected Outcome                                                                                                                                                                                                 | Testing Performed                                                                                                          | Result                                             | Pass/Fail |
+| ----------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------- | --------- | --- | ----------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- | --------------------- | ---- |
 |                                           |
-|                                           |                                                                                                                                                                                                                  |                                                                   |                                    |           |
-| Game title                                | This remains static and unclickable if a user wants the game to reset that can be done using the rest button instead.                                                                                            | Clicked Logo and title                                            | Nothing happens.                   | Pass      |
-| Start-up Popup modal                      | Pops up on page load and shows the rules of the game. Allows the user to press start game.                                                                  | Clicked play game                                   | Popup closes and game can start  | Pass      |
-| Restart game                              | When clicked during play everything will be reset to the start page, score, images etc.                                                                                                                          | Clicked on restart button                                         | Everything reset to default state. | Pass      |
-| Sound toggle button                       | When clicked the sound will turn off for the game and the button text will turn to 'Sound On' When clicked again the sound will then return and the button text will revert to 'Sound Off'.                      | Clicked button                                                    | Performed as expected              | Pass      |
-| Yellow images of rock, paper and scissors | When clicked they will result in the scores changing, the girls expression, the text of who wins or loses, the blue images of the choices will also change as well as the lightning bolts until the game is won. | Tested each image individually until a win or loss was the result | Preformed as expected              | Pass      || Yellow images of rock, paper and scissors | When clicked they will result in the scores changing, the girls expression, the text of who wins or loses, the blue images of the choices will also change as well as the lightning bolts until the game is won. | Tested each image individually until a win or loss was the result | Preformed as expected              | Pass      |
-| Play again button | This appears after a round is won or lost, when clicked restarts the game | Played game to win and lose and button appeared. Clicked on it in both instances to check for restart of game | Preformed as expected   | Pass      |
-| Quit button | This appears after a round is won or lost, when clicked quits game, hides a section of the game and displays a thank you for playing message | Played game to win and lose and button appeared. Clicked on it to check for thank you message being displayed | Preformed as expected              | Pass      |
-| Googley eyes | This appears after a round is won or lost, the image of the girls eyes follow the mouse when it hovers over the play again and quit button. | Played game to win and lose and then hovered over the play again and quit buttons | Image performed as expected              | Pass      |
+|                                           |                                                                                                                                                                                                                  |                                                                                                                            |                                                    |           |
+| Game title                                | This remains static and unclickable if a user wants the game to reset that can be done using the rest button instead.                                                                                            | Clicked Logo and title                                                                                                     | Nothing happens.                                   | Pass      |
+| Start-up Popup modal                      | Pops up on page load and shows the rules of the game. Allows the user to press start game.                                                                                                                       | Clicked play game                                                                                                          | Popup closes and game can start                    | Pass      |
+| Restart game                              | When clicked during play everything will be reset to the start page, score, images etc.                                                                                                                          | Clicked on restart button                                                                                                  | Everything reset to default state.                 | Pass      |
+| Rules button                              | Should display the rules in a popup modal once clicked                                                                                                                                                           | Clicked on the rules button                                                                                                | Rules popup modal displayed                        | Pass      |
+| Sound toggle button                       | When clicked the sound will turn off for the game and the button text will turn to 'Sound On' When clicked again the sound will then return and the button text will revert to 'Sound Off'.                      | Clicked button                                                                                                             | Performed as expected                              | Pass      |
+| Yellow images of rock, paper and scissors | When clicked they will result in the scores changing, the girls expression, the text of who wins or loses, the blue images of the choices will also change as well as the lightning bolts until the game is won. | Tested each image individually until a win or loss was the result                                                          | Preformed as expected                              | Pass      |     | Yellow images of rock, paper and scissors | When clicked they will result in the scores changing, the girls expression, the text of who wins or loses, the blue images of the choices will also change as well as the lightning bolts until the game is won. | Tested each image individually until a win or loss was the result | Preformed as expected | Pass |
+| Play again button                         | This appears after a round is won or lost, when clicked restarts the game                                                                                                                                        | Played game to win and lose and button appeared. Clicked on it in both instances to check for restart of game              | Preformed as expected                              | Pass      |
+| Quit button                               | This appears after a round is won or lost, when clicked quits game, hides a section of the game and displays a thank you for playing message                                                                     | Played game to win and lose and button appeared. Clicked on it to check for thank you message being displayed              | Preformed as expected                              | Pass      |
+| Googley eyes                              | This appears after a round is won or lost, the image of the girls eyes follow the mouse when it hovers over the play again and quit button.                                                                      | Played game to win and lose and then hovered over the play again and quit buttons                                          | Image performed as expected                        | Pass      |
+| Lightning bolts/scoring                   | The number of bolts reflect the points won                                                                                                                                                                       | Played game multiple times to check if all the options changed the lightning bolts as expected until game was won or lost. | Scoring system worked for both player and computer | Pass      |
 
 ---
 
@@ -352,7 +348,7 @@ Additional testing was taken by friends on a variety of devices and screen sizes
 ### Code Used
 
 - Tutorial I based my game on... [Follow link](https://www.youtube.com/watch?v=jaVNP3nIAv0)\
-You can view the origonal code for the game and see where I modified it accordingly and added my code to enhance the game visually and functionally. [Follow link](https://github.com/rldiao/web_practice/blob/master/index.js)
+  You can view the origonal code for the game and see where I modified it accordingly and added my code to enhance the game visually and functionally. [Follow link](https://github.com/rldiao/web_practice/blob/master/index.js)
 - Tip to over-ride bootstrap modal css [Follow link](https://stackoverflow.com/questions/20854035/is-it-possible-to-customize-style-of-bootstrap-modal)
 - Help aligning entire html to centre [Follow link](https://stackoverflow.com/questions/6464592/how-to-align-entire-html-body-to-the-cente)
 - When I was stuck I referred to help from w3schools to figure it out [Follow link](https://www.w3schools.com/)

@@ -50,7 +50,7 @@ h1 {
 
 #quit {
     font-size: 1.5rem;
-    background-color:#fae950;
+    background-color: #fae950;
     display: flex;
 }
 
@@ -67,20 +67,7 @@ h1 {
     font-size: 22px;
 }
 
-#computer-roundswon,
-#rounds-one-pc {
-    display: inline;
-    font-size: 18px;
-    visibility: hidden;
-}
 
-#user-roundswon,
-#rounds-won-user {
-    display: inline;
-    font-size: 18px;
-    clear: both;
-    visibility: hidden;
-}
 
 #lightningcomputer {
     width: 40%;

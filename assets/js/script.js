@@ -3,7 +3,6 @@ let userScore = 0;
 let computerScore = 0;
 let userRoundswon = 0;
 let computerRoundswon = 0;
-let userTotalscore = 0;
 let gamePaused = false;
 let quitMessageRun = false;
 const userScore_span = document.getElementById("user-score");
@@ -19,8 +18,6 @@ const playWinaudio = document.getElementById("userwin_audio");
 const makeChoice = document.getElementById("make-choice");
 const makeChoiceParagraph = document.getElementById("whowontext");
 
-
-
 window.onload = loadedAtStart;
 
 function loadedAtStart() {
@@ -29,28 +26,25 @@ function loadedAtStart() {
     });
 }
 
-
 // makes sure googleEyes animation is loaded and not affected by lazyload
 document.addEventListener("DOMContentLoaded", function () {
     googleEyes();
 });
 
-//update lightning bolts
+// update lightning bolts
 let currentLightning = 0;
 let currentLightningPc = 0;
 let lightningPlayer = document.getElementById("lightningplayer");
 let lightningPc = document.getElementById("lightningcomputer");
 const lightningScore = document.getElementById("myBtn");
 
-//eventlisteners
+// eventlisteners
 lightningScore.addEventListener("click", updateLightning);
 document.getElementById("restart").addEventListener("click", hardReloadgame);
 document.getElementById("play-again").addEventListener("click", hardReloadgame);
 document.getElementById("quit").addEventListener("click", quitMessage);
 
-
-
-// My function to hide the game section with a thanks for playing message
+// my function to hide the game section with a thanks for playing message
 function quitMessage() {
     quitMessageRun = true;
     const mainGameSection = document.getElementById("game-contain");
@@ -59,10 +53,10 @@ function quitMessage() {
             mainGameSection.removeChild(mainGameSection.firstChild);
         }
 
-        // Hide make choice element
+        // hide make choice element
         makeChoice.style.display = "none";
 
-        // Insert this message instead
+        // insert this message instead
         const thanksMessage = document.createElement("div");
         thanksMessage.innerHTML =
             "<p class='thanks-message'>Thanks for playing! Click restart game if you want to play again.</center></p>";
@@ -70,7 +64,7 @@ function quitMessage() {
     }
 }
 
-// My function to disable rock paper scissors buttons when round is won
+// my function to disable rock paper scissors buttons when round is won
 
 function disableChoices(disabled) {
     rock_div.disabled = true;
@@ -78,9 +72,7 @@ function disableChoices(disabled) {
     scissors_div.disabled = true;
 }
 
-
-
-//my function to reset the rounds and the game;
+// my function to reset the rounds and the game;
 function hardReloadgame() {
     if (quitMessageRun) {
         location.reload();
@@ -108,19 +100,19 @@ function hardReloadgame() {
     }
 }
 
-//my function to change text if user wins round
+// my function to change text if user wins round
 function playerWinMesssage() {
     let message = "Congratulations you win the round!!";
     makeChoiceParagraph.textContent = message;
 }
 
-//my function to change text if computer wins round
+// my function to change text if computer wins round
 function pcWinMesssage() {
     let message = "ARG!! You lost the round, better luck next time!!";
     makeChoiceParagraph.textContent = message;
 }
 
-//my function to change the lightning images based on the players score
+// my function to change the lightning images based on the players score
 function updateLightning() {
     changeLightning();
     changeLightningPc();
@@ -138,7 +130,7 @@ function getComputerChoice() {
     return choices[randomNumber];
 }
 
-// My function that gets the computers choice and updates the image.
+// my function that gets the computers choice and updates the image.
 function pcChoiceImg(choice) {
     if (choice === "r") {
         document.getElementById("computerimg").src = "assets/images/rock.png";
@@ -192,18 +184,17 @@ function googleEyes() {
 
 function convertToWord(letter) {
     const wordDictionary = {
-        'r': 'Rock',
-        'p': 'Paper',
-        's': 'Scissors'
+        r: "Rock",
+        p: "Paper",
+        s: "Scissors",
     };
 
-    return wordDictionary[letter] || 'Invalid Choice';
+    return wordDictionary[letter] || "Invalid Choice";
 }
 
-//function if user wins
+// function if user wins
 function win(userChoice, computerChoice) {
     userScore++;
-    userTotalscore++;
     //girls face changes to a sad face when computer wins
     document.getElementById("middleImg").src = "assets/images/facewin.png";
     result_p.innerHTML = `${convertToWord(userChoice)} beats ${convertToWord(
@@ -211,7 +202,7 @@ function win(userChoice, computerChoice) {
     )}. You win! `;
 }
 
-//function if computer wins
+// function if computer wins
 function lose(userChoice, computerChoice) {
     computerScore++;
     //girls face changes to a sad face when computer wins
@@ -221,7 +212,7 @@ function lose(userChoice, computerChoice) {
     )}. You lost! `;
 }
 
-//function if it's a draw
+// function if it's a draw
 function draw(userChoice, computerChoice) {
     //girls face changes to a sad face when a draw
     document.getElementById("middleImg").src = "assets/images/facedraw.png";
@@ -230,7 +221,7 @@ function draw(userChoice, computerChoice) {
     )}. Its a draw `;
 }
 
-//function to get the outcome of the game based on users choice and computers choice
+// function to get the outcome of the game based on users choice and computers choice
 
 function game(userChoice) {
     const computerChoice = getComputerChoice();
@@ -253,7 +244,7 @@ function game(userChoice) {
     }
 }
 
-//Event listener for choices of rock paper scissor icons and also added code to change the player image choice
+// event listener for choices of rock paper scissor icons and also added code to change the player image choice
 
 function main() {
     // my gamePaused condition to pause game scoring and lightning when round is won
@@ -284,7 +275,7 @@ function main() {
     }
 }
 
-// My function to change the lightning image to reflect the user score
+// my function to change the lightning image to reflect the user score
 
 function changeLightning() {
     switch (userScore) {
@@ -308,7 +299,7 @@ function changeLightning() {
     }
     return currentLightning;
 }
-// My function to change the lightning image to reflect the computer score
+// my function to change the lightning image to reflect the computer score
 
 function changeLightningPc() {
     switch (computerScore) {
@@ -333,7 +324,7 @@ function changeLightningPc() {
     return currentLightningPc;
 }
 
-//function that stops the game when someone gets to 5 points and prompts an alert.
+// function that stops the game when someone gets to 5 points and prompts an alert.
 function winGame() {
     if (userScore === 5) {
         document.querySelectorAll("#quit, #play-again").forEach(function (element) {
@@ -349,7 +340,6 @@ function winGame() {
         userRound.innerHTML = userRoundswon;
         //disable rock, paper, scissor button clicks
         googleEyes();
-
 
         //makeChoiceParagraph.textContent = message;
     } else if (computerScore === 5) {
@@ -371,22 +361,22 @@ function winGame() {
     }
 }
 
-//audiomute function
+// audiomute function
 document.addEventListener("DOMContentLoaded", function () {
     // Get references to the audio elements and the button
     var audio1 = document.getElementById("pcwin_audio");
     var audio2 = document.getElementById("userwin_audio");
     var soundOnOff = document.getElementById("soundOnOff");
 
-    // Initialize the mute state
+    // initialize the mute state
     var isMuted = false;
 
-    // Add click event listener to the toggle button
+    // add click event listener to the toggle button
     soundOnOff.addEventListener("click", function () {
         // Toggle the mute state
         isMuted = !isMuted;
 
-        // Update the button text based on the mute state
+        // update the button text based on the mute state
         if (isMuted) {
             audio1.muted = true;
             audio2.muted = true;
@@ -400,7 +390,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 $(document).ready(function () {
-    $("#rulesOnlyModal").modal('show');
+    $("#rulesOnlyModal").modal("show");
 });
 
 main();

@@ -338,7 +338,6 @@ function winGame() {
         disableChoices(true);
         userRoundswon++;
         userRound.innerHTML = userRoundswon;
-        //disable rock, paper, scissor button clicks
         googleEyes();
 
         //makeChoiceParagraph.textContent = message;
@@ -354,7 +353,6 @@ function winGame() {
         disableChoices(true);
         computerRoundswon++;
         computerRound.innerHTML = computerRoundswon;
-        //disable rock, paper, scissor button clicks
         googleEyes();
     } else {
         return;

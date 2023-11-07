@@ -5,6 +5,7 @@ let userRoundswon = 0;
 let computerRoundswon = 0;
 let gamePaused = false;
 let quitMessageRun = false;
+let gameMode = "single"; // "single" is one round, "bestOfFive" for best of five rounds
 const userScore_span = document.getElementById("user-score");
 const computerScore_span = document.getElementById("computer-score");
 const result_p = document.querySelector(".result > p");
@@ -17,6 +18,8 @@ const playLoseaudio = document.getElementById("pcwin_audio");
 const playWinaudio = document.getElementById("userwin_audio");
 const makeChoice = document.getElementById("make-choice");
 const makeChoiceParagraph = document.getElementById("whowontext");
+const oneRoundButton = document.getElementById("one-round-game");
+const fiveRoundsButton = document.getElementById("best-of-five");
 
 window.onload = loadedAtStart;
 
@@ -25,6 +28,42 @@ function loadedAtStart() {
         element.style.display = "none";
     });
 }
+
+// add event listeners for game mode buttons
+oneRoundButton.addEventListener("click", () => {
+    gameMode = "single";
+    resetGame();
+});
+
+fiveRoundsButton.addEventListener("click", () => {
+    gameMode = "bestOfFive";
+    resetGame();
+});
+
+// Function to reset game for chosen game mode
+function resetGame() {
+    gamePaused = false;
+    disableChoices(false);
+    document.querySelectorAll("#quit, #play-again").forEach(function (element) {
+        element.style.display = "none";
+    });
+    userScore = 0;
+    computerScore = 0;
+    userRoundswon = 0;
+    computerRoundswon = 0;
+    userRound.innerHTML = userRoundswon;
+    computerRound.innerHTML = computerRoundswon;
+    makeChoice.style.display = "block"; // Show the make choice paragraph
+
+    // Reset specific elements
+    document.getElementById("lightningplayer").src = "assets/images/lightning0.png";
+    document.getElementById("lightningcomputer").src = "assets/images/lightning0.png";
+    document.getElementById("playerimg").src = "assets/images/question.png";
+    document.getElementById("computerimg").src = "assets/images/questionreverse.png";
+    document.getElementById("middleImg").src = "assets/images/facestart.png";
+    makeChoiceParagraph.innerHTML = "Let's play rock paper scissors!";
+}
+
 
 // makes sure googleEyes animation is loaded and not affected by lazyload
 document.addEventListener("DOMContentLoaded", function () {
@@ -114,6 +153,7 @@ function pcWinMesssage() {
 
 // my function to change the lightning images based on the players score
 function updateLightning() {
+    checkResult();
     changeLightning();
     changeLightningPc();
     lightningPlayer.src = `assets/images/lightning${currentLightning}.png`;
@@ -244,6 +284,25 @@ function game(userChoice) {
     }
 }
 
+// Function to check and display the result
+function checkResult() {
+    if (userScore === 5) {
+        showResult("You win the game!");
+    } else if (computerScore === 5) {
+        showResult("Computer wins the game, better luck next time!");
+    }
+}
+
+// Function to show game result
+function showResult(resultMessage) {
+    makeChoiceParagraph.textContent = resultMessage;
+    gamePaused = true;
+    disableChoices(true);
+    document.querySelectorAll("#quit, #play-again").forEach(function (element) {
+        element.style.display = "block";
+    });
+}
+
 // event listener for choices of rock paper scissor icons and also added code to change the player image choice
 
 function main() {
@@ -326,38 +385,67 @@ function changeLightningPc() {
 
 // function that stops the game when someone gets to 5 points and prompts an alert.
 function winGame() {
-    if (userScore === 5) {
-        document.querySelectorAll("#quit, #play-again").forEach(function (element) {
-            element.style.display = "block";
-        });
-        gamePaused = true;
-        playWinaudio.play();
-        currentLightning = 5;
-        changeLightning();
-        playerWinMesssage();
-        disableChoices(true);
-        userRoundswon++;
-        userRound.innerHTML = userRoundswon;
-        googleEyes();
-
-        //makeChoiceParagraph.textContent = message;
-    } else if (computerScore === 5) {
-        document.querySelectorAll("#quit, #play-again").forEach(function (element) {
-            element.style.display = "block";
-        });
-        gamePaused = true;
-        currentLightningPc = 5;
-        changeLightningPc();
-        playLoseaudio.play();
-        pcWinMesssage();
-        disableChoices(true);
-        computerRoundswon++;
-        computerRound.innerHTML = computerRoundswon;
-        googleEyes();
-    } else {
-        return;
+    if (gameMode === "single") {
+        // For single round mode
+        if (userScore === 5 || computerScore === 5) {
+            showResult();
+        }
+    } else if (gameMode === "bestOfFive") {
+        // For best of five rounds mode
+        if (userRoundswon === 3 || computerRoundswon === 3) {
+            showResult();
+        }
     }
+
 }
+
+
+if (userScore === 5) {
+    document.querySelectorAll("#quit, #play-again").forEach(function (element) {
+        element.style.display = "block";
+    });
+    gamePaused = true;
+    playWinaudio.play();
+    currentLightning = 5;
+    changeLightning();
+    playerWinMesssage();
+    disableChoices(true);
+    userRoundswon++;
+    userRound.innerHTML = userRoundswon;
+    googleEyes();
+
+    //makeChoiceParagraph.textContent = message;
+} else if (computerScore === 5) {
+    document.querySelectorAll("#quit, #play-again").forEach(function (element) {
+        element.style.display = "block";
+    });
+    gamePaused = true;
+    currentLightningPc = 5;
+    changeLightningPc();
+    playLoseaudio.play();
+    pcWinMesssage();
+    disableChoices(true);
+    computerRoundswon++;
+    computerRound.innerHTML = computerRoundswon;
+    googleEyes();
+}
+
+// function to show game result
+function showResult() {
+    if (userScore > computerScore) {
+        makeChoiceParagraph.textContent = "You win the game!";
+    } else if (userScore < computerScore) {
+        makeChoiceParagraph.textContent = "Computer wins the game, better luck next time!";
+    } else if (userScore === computerScore) {
+        makeChoiceParagraph.textContent = "It's a tie!";
+    }
+    gamePaused = true;
+    disableChoices(true);
+    document.querySelectorAll("#quit, #play-again").forEach(function (element) {
+        element.style.display = "block";
+    });
+}
+
 
 // audiomute function
 document.addEventListener("DOMContentLoaded", function () {

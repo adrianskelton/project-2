@@ -42,6 +42,10 @@ h1 {
     justify-content: center;
 }
 
+#one-round-game {
+    float: left;
+}
+
 #play-again {
     font-size: 1.5rem;
     background-color: #fae950;
@@ -66,8 +70,6 @@ h1 {
 #computer-label {
     font-size: 22px;
 }
-
-
 
 #lightningcomputer {
     width: 40%;
@@ -130,8 +132,6 @@ h1 {
     padding: 0;
     justify-self: center;
 }
-
-
 
 /* Choose weapon section*/
 .chooseweapon {

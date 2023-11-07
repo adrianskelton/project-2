@@ -160,7 +160,7 @@ Namely:
 
 ### Rules button
 
-When the user clicks on the rules button the rules popup modal pops up. 
+When the user clicks on the rules button the rules popup modal pops up.
 
 ### "Sound on/off" toggle button
 
@@ -359,7 +359,7 @@ You can view the origonal code for the game and see where I modified it accordin
 ### Gathering knowledge
 
 Was unsure about commit message to use when taking away features [Follow link](https://stackoverflow.com/questions/48075169/semantic-commit-type-when-remove-something>)\
-I used w3 schools website a lot when I got stuck with trying out new functions I got stuck on [Follow link](https://www.w3schools.com/jsref/prop_style_display.asp)
+I used w3 schools website a lot when I got stuck with trying out new functs I got stuck on [Follow link](https://www.w3schools.com/jsref/prop_style_display.asp)
 
 ### Content
 

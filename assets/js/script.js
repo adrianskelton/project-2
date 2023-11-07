@@ -12,7 +12,7 @@ const result_p = document.querySelector(".result > p");
 const rock_div = document.getElementById("r");
 const paper_div = document.getElementById("p");
 const scissors_div = document.getElementById("s");
-const computerRound = document.getElementById("computer-roundswon");
+const computerRound = document.getElementById("computer-Roundswon");
 const userRound = document.getElementById("user-roundswon");
 const playLoseaudio = document.getElementById("pcwin_audio");
 const playWinaudio = document.getElementById("userwin_audio");
@@ -235,6 +235,7 @@ function convertToWord(letter) {
 // function if user wins
 function win(userChoice, computerChoice) {
     userScore++;
+    userRound.innerHTML = userRoundswon;
     //girls face changes to a sad face when computer wins
     document.getElementById("middleImg").src = "assets/images/facewin.png";
     result_p.innerHTML = `${convertToWord(userChoice)} beats ${convertToWord(
@@ -245,6 +246,7 @@ function win(userChoice, computerChoice) {
 // function if computer wins
 function lose(userChoice, computerChoice) {
     computerScore++;
+    computerRound.innerHTML = computerRoundswon;
     //girls face changes to a sad face when computer wins
     document.getElementById("middleImg").src = "assets/images/facehand.png";
     result_p.innerHTML = `${convertToWord(userChoice)} loses to ${convertToWord(
@@ -286,6 +288,14 @@ function game(userChoice) {
 
 // Function to check and display the result
 function checkResult() {
+    if (gameMode === "bestOfFive") {
+        makeChoiceParagraph.textContent = `Round ${userRoundswon + computerRoundswon + 1}`;
+    }
+
+    if (userRoundswon + computerRoundswon >= 5) {
+        showResult();
+    }
+
     if (userScore === 5) {
         showResult("You win the game!");
     } else if (computerScore === 5) {
@@ -331,8 +341,37 @@ function main() {
                 updateLightning();
             }
         });
+
+        if (userScore === 5) {
+            document.querySelectorAll("#quit, #play-again").forEach(function (element) {
+                element.style.display = "block";
+            });
+            gamePaused = true;
+            playWinaudio.play();
+            currentLightning = 5;
+            changeLightning();
+            playerWinMesssage();
+            disableChoices(true);
+            userRoundswon++;
+            userRound.innerHTML = userRoundswon; // Update userRound element
+            googleEyes();
+        } else if (computerScore === 5) {
+            document.querySelectorAll("#quit, #play-again").forEach(function (element) {
+                element.style.display = "block";
+            });
+            gamePaused = true;
+            currentLightningPc = 5;
+            changeLightningPc();
+            playLoseaudio.play();
+            pcWinMesssage();
+            disableChoices(true);
+            computerRoundswon++;
+            computerRound.innerHTML = computerRoundswon; // Update computerRound element
+            googleEyes();
+        }
     }
 }
+
 
 // my function to change the lightning image to reflect the user score
 

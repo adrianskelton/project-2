@@ -297,8 +297,14 @@ function checkResult() {
     }
 
     if (userScore === 5) {
+        userRoundswon += 1;
+        userRound.innerText = userRoundswon.toString();
         showResult("You win the game!");
     } else if (computerScore === 5) {
+        showResult("Computer wins the game, better luck next time!");
+    } else if (computerScore === 5) {
+        computerRoundswon += 1;
+        computerRound.innerText = computerRoundswon.toString();
         showResult("Computer wins the game, better luck next time!");
     }
 }

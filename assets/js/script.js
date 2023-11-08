@@ -37,7 +37,7 @@ oneRoundButton.addEventListener("click", () => {
 
 fiveRoundsButton.addEventListener("click", () => {
     gameMode = "bestOfFive";
-    resetGame();
+    resetGameFive();
 });
 
 // Function to reset game for chosen game mode
@@ -51,6 +51,28 @@ function resetGame() {
     computerScore = 0;
     userRoundswon = 0;
     computerRoundswon = 0;
+    userRound.innerHTML = userRoundswon;
+    computerRound.innerHTML = computerRoundswon;
+    makeChoice.style.display = "block"; // Show the make choice paragraph
+
+    // Reset specific elements
+    document.getElementById("lightningplayer").src = "assets/images/lightning0.png";
+    document.getElementById("lightningcomputer").src = "assets/images/lightning0.png";
+    document.getElementById("playerimg").src = "assets/images/question.png";
+    document.getElementById("computerimg").src = "assets/images/questionreverse.png";
+    document.getElementById("middleImg").src = "assets/images/facestart.png";
+    makeChoiceParagraph.innerHTML = "Let's play rock paper scissors!";
+}
+
+// Function to reset game for chosen game mode
+function resetGameFive() {
+    gamePaused = false;
+    disableChoices(false);
+    document.querySelectorAll("#quit, #play-again").forEach(function (element) {
+        element.style.display = "none";
+    });
+    userScore = 0;
+    computerScore = 0;
     userRound.innerHTML = userRoundswon;
     computerRound.innerHTML = computerRoundswon;
     makeChoice.style.display = "block"; // Show the make choice paragraph
@@ -134,8 +156,13 @@ function hardReloadgame() {
             "Lets play rock paper scissors!";
         userScore = 0;
         computerScore = 0;
-        userRoundswon = 0;
-        computerRoundswon = 0;
+
+        // check the game mode before resetting the rounds
+        if (gameMode !== "bestoFFive") {
+            userRoundswon = 0;
+            computerRoundswon = 0;
+        }
+
     }
 }
 
@@ -235,7 +262,7 @@ function convertToWord(letter) {
 // function if user wins
 function win(userChoice, computerChoice) {
     userScore++;
-    userRound.innerHTML = userRoundswon;
+    //temp comment out to see if this resets round number userRound.innerHTML = userRoundswon;
     //girls face changes to a sad face when computer wins
     document.getElementById("middleImg").src = "assets/images/facewin.png";
     result_p.innerHTML = `${convertToWord(userChoice)} beats ${convertToWord(
@@ -246,7 +273,7 @@ function win(userChoice, computerChoice) {
 // function if computer wins
 function lose(userChoice, computerChoice) {
     computerScore++;
-    computerRound.innerHTML = computerRoundswon;
+    //temp comment out to see if this resets round number computerRound.innerHTML = computerRoundswon;
     //girls face changes to a sad face when computer wins
     document.getElementById("middleImg").src = "assets/images/facehand.png";
     result_p.innerHTML = `${convertToWord(userChoice)} loses to ${convertToWord(
@@ -300,8 +327,7 @@ function checkResult() {
         userRoundswon += 1;
         userRound.innerText = userRoundswon.toString();
         showResult("You win the game!");
-    } else if (computerScore === 5) {
-        showResult("Computer wins the game, better luck next time!");
+
     } else if (computerScore === 5) {
         computerRoundswon += 1;
         computerRound.innerText = computerRoundswon.toString();
@@ -521,7 +547,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 $(document).ready(function () {
-    $("#rulesOnlyModal").modal("show");
+    $("#startupModal").modal("show");
 });
 
 main();

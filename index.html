@@ -97,7 +97,7 @@
         type="button"
         class=""
         data-bs-toggle="modal"
-        data-bs-target="#rulesOnlyModal"
+        data-bs-target="#startupModal"
       >
         Rules
       </button>
@@ -121,18 +121,16 @@
               ></button>
             </div>
             <div class="modal-body">
-              <p>
-                Rock beats scissors, scissors beat paper, and paper beats rock.
-              </p>
-              <p>
-                First to 5 points wins the round and first to 5 rounds wins the
-                game!
-              </p>
-              <p>ENTER YOUR NAME TO START</p>
-              <form id="scoreboard">
-                <input type="text" id="username" required autocomplete="off" />
-              </form>
-            </div>
+                <h2>Rules</h2>
+                <p>
+                  Rock beats scissors, scissors beat paper, and paper beats rock.
+                </p>
+                <p>
+                  Choose between yellow rock, paper, scissor images and see if you
+                  can beat the computer.
+                </p>
+                <p>First to 5 points/lightning bolts wins the round!</p>
+              </div>
             <div class="modal-footer">
               <button
                 id="closeModal"
@@ -173,14 +171,12 @@
             alt="player lightning score image"
           />
           <span id="user-name">PLAYER</span>
-          <div id="user-score">0</div>
-
           <img
             src="assets/images/question.png"
             id="playerimg"
             alt="image of players choice"
           />
-          <div id="user-roundswon"></div>
+          <div id="user-roundswon">0</div>
           <p id="title-rounds">Rounds won</p>
         </div>
 

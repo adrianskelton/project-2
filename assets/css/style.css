@@ -33,6 +33,10 @@ h1 {
     visibility: hidden;
 }
 
+#hide-startupmodal {
+    display: none;
+}
+
 /*Hidden buttons that only appear after round has been won*/
 #round-over {
     padding-top: 20px;
@@ -52,6 +56,16 @@ h1 {
     display: flex;
 }
 
+#next-round {
+    font-size: 1.5rem;
+    background-color: #fae950;
+    display: flex;
+}
+
+#title-rounds {
+    text-align: center;
+}
+
 #quit {
     font-size: 1.5rem;
     background-color: #fae950;
@@ -61,6 +75,10 @@ h1 {
 #user-name {
     font-size: 22px;
     display: inline;
+}
+
+#computer-Roundswon {
+    text-align: center;
 }
 
 #computer-score {

@@ -37,7 +37,7 @@
   </head>
   <body>
     <!--Modal popup for rules only-->
-    <div class="modal" id="rulesOnlyModal" tabindex="-1">
+    <div class="modal" id="startupModal" tabindex="-1">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
@@ -59,24 +59,16 @@
               Choose between yellow rock, paper, scissor images and see if you
               can beat the computer.
             </p>
-            <p>First to 5 points/lightning bolts wins the round!</p>
+            <p>First to 5 points/lightning bolts wins the round! First to win 3 rounds wins overall!</p>
           </div>
           <div class="modal-footer">
             <button
               type="button"
-              id="one-round-game"
+              id="play-game"
               class="btn btn-secondary"
               data-bs-dismiss="modal"
             >
-              Play single round!
-            </button>
-            <button
-              type="button"
-              id="best-of-five"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              Play best of 5!
+            Click here to Play!
             </button>
           </div>
         </div>
@@ -210,7 +202,7 @@
       </div>
       <!--Hidden section revealed on round won-->
       <aside id="round-over">
-        <button type="button" id="play-again">Play again</button>
+        <button type="button" id="play-again">Next Round!</button>
         <button type="button" id="quit">Quit</button>
       </aside>
     </div>

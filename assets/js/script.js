@@ -5,7 +5,7 @@ let userRoundswon = 0;
 let computerRoundswon = 0;
 let gamePaused = false;
 let quitMessageRun = false;
-let gameMode = "single"; // "single" is one round, "bestOfFive" for best of five rounds
+let gameMode = "bestOfFive"; // "single" is one round, "bestOfFive" for best of five rounds
 const userScore_span = document.getElementById("user-score");
 const computerScore_span = document.getElementById("computer-score");
 const result_p = document.querySelector(".result > p");
@@ -21,6 +21,11 @@ const makeChoiceParagraph = document.getElementById("whowontext");
 const oneRoundButton = document.getElementById("one-round-game");
 const fiveRoundsButton = document.getElementById("best-of-five");
 
+document.addEventListener("DOMContentLoaded", function(event) { 
+    $(document).ready(function () {
+        $("#startupModal").modal("show");
+    });
+    });
 window.onload = loadedAtStart;
 
 function loadedAtStart() {
@@ -49,8 +54,8 @@ function resetGame() {
     });
     userScore = 0;
     computerScore = 0;
-    userRoundswon = 0;
-    computerRoundswon = 0;
+    //userRoundswon = 0;
+    //computerRoundswon = 0;
     userRound.innerHTML = userRoundswon;
     computerRound.innerHTML = computerRoundswon;
     makeChoice.style.display = "block"; // Show the make choice paragraph
@@ -137,6 +142,7 @@ function disableChoices(disabled) {
 function hardReloadgame() {
     if (quitMessageRun) {
         location.reload();
+        console.log("hardreloadquit")
     } else {
         gamePaused = false;
         disableChoices(false);
@@ -156,6 +162,7 @@ function hardReloadgame() {
             "Lets play rock paper scissors!";
         userScore = 0;
         computerScore = 0;
+        console.log("hardreloadbest5")
 
         // check the game mode before resetting the rounds
         if (gameMode !== "bestoFFive") {
@@ -378,27 +385,29 @@ function main() {
             document.querySelectorAll("#quit, #play-again").forEach(function (element) {
                 element.style.display = "block";
             });
+            userRoundswon++;
+            console.log(userRoundswon)
+            userRound.innerHTML = userRoundswon; // Update userRound element
             gamePaused = true;
             playWinaudio.play();
             currentLightning = 5;
             changeLightning();
             playerWinMesssage();
             disableChoices(true);
-            userRoundswon++;
-            userRound.innerHTML = userRoundswon; // Update userRound element
             googleEyes();
         } else if (computerScore === 5) {
             document.querySelectorAll("#quit, #play-again").forEach(function (element) {
                 element.style.display = "block";
             });
+            computerRoundswon++;
+            console.log(computerRoundswon)
+            computerRound.innerHTML = computerRoundswon; // Update computerRound element
             gamePaused = true;
             currentLightningPc = 5;
             changeLightningPc();
             playLoseaudio.play();
             pcWinMesssage();
             disableChoices(true);
-            computerRoundswon++;
-            computerRound.innerHTML = computerRoundswon; // Update computerRound element
             googleEyes();
         }
     }
@@ -469,7 +478,6 @@ function winGame() {
     }
 
 }
-
 
 if (userScore === 5) {
     document.querySelectorAll("#quit, #play-again").forEach(function (element) {

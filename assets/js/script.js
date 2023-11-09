@@ -278,12 +278,18 @@ function checkResult() {
         userRoundswon += 1;
         playWinaudio.play();
         userRound.innerText = userRoundswon.toString();
+        if (userRoundswon ===3) {
+            quitMessage();
+        }
         showResult("You win this round onto the next!");
 
     } else if (computerScore === 5) {
         computerRoundswon += 1;
         playLoseaudio.play();
         computerRound.innerText = computerRoundswon.toString();
+        if (computerRoundswon ===3) {
+            quitMessage();
+        }
         showResult("Computer wins this round, better luck next time!");
     }
 
@@ -347,6 +353,9 @@ function main() {
             console.log(computerRoundswon);
             computerRound.innerHTML = computerRoundswon; // Update computerRound element
             gamePaused = true;
+            if (computerRoundswon ===3) {
+                quitMessage();
+            }
             currentLightningPc = 5;
             changeLightningPc();
             playLoseaudio.play();
@@ -357,8 +366,10 @@ function main() {
     }
 }
 
-// my function to change the lightning image to reflect the user score
-
+/**
+ * My function to change the lightning image to reflect the user score
+ * 
+ */
 function changeLightning() {
     switch (userScore) {
         case 1:
@@ -381,8 +392,12 @@ function changeLightning() {
     }
     return currentLightning;
 }
-// my function to change the lightning image to reflect the computer score
 
+
+/**
+ * My function to change the lightning image to reflect the computer score
+ * 
+ */
 function changeLightningPc() {
     switch (computerScore) {
         case 1:
@@ -406,7 +421,10 @@ function changeLightningPc() {
     return currentLightningPc;
 }
 
-// function that stops the game when someone gets to 5 points and prompts an alert.
+/**
+ * My function to change the lightning image to reflect the user score
+ * 
+ */
 function winGame() {
     if (gameMode === "single") {
         // For single round mode
@@ -454,7 +472,9 @@ if (userScore === 5) {
     console.log("pcround+");
 }
 
-// function to show game result
+/**
+ * My function checks who wins and displays associated paragraph
+ */
 function showResult() {
     if (userScore > computerScore) {
         makeChoiceParagraph.textContent = "You win this round, to the next!";
@@ -472,8 +492,10 @@ function showResult() {
     });
 }
 
+/**
+ * My function for sound effects toggle on and off
+ */
 
-// my audiomute function
 document.addEventListener("DOMContentLoaded", function () {
     // Get references to the audio elements and the button
     var audio1 = document.getElementById("pcwin_audio");

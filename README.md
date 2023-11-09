@@ -33,7 +33,7 @@ The alert popups were also changed to html that is displayed once the user won o
     - [Imagery](#imagery)
     - [Wireframes](#wireframes)
     - [Desktop view - start-up screen](#desktop-view---start-up-screen)
-    - [Desktop view - the first screen shown to the user when the page loads (shown above). The footer was later taken off in the actual to make the game look less busy](#desktop-view---the-first-screen-shown-to-the-user-when-the-page-loads-shown-above-the-footer-was-later-taken-off-in-the-actual-to-make-the-game-look-less-busy)
+    - [Desktop view - the first screen shown to the user when the page loads (shown above). The footer was later taken off in the actual to make the game look less busy. Also the option to enter a name was a concept that can later be added in future. These were all rough drafts.](#desktop-view---the-first-screen-shown-to-the-user-when-the-page-loads-shown-above-the-footer-was-later-taken-off-in-the-actual-to-make-the-game-look-less-busy-also-the-option-to-enter-a-name-was-a-concept-that-can-later-be-added-in-future-these-were-all-rough-drafts)
     - [Desktop view - game screen (shown above)](#desktop-view---game-screen-shown-above)
     - [Mobile view](#mobile-view)
     - [Tablet view](#tablet-view)
@@ -115,7 +115,7 @@ Due to the nature of the project it is not image intensive however I sourced ima
 
 ![alt text](assets/images/wireddesktopstart.png)
 
-### Desktop view - the first screen shown to the user when the page loads (shown above). The footer was later taken off in the actual to make the game look less busy
+### Desktop view - the first screen shown to the user when the page loads (shown above). The footer was later taken off in the actual to make the game look less busy. Also the option to enter a name was a concept that can later be added in future. These were all rough drafts. 
 
 ![alt text](assets/images/wireddesktop.png)
 
@@ -125,7 +125,7 @@ Due to the nature of the project it is not image intensive however I sourced ima
 
 ### Mobile view
 
-![alt text](assets/images/readme/wiredmobile.png)br>
+![alt text](assets/images/readme/wiredmobile.png)
 Start screen (above left) In game screen (above right)
 
 ### Tablet view
@@ -138,7 +138,7 @@ I used Balsamiq to design my wireframes.
 
 ### Landing page
 
-![alt text](assets/images/readme/firstscreen.png)
+![alt text](assets/images/readme/screenshot_firstscreen.png)
 
 The game is only one page with a popup modal automatically set to appear when the page is loaded.
 
@@ -342,6 +342,7 @@ Additional testing was taken by friends on a variety of devices and screen sizes
 | Quit button | This appears after a round is won or lost, when clicked quits game, hides a section of the game and displays a thank you for playing message | Played game to win and lose and button appeared. Clicked on it to check for thank you message being displayed | Preformed as expected              | Pass      |
 | Googley eyes | This appears after a round is won or lost, the image of the girls eyes follow the mouse when it hovers over the play again and quit button. | Played game to win and lose and then hovered over the play again and quit buttons | Image performed as expected              | Pass      |
 | Lightning bolts/scoring | The number of bolts reflect the points won | Played game multiple times to check if all the options changed the lightning bolts as expected until game was won or lost. | Scoring system worked for both player and computer              | Pass      |
+| CSS Button hover effect | Should be a yellow css background change for the rock paper scissor images on hover. | Played game for every outcome to check css hover worked | Images changed as expected              | Pass      |
 
 
 

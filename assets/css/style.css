@@ -94,7 +94,7 @@ h1 {
     display: flex;
 }
 
-#title-rounds {
+#title-rounds-user, #title-rounds-pc {
     text-align: center;
 }
 
@@ -278,7 +278,7 @@ h1 {
 
 /*Styling for rock paper scissor buttons*/
 
-#title-rounds {
+#title-rounds-user, #title-rounds-pc {
     font-size: 22px;
 }
 

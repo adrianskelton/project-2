@@ -292,11 +292,14 @@ function checkResult() {
     }
 }
 
+/**
+ *  gamePaused condition to pause game scoring and lightning when round is won
+ */
 
 // event listener for choices of rock paper scissor icons and also added code to change the player image choice
 
 function main() {
-    // my gamePaused condition to pause game scoring and lightning when round is won
+    // 
     {
         rock_div.addEventListener("click", function () {
             if (!gamePaused) {

@@ -37,6 +37,38 @@ h1 {
     display: none;
 }
 
+/*Styling for rock paper scissor buttons*/
+
+#r {
+    background-color: transparent;
+    border: none;
+}
+#r:hover {
+    background-color: #fae950;
+    border-radius: 50%;
+    border-color: white;
+}
+
+#p {
+    background-color: transparent;
+    border: none;
+}
+#p:hover {
+    background-color: #fae950;
+    border-radius: 50%;
+    border-color: white;
+}
+
+#s {
+    background-color: transparent;
+    border: none;
+}
+#s:hover {
+    background-color: #fae950;
+    border-radius: 50%;
+    border-color: white;
+}
+
 /*Hidden buttons that only appear after round has been won*/
 #round-over {
     padding-top: 20px;
@@ -196,7 +228,7 @@ h1 {
 .thanks-message {
     font-size: xx-large;
     text-align: center;
-    padding-top: 30px;
+    padding-top: 10px;
 }
 
 .scissors {
@@ -244,6 +276,29 @@ h1 {
 
 /*Media query for mobile phones*/
 
+/*Styling for rock paper scissor buttons*/
+
+#title-rounds {
+    font-size: 22px;
+}
+
+#r {
+    background-color: transparent;
+    border: none;
+}
+
+
+#p {
+    background-color: transparent;
+    border: none;
+}
+
+#s {
+    background-color: transparent;
+    border: none;
+}
+
+
 @media screen and (max-width: 480px) {
     .title-makechoice {
         color: #3b3b3b;
@@ -265,7 +320,7 @@ h1 {
 
     h1 {
         align-self: center;
-        font-size: 50px;
+        font-size: 40px;
         color: #3b3b3b;
         padding-top: 10px;
     }

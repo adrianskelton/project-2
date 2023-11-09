@@ -59,6 +59,18 @@ function quitMessage() {
 
         // insert this message instead
         const thanksMessage = document.createElement("div");
+
+        if (userRoundswon >= 3) {
+            thanksMessage.innerHTML =
+            "<p class='thanks-message'>You are the ultimate winner! Click restart game if you want to play again.</center></p>";
+        mainGameSection.appendChild(thanksMessage);
+        }
+        else if (computerRoundswon >=3) {
+            thanksMessage.innerHTML =
+            "<p class='thanks-message'>You ultimately lost! Click restart game if you want to play again.</center></p>";
+        mainGameSection.appendChild(thanksMessage);
+        }
+        else
         thanksMessage.innerHTML =
             "<p class='thanks-message'>Thanks for playing! Click restart game if you want to play again.</center></p>";
         mainGameSection.appendChild(thanksMessage);
@@ -79,6 +91,7 @@ function hardReloadgame() {
         location.reload();
         console.log("hardreloadquit");
     } else {
+        makeChoice.style.display = "block";
         gamePaused = false;
         disableChoices(false);
         document.querySelectorAll("#quit, #play-again").forEach(function (element) {
@@ -196,7 +209,6 @@ function convertToWord(letter) {
 // function if user wins
 function win(userChoice, computerChoice) {
     userScore++;
-    overallWinnerCheck();
     //temp comment out to see if this resets round number userRound.innerHTML = userRoundswon;
     //girls face changes to a sad face when computer wins
     document.getElementById("middleImg").src = "assets/images/facewin.png";
@@ -208,7 +220,6 @@ function win(userChoice, computerChoice) {
 // function if computer wins
 function lose(userChoice, computerChoice) {
     computerScore++;
-    overallWinnerCheck();
     //temp comment out to see if this resets round number computerRound.innerHTML = computerRoundswon;
     //girls face changes to a sad face when computer wins
     document.getElementById("middleImg").src = "assets/images/facehand.png";
@@ -257,8 +268,10 @@ function checkResult() {
 
     if (userRoundswon >= 3) {
         showResult("You are the overall winner! Click restart if you want to play again!");
+        quitMessage();
     } else if (computerRoundswon >= 3) {
         showResult("Computer wins overall! Click restart if you want another go!");
+        quitMessage();
     }
 
     if (userScore === 5) {
@@ -341,17 +354,6 @@ function main() {
     }
 }
 
-function overallWinnerCheck() {
-    if (userRoundswon >= 3) {
-        showResult("You are the overall winner! Click restart if you want to play again!");
-        console.log("Player reached 3 rounds!");
-    } else if (computerRoundswon >= 3) {
-        showResult("Computer wins overall! Click restart if you want another go!");
-        console.log("Computer reached 3 rounds!");
-    }
-}
-
-
 // my function to change the lightning image to reflect the user score
 
 function changeLightning() {
@@ -419,6 +421,7 @@ function winGame() {
 if (userScore === 5) {
     document.querySelectorAll("#quit, #play-again").forEach(function (element) {
         element.style.display = "block";
+        makeChoice.style.display = "none";
     });
     playWinaudio.play();
     userRoundswon++;
@@ -457,6 +460,8 @@ function showResult() {
     } else if (userScore === computerScore) {
         makeChoiceParagraph.textContent = "It's a tie!";
     }
+
+    makeChoice.style.display = "none";
     gamePaused = true;
     disableChoices(true);
     document.querySelectorAll("#quit, #play-again").forEach(function (element) {

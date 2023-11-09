@@ -93,7 +93,7 @@ function hardReloadgame() {
     } else {
         makeChoice.style.display = "block";
         gamePaused = false;
-        disableChoices(false);
+        // disableChoices(true);
         document.querySelectorAll("#quit, #play-again").forEach(function (element) {
             element.style.display = "none";
         });
@@ -110,7 +110,7 @@ function hardReloadgame() {
             "Lets play rock paper scissors!";
         userScore = 0;
         computerScore = 0;
-        console.log("hardreloadbest5");
+        // disableChoices(true);
     }
 }
 
@@ -334,7 +334,7 @@ function main() {
             currentLightning = 5;
             changeLightning();
             playerWinMesssage();
-            disableChoices(true);
+            // disableChoices(false);
             googleEyes();
         } else if (computerScore === 5) {
             document.querySelectorAll("#quit, #play-again").forEach(function (element) {
@@ -348,7 +348,7 @@ function main() {
             changeLightningPc();
             playLoseaudio.play();
             pcWinMesssage();
-            disableChoices(true);
+            //disableChoices(false);
             googleEyes();
         }
     }
@@ -430,7 +430,7 @@ if (userScore === 5) {
     currentLightning = 5;
     changeLightning();
     playerWinMesssage();
-    disableChoices(true);
+    // disableChoices(true);
     googleEyes();
     console.log("userround+");
 
@@ -446,7 +446,7 @@ if (userScore === 5) {
     currentLightningPc = 5;
     changeLightningPc();
     pcWinMesssage();
-    disableChoices(true);
+    // disableChoices(true);
     googleEyes();
     console.log("pcround+");
 }
@@ -463,14 +463,14 @@ function showResult() {
 
     makeChoice.style.display = "none";
     gamePaused = true;
-    disableChoices(true);
+    // disableChoices(true);
     document.querySelectorAll("#quit, #play-again").forEach(function (element) {
         element.style.display = "block";
     });
 }
 
 
-// audiomute function
+// my audiomute function
 document.addEventListener("DOMContentLoaded", function () {
     // Get references to the audio elements and the button
     var audio1 = document.getElementById("pcwin_audio");

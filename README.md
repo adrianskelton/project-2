@@ -38,34 +38,30 @@ The alert popups were also changed to html that is displayed once the user won o
 - [Features](#features)
   - [Landing page](#landing-page)
   - [Top menu bar](#top-menu-bar)
-    - [Restart game button](#restart-game-button)
-    - [Rules button](#rules-button)
-    - ["Sound on/off" toggle button](#sound-onoff-toggle-button)
-  - [User and computer score and lightning bolt](#user-and-computer-score-and-lightning-bolt)
+    - [User and computer score and lightning bolt](#user-and-computer-score-and-lightning-bolt)
     - [Changing facial expression image with appropriate text of who wins and how](#changing-facial-expression-image-with-appropriate-text-of-who-wins-and-how)
-  - [Current round and rounds won](#current-round-and-rounds-won)
-  - [The 3 option images for the player to select: rock, paper or scissors](#the-3-option-images-for-the-player-to-select-rock-paper-or-scissors)
-    - [The 3 option images for the player to select: rock, paper or scissors with hover over effect](#the-3-option-images-for-the-player-to-select-rock-paper-or-scissors-with-hover-over-effect)
+    - [Current round and rounds won](#current-round-and-rounds-won)
+    - [3 Options, rock, paper and scissors](#3-options-rock-paper-and-scissors)
     - [Quit message screen](#quit-message-screen)
   - [](#)
     - [Googley eyes](#googley-eyes)
     - [Future Implementations](#future-implementations)
     - [Accessibility](#accessibility)
   - [Technologies Used](#technologies-used)
-    - [Languages Used](#languages-used)
-    - [Frameworks, Libraries \& Programs Used](#frameworks-libraries--programs-used)
+  - [Languages Used](#languages-used)
+  - [Frameworks, Libraries \& Programs Used](#frameworks-libraries--programs-used)
   - [Deployment \& Local Development](#deployment--local-development)
     - [Deployment](#deployment)
     - [Local Development](#local-development)
       - [How to Clone](#how-to-clone)
       - [How to Fork](#how-to-fork)
   - [Testing](#testing)
-  - [Manual Testing](#manual-testing)
     - [W3C Validator](#w3c-validator)
     - [Jigsaw CSS Validator](#jigsaw-css-validator)
     - [Lighthouse](#lighthouse)
     - [JSHINT](#jshint)
     - [Full Testing](#full-testing)
+    - [Manual Testing](#manual-testing)
   - [Bugs](#bugs)
     - [Bugs fixed](#bugs-fixed)
   - [Credits](#credits)
@@ -154,7 +150,7 @@ This contains 3 buttons of:
 
 ![alt text](assets/images/readme/screenshot_buttons.png)
 
-### Restart game button
+**Restart game button**
 
 The restart game button resets all the variables to their start stage.
 Namely:
@@ -169,18 +165,18 @@ Namely:
 
 - When the game is over I had to make an if statement checking if the player had pushed the quit game button. This was because a lot of elements that were present before to be reset are now hidden and will bring up errors, so if they player clicked on the quit button the game will reload using the location.reload(); code and the page will refresh. Otherwise it will run the script and set all the variables to their default start game state if they player has not clicked on the quit game button.
 
-### Rules button
+**Rules button**
 
 When the user clicks on the rules button the rules popup modal pops up.
 
-### "Sound on/off" toggle button
+**"Sound on/off" toggle button**
 
 This button toggles between a "sound on" and a "sound off" state, muting the two mp3 files listed at the bottom of the html.
 The text then reflects what the user should push on or off for their desired choice.
 
 ---
 
-## User and computer score and lightning bolt
+### User and computer score and lightning bolt
 
 ![alt text](assets/images/readme/screenshot_score.png)\
 User score showing 4 points and computer with none. (shown above)
@@ -206,18 +202,19 @@ Draw image (shown above)
 
 ______
 
-## Current round and rounds won
+### Current round and rounds won
 
 ![alt text](assets/images/readme/screenshot_rounds.png)
 
 The current round is displayed underneath the header once the game is running and the number of rounds won is displayed underneath the player choice and computer choice. (circled in red above)
 
 ---
-## The 3 option images for the player to select: rock, paper or scissors
+### 3 Options, rock, paper and scissors
 
 ![alt text](assets/images/readme/screenshot_choices.png)
 
-### The 3 option images for the player to select: rock, paper or scissors with hover over effect
+The 3 option images for the player to select: rock, paper or (scissors shown above)
+The 3 option images for the player to select: rock, paper or scissors with hover over effect (shown below)
 
 ![alt text](assets/images/readme/screenshot_choices_hover.png)
 
@@ -238,9 +235,10 @@ I made a mousehover action that changes the image of the girls eyes so it looks 
 ### Future Implementations
 
 - A scoreboard that logs the username and their score will be later implemented.
+- Another single round option will be added, I started adding this functionality as you can see in the code at some places there was "bestOfFive" but later due to time constraints and to the advice of fellow students and mentors I left that for a future implementation. 
 - More options could later be added to the game such as spock and lizard.
 - A button option to share the game on Facebook and other platforms.
-- When the player hovers over the selection images of rock paper or scissors they will have a css animation.
+
 
 ### Accessibility
 
@@ -264,11 +262,11 @@ Added aria labels where needed.
 **coolors.co** - Website used for the colour pallete.\
 **Lighthouse in chrome** - Used to see the performance of the site.
 
-### Languages Used
+## Languages Used
 
 HTML, CSS, Javascript.
 
-### Frameworks, Libraries & Programs Used
+## Frameworks, Libraries & Programs Used
 
 **Bootstrap** - for the responsiveness of the website despite having to add a media query for the 1000px breakpoint so that the site looked better on mobile and tablets. I also used bootstrap code for the navbar.\
 **Github** - I used GitHub for the storage of my site and Gitpages to pubish my website.\
@@ -301,8 +299,6 @@ To fork the repository:
 3. Click the Fork button in the top right corner.
 
 ## Testing
-
-## Manual Testing
 
 ### W3C Validator
 
@@ -345,6 +341,8 @@ Each device tested the site using the following browsers:
 - Firefox
 
 Additional testing was taken by friends on a variety of devices and screen sizes.
+
+### Manual Testing
 
 | Feature                                   | Expected Outcome                                                                                                                                                                                                 | Testing Performed                                                 | Result                             | Pass/Fail |
 | ----------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- | ---------------------------------- | --------- |

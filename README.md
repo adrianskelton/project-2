@@ -33,21 +33,22 @@ The alert popups were also changed to html that is displayed once the user won o
     - [Imagery](#imagery)
     - [Wireframes](#wireframes)
     - [Desktop view - start-up screen](#desktop-view---start-up-screen)
-    - [Desktop view - the first screen shown to the user when the page loads (shown above). The footer was later taken off in the actual to make the game look less busy. Also the option to enter a name was a concept that can later be added in future. These were all rough drafts.](#desktop-view---the-first-screen-shown-to-the-user-when-the-page-loads-shown-above-the-footer-was-later-taken-off-in-the-actual-to-make-the-game-look-less-busy-also-the-option-to-enter-a-name-was-a-concept-that-can-later-be-added-in-future-these-were-all-rough-drafts)
-    - [Desktop view - game screen (shown above)](#desktop-view---game-screen-shown-above)
     - [Mobile view](#mobile-view)
     - [Tablet view](#tablet-view)
-  - [Features](#features)
-    - [Landing page](#landing-page)
-    - [Popup modal with rules and form for players name](#popup-modal-with-rules-and-form-for-players-name)
-    - [Top menu bar](#top-menu-bar)
+- [Features](#features)
+  - [Landing page](#landing-page)
+  - [Top menu bar](#top-menu-bar)
     - [Restart game button](#restart-game-button)
     - [Rules button](#rules-button)
     - ["Sound on/off" toggle button](#sound-onoff-toggle-button)
-    - [User and computer score and lightning bolt](#user-and-computer-score-and-lightning-bolt)
+  - [User and computer score and lightning bolt](#user-and-computer-score-and-lightning-bolt)
     - [Changing facial expression image with appropriate text of who wins and how](#changing-facial-expression-image-with-appropriate-text-of-who-wins-and-how)
-    - [The 3 option images for the player to select: rock, paper or scissors](#the-3-option-images-for-the-player-to-select-rock-paper-or-scissors)
-    - [Screenshots of a round win and loss](#screenshots-of-a-round-win-and-loss)
+  - [Current round and rounds won](#current-round-and-rounds-won)
+  - [The 3 option images for the player to select: rock, paper or scissors](#the-3-option-images-for-the-player-to-select-rock-paper-or-scissors)
+    - [The 3 option images for the player to select: rock, paper or scissors with hover over effect](#the-3-option-images-for-the-player-to-select-rock-paper-or-scissors-with-hover-over-effect)
+    - [Quit message screen](#quit-message-screen)
+  - [](#)
+    - [Googley eyes](#googley-eyes)
     - [Future Implementations](#future-implementations)
     - [Accessibility](#accessibility)
   - [Technologies Used](#technologies-used)
@@ -115,14 +116,11 @@ Due to the nature of the project it is not image intensive however I sourced ima
 
 ![alt text](assets/images/wireddesktopstart.png)
 
-### Desktop view - the first screen shown to the user when the page loads (shown above). The footer was later taken off in the actual to make the game look less busy. Also the option to enter a name was a concept that can later be added in future. These were all rough drafts. 
+The first screen shown to the user when the page loads (shown above). The footer was later taken off in the actual to make the game look less busy. Also the option to enter a name was a concept that can later be added in future. These were all rough drafts. The main screen is seen below after the popup is closed.
 
 ![alt text](assets/images/wireddesktop.png)
 
-### Desktop view - game screen (shown above)
-
 ---
-
 ### Mobile view
 
 ![alt text](assets/images/readme/wiredmobile.png)
@@ -134,22 +132,23 @@ Start screen (above left) In game screen (above right)
 
 I used Balsamiq to design my wireframes.
 
-## Features
+---
+# Features
 
-### Landing page
+## Landing page
 
-![alt text](assets/images/readme/screenshot_firstscreen.png)
+![alt text](assets/images/readme/screenshot_first_screen.png)
 
-The game is only one page with a popup modal automatically set to appear when the page is loaded.
+The game is only one page with a popup modal automatically set to appear when the page is loaded. This displays the rules of the game and allows the player to click on the button to start the game. (shown above)
 
-### Popup modal with rules and form for players name
+This then takes the player to the main screen when the game begins and the player can make their choice of rock paper or scissors. (shown below)
 
-This is a bootstrap modal that pops up automatically on the loading of the homepage.
-The user can read the rules of the game in the modal and then enter their name to start.
+![alt text](assets/images/readme/screenshot_landing.png)
 
-![alt text](assets/images/readme/headerscreen.png)
+---
+## Top menu bar
 
-### Top menu bar
+![alt text](assets/images/readme/screenshot_header.png)
 
 This contains 3 buttons of:
 
@@ -181,43 +180,60 @@ The text then reflects what the user should push on or off for their desired cho
 
 ---
 
-### User and computer score and lightning bolt
+## User and computer score and lightning bolt
 
 ![alt text](assets/images/readme/screenshot_score.png)\
-User score with 4 points and computer with none. (shown above)
+User score showing 4 points and computer with none. (shown above)
 
 ### Changing facial expression image with appropriate text of who wins and how
 
-There are different states of the images, static when the game starts, a win, a lose and a draw. Then there is the image with glasses when the round is won or lost that has an animation effect that changes the image depending on if the mouse is hovering over the 'play again' or 'quit' button.
+There are different states of the images, static when the game starts, a win, a lose and a draw. Then there is the image with glasses when the round is won or lost that has an animation effect that changes the image depending on if the mouse is hovering over the 'next round' or 'quit' button.
 
 Each of these are reflected in the text above the image and the girls expression to match.
 These images are shown below.
 
-![alt text](assets/images/readme/screenshot_girl_expression1.png).\
+![alt text](assets/images/readme/screenshot_face_ready.png).\
 Static image (shown above)
 
-![alt text](assets/images/readme/screenshot_girl_expression3.png).\
+![alt text](assets/images/readme/screenshot_face_win.png).\
 Win image (shown above)
 
-![alt text](assets/images/readme/screenshot_girl_expression4.png).\
+![alt text](assets/images/readme/screenshot_face_lose.png).\
 Player Loses image (shown above)
 
-![alt text](assets/images/readme/screenshot_girl_expression2.png).\
+![alt text](assets/images/readme/screenshot_face_draw.png).\
 Draw image (shown above)
 
-**
+______
 
-### The 3 option images for the player to select: rock, paper or scissors
+## Current round and rounds won
 
-![alt text](assets/images/readme/screenshot_user_choice.png)
+![alt text](assets/images/readme/screenshot_rounds.png)
 
-### Screenshots of a round win and loss
+The current round is displayed underneath the header once the game is running and the number of rounds won is displayed underneath the player choice and computer choice. (circled in red above)
+
+---
+## The 3 option images for the player to select: rock, paper or scissors
+
+![alt text](assets/images/readme/screenshot_choices.png)
+
+### The 3 option images for the player to select: rock, paper or scissors with hover over effect
+
+![alt text](assets/images/readme/screenshot_choices_hover.png)
+
+### Quit message screen
+
+Most of the game is hidden from view once the quit button is clicked, displaying the message below. When the user wins or loses the same screen is shown just with a different message saying that they are the ultimate winner or loser.
 
 ![alt text](assets/images/readme/screenshot_pcwin.png)
 
 ![alt text](assets/images/readme/screenshot_userwin.png)
-
 ---
+
+### Googley eyes
+
+I made a mousehover action that changes the image of the girls eyes so it looks like her eyes are following the mouse when it hovers over the next round or the quit button. 
+![alt text](assets/images/readme/screenshot_googley_eye.png)
 
 ### Future Implementations
 
@@ -308,7 +324,9 @@ To fork the repository:
 
 ### JSHINT
 
-![alt text](assets/images/readme/screenshotjshint.png)
+Put javascript through JSHINT validator, the only warning that came up was shown below and that as my mentor pointed out was just due to it being a modul call problem where the script was not imported in JSHINT.
+
+![alt text](assets/images/readme/screenshot_jshint.png)
 
 ### Full Testing
 
@@ -338,11 +356,12 @@ Additional testing was taken by friends on a variety of devices and screen sizes
 | Rules button | Should display the rules in a popup modal once clicked | Clicked on the rules button | Rules popup modal displayed              | Pass      |
 | Sound toggle button                       | When clicked the sound will turn off for the game and the button text will turn to 'Sound On' When clicked again the sound will then return and the button text will revert to 'Sound Off'.                      | Clicked button                                                    | Performed as expected              | Pass      |
 | Yellow images of rock, paper and scissors | When clicked they will result in the scores changing, the girls expression, the text of who wins or loses, the blue images of the choices will also change as well as the lightning bolts until the game is won. | Tested each image individually until a win or loss was the result | Preformed as expected              | Pass      || Yellow images of rock, paper and scissors | When clicked they will result in the scores changing, the girls expression, the text of who wins or loses, the blue images of the choices will also change as well as the lightning bolts until the game is won. | Tested each image individually until a win or loss was the result | Preformed as expected              | Pass      |
-| Play again button | This appears after a round is won or lost, when clicked restarts the game | Played game to win and lose and button appeared. Clicked on it in both instances to check for restart of game | Preformed as expected   | Pass      |
+| Next round button | This appears after a round is won or lost, when clicked it starts the next round | Played game to win and lose and button appeared. Clicked on it in both instances to check for restart of next round | Preformed as expected   | Pass      |
 | Quit button | This appears after a round is won or lost, when clicked quits game, hides a section of the game and displays a thank you for playing message | Played game to win and lose and button appeared. Clicked on it to check for thank you message being displayed | Preformed as expected              | Pass      |
-| Googley eyes | This appears after a round is won or lost, the image of the girls eyes follow the mouse when it hovers over the play again and quit button. | Played game to win and lose and then hovered over the play again and quit buttons | Image performed as expected              | Pass      |
+| Googley eyes | This appears after a round is won or lost, the image of the girls eyes follow the mouse when it hovers over the next round and quit button. | Played game to win and lose and then hovered over the next round and quit buttons | Image performed as expected              | Pass      |
 | Lightning bolts/scoring | The number of bolts reflect the points won | Played game multiple times to check if all the options changed the lightning bolts as expected until game was won or lost. | Scoring system worked for both player and computer              | Pass      |
 | CSS Button hover effect | Should be a yellow css background change for the rock paper scissor images on hover. | Played game for every outcome to check css hover worked | Images changed as expected              | Pass      |
+| Rounds counter and current round | Current round show reflect round being played and round counter should reflect rounds won | Played game for every outcome to see these both incremented correctly | Incremented correctly            | Pass      |
 
 
 
@@ -363,10 +382,11 @@ Additional testing was taken by friends on a variety of devices and screen sizes
 
 ### Code Used
 
-- I watched a collection of youtube tutorials which are listed here, these helped me prepare for the project... 
+- I watched a collection of youtube tutorials which are listed here, these helped me prepare for the project: 
 - [Bro Code](https://www.youtube.com/watch?v=n1_vHArDBRA&pp=ygUecm9jayBwYXBlciBzY2lzc29ycyBqYXZhc2NyaXB0)
-- [FreeCodeCamp](https://www.youtube.com/watch?v=jaVNP3nIAv0)\
+- [FreeCodeCamp](https://www.youtube.com/watch?v=jaVNP3nIAv0)
 - [Web Dev Simplified](https://www.youtube.com/watch?v=1yS-JV4fWqY&pp=ygUecm9jayBwYXBlciBzY2lzc29ycyBqYXZhc2NyaXB0)
+- [Your First Javascript Game | Tutorial for Beginners | Rock, Paper, Scissors](https://www.youtube.com/watch?v=C2_z34QFVjw&ab_channel=DaveGray)
 
 - Tip to over-ride bootstrap modal css [Follow link](https://stackoverflow.com/questions/20854035/is-it-possible-to-customize-style-of-bootstrap-modal)
 - Help aligning entire html to centre [Follow link](https://stackoverflow.com/questions/6464592/how-to-align-entire-html-body-to-the-cente)
@@ -374,8 +394,8 @@ Additional testing was taken by friends on a variety of devices and screen sizes
 
 ### Gathering knowledge
 
-Was unsure about commit message to use when taking away features [Follow link](https://stackoverflow.com/questions/48075169/semantic-commit-type-when-remove-something>)\
-I used w3 schools website a lot when I got stuck with trying out new functs I got stuck on [Follow link](https://www.w3schools.com/jsref/prop_style_display.asp)
+When unsure about commit message to use [Follow link](https://stackoverflow.com/questions/48075169/semantic-commit-type-when-remove-something>)\
+I used w3 schools website a lot when I got stuck while writing new functionality [Follow link](https://www.w3schools.com/jsref/prop_style_display.asp)
 
 ### Content
 
@@ -395,4 +415,4 @@ Frame image used for hand gestures
 
 ### Acknowledgments
 
-I would like to thank my mentors Narender and Spencer as well as all the users on slack for all their opinions and code reviews.
+I would like to thank my mentors Narender and Spencer as well as all the users on slack for all their opinions and code reviews

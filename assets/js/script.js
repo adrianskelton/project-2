@@ -5,7 +5,7 @@ let userRoundswon = 0;
 let computerRoundswon = 0;
 let gamePaused = false;
 let quitMessageRun = false;
-let gameMode = "bestOfFive"; // "single" is one round, "bestOfFive" for best of five rounds
+let gameMode = "bestOfFive"; // "single" round feature not yet added, "bestOfFive" for best of five rounds
 const result_p = document.querySelector(".result > p");
 const rock_div = document.getElementById("r");
 const paper_div = document.getElementById("p");
@@ -16,8 +16,6 @@ const playLoseaudio = document.getElementById("pcwin_audio");
 const playWinaudio = document.getElementById("userwin_audio");
 const makeChoice = document.getElementById("make-choice");
 const makeChoiceParagraph = document.getElementById("whowontext");
-// const oneRoundButton = document.getElementById("one-round-game");
-const fiveRoundsButton = document.getElementById("best-of-five");
 
 window.onload = loadedAtStart;
 
@@ -45,7 +43,9 @@ document.getElementById("restart").addEventListener("click", hardReloadgame);
 document.getElementById("play-again").addEventListener("click", hardReloadgame);
 document.getElementById("quit").addEventListener("click", quitMessage);
 
-// my function to hide the game section with a thanks for playing message
+/**
+ * My function to hide the game section and display appropriate message
+ */
 function quitMessage() {
     quitMessageRun = true;
     const mainGameSection = document.getElementById("game-contain");
@@ -77,23 +77,16 @@ function quitMessage() {
     }
 }
 
-// my function to disable rock paper scissors buttons when round is won
-
-function disableChoices(disabled) {
-    rock_div.disabled = true;
-    paper_div.disabled = true;
-    scissors_div.disabled = true;
-}
-
-// my function to reset the rounds and the game;
+/**
+ * My function to reset the rounds and the game;
+ */
+ 
 function hardReloadgame() {
     if (quitMessageRun) {
         location.reload();
-        console.log("hardreloadquit");
     } else {
         makeChoice.style.display = "block";
         gamePaused = false;
-        // disableChoices(true);
         document.querySelectorAll("#quit, #play-again").forEach(function (element) {
             element.style.display = "none";
         });
@@ -110,23 +103,28 @@ function hardReloadgame() {
             "Lets play rock paper scissors!";
         userScore = 0;
         computerScore = 0;
-        // disableChoices(true);
     }
 }
 
-// my function to change text if user wins round
+/**
+ * My function to change text if user wins round
+ */
 function playerWinMesssage() {
     let message = "Congratulations you win the round!!";
     makeChoiceParagraph.textContent = message;
 }
 
-// my function to change text if computer wins round
+/**
+ * my function to change text if computer wins round
+ */
 function pcWinMesssage() {
     let message = "ARG!! You lost the round, better luck next time!!";
     makeChoiceParagraph.textContent = message;
 }
 
-// my function to change the lightning images based on the players score
+/**
+ * my function to change the lightning images based on the players score
+ */
 function updateLightning() {
     checkResult();
     changeLightning();
@@ -136,6 +134,10 @@ function updateLightning() {
     winGame();
 }
 
+/**
+ * 
+ * function to get computer random choice
+ */
 function getComputerChoice() {
     const choices = ["r", "p", "s"];
     const randomNumber = Math.floor(Math.random() * 3);
@@ -144,7 +146,7 @@ function getComputerChoice() {
     return choices[randomNumber];
 }
 
-// my function that gets the computers choice and updates the image.
+// My function that gets the computers choice and updates the image.
 function pcChoiceImg(choice) {
     if (choice === "r") {
         document.getElementById("computerimg").src = "assets/images/rock.png";
@@ -155,7 +157,7 @@ function pcChoiceImg(choice) {
     }
 }
 
-// my googley eye function for animation of girls eyes when game ends
+// My googley eye function for animation of girls eyes when game ends
 function googleEyes() {
     const middleImg = document.getElementById("middleImg");
     const quitbutton = document.getElementById("quit");
@@ -194,7 +196,9 @@ function googleEyes() {
     });
 }
 
-// modified word to letter code from tutorial
+/**
+ * My word to letter function
+ */
 
 function convertToWord(letter) {
     const wordDictionary = {
@@ -206,10 +210,11 @@ function convertToWord(letter) {
     return wordDictionary[letter] || "Invalid Choice";
 }
 
-// function if user wins
+/**
+ * Function if user wins
+ */
 function win(userChoice, computerChoice) {
     userScore++;
-    //temp comment out to see if this resets round number userRound.innerHTML = userRoundswon;
     //girls face changes to a sad face when computer wins
     document.getElementById("middleImg").src = "assets/images/facewin.png";
     result_p.innerHTML = `${convertToWord(userChoice)} beats ${convertToWord(
@@ -217,10 +222,11 @@ function win(userChoice, computerChoice) {
     )}. You win! `;
 }
 
-// function if computer wins
+/**
+ * Function if computer wins
+ */
 function lose(userChoice, computerChoice) {
     computerScore++;
-    //temp comment out to see if this resets round number computerRound.innerHTML = computerRoundswon;
     //girls face changes to a sad face when computer wins
     document.getElementById("middleImg").src = "assets/images/facehand.png";
     result_p.innerHTML = `${convertToWord(userChoice)} loses to ${convertToWord(
@@ -228,7 +234,9 @@ function lose(userChoice, computerChoice) {
     )}. You lost! `;
 }
 
-// function if it's a draw
+/**
+ * Function if its a draw
+ */
 function draw(userChoice, computerChoice) {
     //girls face changes to a sad face when a draw
     document.getElementById("middleImg").src = "assets/images/facedraw.png";
@@ -237,8 +245,9 @@ function draw(userChoice, computerChoice) {
     )}. Its a draw `;
 }
 
-// function to get the outcome of the game based on users choice and computers choice
-
+/**
+ * Function to get outcome of each game based on choices
+ */
 function game(userChoice) {
     const computerChoice = getComputerChoice();
     switch (userChoice + computerChoice) {
@@ -260,7 +269,9 @@ function game(userChoice) {
     }
 }
 
-// Function to check and display the result
+/**
+ * Function to check result and display messages
+ */
 function checkResult() {
     if (gameMode === "bestOfFive") {
         makeChoiceParagraph.textContent = `Round ${userRoundswon + computerRoundswon + 1}`;
@@ -301,11 +312,7 @@ function checkResult() {
 /**
  *  gamePaused condition to pause game scoring and lightning when round is won
  */
-
-// event listener for choices of rock paper scissor icons and also added code to change the player image choice
-
 function main() {
-    // 
     {
         rock_div.addEventListener("click", function () {
             if (!gamePaused) {
@@ -336,21 +343,18 @@ function main() {
                 element.style.display = "block";
             });
             userRoundswon++;
-            console.log('User rounds won : ' + userRoundswon);
             userRound.innerHTML = userRoundswon; // Update userRound element
             gamePaused = true;
             playWinaudio.play();
             currentLightning = 5;
             changeLightning();
             playerWinMesssage();
-            // disableChoices(false);
             googleEyes();
         } else if (computerScore === 5) {
             document.querySelectorAll("#quit, #play-again").forEach(function (element) {
                 element.style.display = "block";
             });
             computerRoundswon++;
-            console.log(computerRoundswon);
             computerRound.innerHTML = computerRoundswon; // Update computerRound element
             gamePaused = true;
             if (computerRoundswon ===3) {
@@ -360,7 +364,6 @@ function main() {
             changeLightningPc();
             playLoseaudio.play();
             pcWinMesssage();
-            //disableChoices(false);
             googleEyes();
         }
     }
@@ -368,7 +371,6 @@ function main() {
 
 /**
  * My function to change the lightning image to reflect the user score
- * 
  */
 function changeLightning() {
     switch (userScore) {
@@ -393,10 +395,8 @@ function changeLightning() {
     return currentLightning;
 }
 
-
 /**
  * My function to change the lightning image to reflect the computer score
- * 
  */
 function changeLightningPc() {
     switch (computerScore) {
@@ -423,7 +423,6 @@ function changeLightningPc() {
 
 /**
  * My function to change the lightning image to reflect the user score
- * 
  */
 function winGame() {
     if (gameMode === "single") {
@@ -451,9 +450,7 @@ if (userScore === 5) {
     currentLightning = 5;
     changeLightning();
     playerWinMesssage();
-    // disableChoices(true);
     googleEyes();
-    console.log("userround+");
 
     //makeChoiceParagraph.textContent = message;
 } else if (computerScore === 5) {
@@ -467,9 +464,7 @@ if (userScore === 5) {
     currentLightningPc = 5;
     changeLightningPc();
     pcWinMesssage();
-    // disableChoices(true);
     googleEyes();
-    console.log("pcround+");
 }
 
 /**
@@ -483,10 +478,8 @@ function showResult() {
     } else if (userScore === computerScore) {
         makeChoiceParagraph.textContent = "It's a tie!";
     }
-
     makeChoice.style.display = "none";
     gamePaused = true;
-    // disableChoices(true);
     document.querySelectorAll("#quit, #play-again").forEach(function (element) {
         element.style.display = "block";
     });
@@ -495,7 +488,6 @@ function showResult() {
 /**
  * My function for sound effects toggle on and off
  */
-
 document.addEventListener("DOMContentLoaded", function () {
     // Get references to the audio elements and the button
     var audio1 = document.getElementById("pcwin_audio");

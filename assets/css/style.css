@@ -47,6 +47,7 @@ h1 {
     background-color: #fae950;
     border-radius: 50%;
     border-color: white;
+    background-size: contain;
 }
 
 #p {
@@ -57,6 +58,7 @@ h1 {
     background-color: #fae950;
     border-radius: 50%;
     border-color: white;
+    background-size: contain;
 }
 
 #s {

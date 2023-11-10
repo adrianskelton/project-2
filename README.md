@@ -26,7 +26,7 @@ The alert popups were also changed to html that is displayed once the user won o
   - [Table of Contents](#table-of-contents)
 - [User Stories](#user-stories)
   - [Target Audience](#target-audience)
-      - [Visitor goals](#visitor-goals)
+  - [Visitor goals](#visitor-goals)
   - [Design](#design)
     - [Colour Scheme](#colour-scheme)
     - [Typography](#typography)
@@ -38,15 +38,14 @@ The alert popups were also changed to html that is displayed once the user won o
 - [Features](#features)
   - [Landing page](#landing-page)
   - [Top menu bar](#top-menu-bar)
-    - [User and computer score and lightning bolt](#user-and-computer-score-and-lightning-bolt)
-    - [Changing facial expression image with appropriate text of who wins and how](#changing-facial-expression-image-with-appropriate-text-of-who-wins-and-how)
-    - [Current round and rounds won](#current-round-and-rounds-won)
-    - [3 Options, rock, paper and scissors](#3-options-rock-paper-and-scissors)
-    - [Quit message screen](#quit-message-screen)
-  - [](#)
-    - [Googley eyes](#googley-eyes)
-    - [Future Implementations](#future-implementations)
-    - [Accessibility](#accessibility)
+  - [User and computer score and lightning bolt](#user-and-computer-score-and-lightning-bolt)
+  - [Changing facial expression image with appropriate text of who wins and how](#changing-facial-expression-image-with-appropriate-text-of-who-wins-and-how)
+  - [Current round and rounds won](#current-round-and-rounds-won)
+  - [3 Options, rock, paper and scissors](#3-options-rock-paper-and-scissors)
+  - [Quit message screen](#quit-message-screen)
+  - [Googley eyes](#googley-eyes)
+  - [Future Implementations](#future-implementations)
+  - [Accessibility](#accessibility)
   - [Technologies Used](#technologies-used)
   - [Languages Used](#languages-used)
   - [Frameworks, Libraries \& Programs Used](#frameworks-libraries--programs-used)
@@ -65,11 +64,11 @@ The alert popups were also changed to html that is displayed once the user won o
   - [Bugs](#bugs)
     - [Bugs fixed](#bugs-fixed)
   - [Credits](#credits)
-    - [Code Used](#code-used)
-    - [Gathering knowledge](#gathering-knowledge)
-    - [Content](#content)
-    - [Media](#media)
-    - [Acknowledgments](#acknowledgments)
+  - [Code Used](#code-used)
+  - [Gathering knowledge](#gathering-knowledge)
+  - [Content](#content)
+  - [Media](#media)
+  - [Acknowledgments](#acknowledgments)
 
 ---
 
@@ -79,7 +78,7 @@ The alert popups were also changed to html that is displayed once the user won o
 
 The target audience simply is anyone wanting to play an easy to understand game of rock, paper, scissors.
 
-#### Visitor goals
+## Visitor goals
 
 - As a user, I want to be able to recognise what the game is.
 - As a user, I want to easily understand the concepts of the game.
@@ -176,12 +175,12 @@ The text then reflects what the user should push on or off for their desired cho
 
 ---
 
-### User and computer score and lightning bolt
+## User and computer score and lightning bolt
 
 ![alt text](assets/images/readme/screenshot_score.png)\
 User score showing 4 points and computer with none. (shown above)
 
-### Changing facial expression image with appropriate text of who wins and how
+## Changing facial expression image with appropriate text of who wins and how
 
 There are different states of the images, static when the game starts, a win, a lose and a draw. Then there is the image with glasses when the round is won or lost that has an animation effect that changes the image depending on if the mouse is hovering over the 'next round' or 'quit' button.
 
@@ -200,16 +199,16 @@ Player Loses image (shown above)
 ![alt text](assets/images/readme/screenshot_face_draw.png).\
 Draw image (shown above)
 
-______
+---
 
-### Current round and rounds won
+## Current round and rounds won
 
 ![alt text](assets/images/readme/screenshot_rounds.png)
 
 The current round is displayed underneath the header once the game is running and the number of rounds won is displayed underneath the player choice and computer choice. (circled in red above)
 
 ---
-### 3 Options, rock, paper and scissors
+## 3 Options, rock, paper and scissors
 
 ![alt text](assets/images/readme/screenshot_choices.png)
 
@@ -218,21 +217,22 @@ The 3 option images for the player to select: rock, paper or scissors with hover
 
 ![alt text](assets/images/readme/screenshot_choices_hover.png)
 
-### Quit message screen
+## Quit message screen
 
 Most of the game is hidden from view once the quit button is clicked, displaying the message below. When the user wins or loses the same screen is shown just with a different message saying that they are the ultimate winner or loser.
 
 ![alt text](assets/images/readme/screenshot_pcwin.png)
 
 ![alt text](assets/images/readme/screenshot_userwin.png)
+
 ---
 
-### Googley eyes
+## Googley eyes
 
 I made a mousehover action that changes the image of the girls eyes so it looks like her eyes are following the mouse when it hovers over the next round or the quit button. 
 ![alt text](assets/images/readme/screenshot_googley_eye.png)
 
-### Future Implementations
+## Future Implementations
 
 - A scoreboard that logs the username and their score will be later implemented.
 - Another single round option will be added, I started adding this functionality as you can see in the code at some places there was "bestOfFive" but later due to time constraints and to the advice of fellow students and mentors I left that for a future implementation. 
@@ -240,7 +240,7 @@ I made a mousehover action that changes the image of the girls eyes so it looks 
 - A button option to share the game on Facebook and other platforms.
 
 
-### Accessibility
+## Accessibility
 
 Added aria labels where needed.
 
@@ -378,29 +378,29 @@ Additional testing was taken by friends on a variety of devices and screen sizes
 
 ## Credits
 
-### Code Used
+## Code Used
 
-- I watched a collection of youtube tutorials which are listed here, these helped me prepare for the project: 
-- [Bro Code](https://www.youtube.com/watch?v=n1_vHArDBRA&pp=ygUecm9jayBwYXBlciBzY2lzc29ycyBqYXZhc2NyaXB0)
-- [FreeCodeCamp](https://www.youtube.com/watch?v=jaVNP3nIAv0)
-- [Web Dev Simplified](https://www.youtube.com/watch?v=1yS-JV4fWqY&pp=ygUecm9jayBwYXBlciBzY2lzc29ycyBqYXZhc2NyaXB0)
-- [Your First Javascript Game | Tutorial for Beginners | Rock, Paper, Scissors](https://www.youtube.com/watch?v=C2_z34QFVjw&ab_channel=DaveGray)
+  I watched a collection of youtube tutorials which are listed here, these helped me prepare for the project: 
+- Bro code youtube channel [Follow Link](https://www.youtube.com/watch?v=n1_vHArDBRA&pp=ygUecm9jayBwYXBlciBzY2lzc29ycyBqYXZhc2NyaXB0)
+- FreeCodeCamp tutorial [Follow link](https://www.youtube.com/watch?v=jaVNP3nIAv0)
+- Rock paper scissors tutorial from web dev simplified [Follow link](https://www.youtube.com/watch?v=1yS-JV4fWqY&pp=ygUecm9jayBwYXBlciBzY2lzc29ycyBqYXZhc2NyaXB0)
+- Your First Javascript Game | Tutorial for Beginners | Rock, Paper, Scissors [Follow link](https://www.youtube.com/watch?v=C2_z34QFVjw&ab_channel=DaveGray)
 
 - Tip to over-ride bootstrap modal css [Follow link](https://stackoverflow.com/questions/20854035/is-it-possible-to-customize-style-of-bootstrap-modal)
 - Help aligning entire html to centre [Follow link](https://stackoverflow.com/questions/6464592/how-to-align-entire-html-body-to-the-cente)
 - When I was stuck I referred to help from w3schools to figure it out [Follow link](https://www.w3schools.com/)
 
-### Gathering knowledge
+## Gathering knowledge
 
 When unsure about commit message to use [Follow link](https://stackoverflow.com/questions/48075169/semantic-commit-type-when-remove-something>)\
 I used w3 schools website a lot when I got stuck while writing new functionality [Follow link](https://www.w3schools.com/jsref/prop_style_display.asp)
 
-### Content
+## Content
 
 Sound effects used for the loss [Follow link](https://mixkit.co/free-sound-effects/lose/)\
 Sound effects used for the win [Follow link](https://pixabay.com/sound-effects/8-bit-victory-sound-101319/)
 
-### Media
+## Media
 
 Girls facial expression from pixel website [Follow link](https://www.pexels.com/photo/collage-photo-of-woman-3812743/)
 
@@ -411,6 +411,6 @@ Googly eyes added to facial expression sourced from [Follow link](https://common
 Frame image used for hand gestures
 [Follow link](https://www.vecteezy.com/vector-art/1952391-explosion-pop-art-style-icon)
 
-### Acknowledgments
+## Acknowledgments
 
 I would like to thank my mentors Narender and Spencer as well as all the users on slack for all their opinions and code reviews

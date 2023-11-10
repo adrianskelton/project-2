@@ -82,28 +82,7 @@ function quitMessage() {
  */
  
 function hardReloadgame() {
-    if (quitMessageRun) {
         location.reload();
-    } else {
-        makeChoice.style.display = "block";
-        gamePaused = false;
-        document.querySelectorAll("#quit, #play-again").forEach(function (element) {
-            element.style.display = "none";
-        });
-
-        document.getElementById("lightningplayer").src =
-            "assets/images/lightning0.png";
-        document.getElementById("lightningcomputer").src =
-            "assets/images/lightning0.png";
-        document.getElementById("playerimg").src = "assets/images/question.png";
-        document.getElementById("computerimg").src =
-            "assets/images/questionreverse.png";
-        document.getElementById("middleImg").src = "assets/images/facestart.png";
-        document.getElementById("whowontext").innerHTML =
-            "Lets play rock paper scissors!";
-        userScore = 0;
-        computerScore = 0;
-    }
 }
 
 /**
